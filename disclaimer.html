@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Information | Wise & Healthy Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --dark-green: #1b4332;
+            --mid-green: #2d6a4f;
+            --honey: #d4a373;
+            --cream: #fefae0;
+            --white: #ffffff;
+            --text-color: #333;
+        }
+
+        body.dark-theme {
+            --white: #121212;
+            --dark-green: #081c15;
+            --cream: #1e1e1a;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--white);
+            color: var(--text-color);
+            line-height: 1.8;
+            transition: 0.3s;
+        }
+
+        nav {
+            background: var(--dark-green);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 { color: var(--dark-green); border-bottom: 2px solid var(--honey); padding-bottom: 10px; }
+        body.dark-theme h1 { color: var(--honey); }
+
+        h2 { color: var(--mid-green); margin-top: 40px; }
+        
+        .alert-box {
+            background: var(--cream);
+            border-left: 5px solid var(--honey);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            border-top: 1px solid #eee;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--mid-green);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html"><i class="fa-solid fa-leaf"></i> BACK TO HOME</a>
+</nav>
+
+<div class="legal-container">
+    <a href="index.html" class="back-link">← Return to Directory</a>
+    
+    <h1>Medical Disclaimer</h1>
+    
+    <div class="alert-box">
+        <strong>Important:</strong> The information provided by Wise & Healthy Living is for educational purposes only and is not intended as medical advice, diagnosis, or treatment.
+    </div>
+
+    <p>All content, including text, graphics, images, and information, contained on or available through this web site is for general information purposes only. You are encouraged to confirm any information obtained from or through this web site with other sources, and review all information regarding any medical condition or treatment with your physician.</p>
+
+    <h2>No Professional Relationship</h2>
+    <p>Use of this website does not create a doctor-patient relationship. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read on this website.</p>
+
+    <hr style="margin: 50px 0; opacity: 0.2;">
+
+    <h1>Privacy Policy</h1>
+    <p>Your privacy is important to us. This section explains how we handle your information.</p>
+
+    <h2>Data Collection</h2>
+    <p>We do not require users to create accounts to browse our herbal directory. If you contact us via WhatsApp or Email, we only use your provided contact details to respond to your specific inquiry.</p>
+
+    <h2>Cookies</h2>
+    <p>This site uses local storage to remember your "Dark Mode" preference. This data stays on your device and is not tracked by us.</p>
+
+    <h2>Third-Party Links</h2>
+    <p>Our directory links to external research (e.g., NIH, PubMed). We are not responsible for the privacy practices or content of these external sites.</p>
+</div>
+
+<footer>
+    &copy; 2026 Wise & Healthy Living | Last Updated: January 2026
+</footer>
+
+<script>
+    // Sync theme with main page
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+</script>
+
+</body>
+</html>
