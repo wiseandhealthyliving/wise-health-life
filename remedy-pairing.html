@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remedy Pairings | Wise & Healthy Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Using your root variables for consistency */
+        :root {
+            --dark-green: #1b4332;
+            --mid-green: #2d6a4f;
+            --honey: #d4a373;
+            --cream: #fefae0;
+            --white: #ffffff;
+            --text-color: #333;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; background: #fafafa; color: var(--text-color); margin: 0; line-height: 1.6; }
+        
+        nav { background: var(--dark-green); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; }
+
+        .pairing-header { background: var(--dark-green); color: white; padding: 80px 20px; text-align: center; }
+        .pairing-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        
+        /* Synergy Card Design */
+        .synergy-card {
+            background: var(--white);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--honey);
+        }
+
+        .herb-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--dark-green);
+            border: 2px solid var(--honey);
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 10px;
+        }
+
+        .plus-sign { font-size: 2rem; color: var(--honey); margin: 0 20px; }
+
+        .synergy-info { flex: 1; padding-left: 20px; }
+        .synergy-info h3 { color: var(--dark-green); margin-top: 0; }
+        .scientific-why { 
+            background: #f9f9f9; 
+            padding: 10px 15px; 
+            border-radius: 10px; 
+            font-size: 0.9rem; 
+            border-left: 3px solid var(--mid-green);
+        }
+
+        @media (max-width: 600px) {
+            .synergy-card { flex-direction: column; text-align: center; }
+            .plus-sign { margin: 15px 0; }
+            .synergy-info { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#remedies">Remedies</a>
+<a href="remedy-pairing.html" style="color: var(--honey);">Pairings</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header class="pairing-header">
+    <h1>The Science of Synergy</h1>
+    <p>Why 1 + 1 often equals 3 in herbal medicine.</p>
+</header>
+
+<div class="container">
+    
+    <div class="synergy-card">
+        <div class="herb-circle">Turmeric</div>
+        <div class="plus-sign">+</div>
+        <div class="herb-circle">Black Pepper</div>
+        <div class="synergy-info">
+            <h3>The Absorption Duo</h3>
+            <p>Curcumin (in Turmeric) is difficult for the body to absorb on its own.</p>
+            <div class="scientific-why">
+                <strong>The Science:</strong> Piperine in black pepper inhibits the metabolic pathway (glucuronidation) that eliminates curcumin, increasing its bioavailability by up to 2,000%.
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="synergy-card">
+        <div class="herb-circle">Garlic</div>
+        <div class="plus-sign">+</div>
+        <div class="herb-circle">Cayenne</div>
+        <div class="synergy-info">
+            <h3>Cardiovascular Flow</h3>
+            <p>Garlic thins the blood slightly and supports arterial health.</p>
+            <div class="scientific-why">
+                <strong>The Science:</strong> Cayenne acts as a "vasodilator," opening up capillaries. This allows the sulfuric compounds in garlic to reach deep tissues and extremities much faster.
+            </div>
+        </div>
+    </div>
+
+    <div class="synergy-card">
+        <div class="herb-circle">Ashwagandha</div>
+        <div class="plus-sign">+</div>
+        <div class="herb-circle">Healthy Fats</div>
+        <div class="synergy-info">
+            <h3>Endocrine Support</h3>
+            <p>Ashwagandha is a fat-soluble adaptogen.</p>
+            <div class="scientific-why">
+                <strong>The Science:</strong> Steroidal lactones (withanolides) are lipophilic. Taking Ashwagandha with coconut oil or full-fat milk ensures the compounds pass the gut barrier effectively.
+            </div>
+        </div>
+    </div>
+
+    <div class="synergy-card">
+        <div class="herb-circle">Echinacea</div>
+        <div class="plus-sign">+</div>
+        <div class="herb-circle">Vitamin C</div>
+        <div class="synergy-info">
+            <h3>The White Blood Cell Boost</h3>
+            <p>Echinacea stimulates the production of white blood cells.</p>
+            <div class="scientific-why">
+                <strong>The Science:</strong> While Echinacea increases the *number* of immune cells, Vitamin C increases their *activity* (chemotaxis), making the immune response faster and more efficient.
+            </div>
+        </div>
+    </div>
+
+    <div class="synergy-card">
+        <div class="herb-circle">Peppermint</div>
+        <div class="plus-sign">+</div>
+        <div class="herb-circle">Caraway</div>
+        <div class="synergy-info">
+            <h3>The Anti-Spasmodic Team</h3>
+            <p>Ideal for intense bloating or IBS symptoms.</p>
+            <div class="scientific-why">
+                <strong>The Science:</strong> Peppermint relaxes the smooth muscle of the gut, while Caraway prevents gas formation. Together, they reduce visceral hypersensitivity significantly.
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer style="text-align: center; padding: 40px; background: var(--dark-green); color: white;">
+    <p>&copy; 2026 Wise & Healthy Living | Synergy Guide</p>
+</footer>
+
+</body>
+</html>
