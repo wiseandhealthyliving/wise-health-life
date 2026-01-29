@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Herbal Calendar | Wise & Healthy Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --dark-green: #1b4332;
+            --mid-green: #2d6a4f;
+            --honey: #d4a373;
+            --cream: #fefae0;
+            --white: #ffffff;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #faf9f6;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        nav { background: var(--dark-green); padding: 15px 0; text-align: center; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; font-size: 0.85rem; }
+
+        header {
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), url('https://images.unsplash.com/photo-1464334468621-39da717174c9?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover; background-position: center;
+            color: white; padding: 80px 20px; text-align: center;
+        }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+
+        /* Tabs Styling */
+        .season-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            border: 2px solid var(--mid-green);
+            background: white;
+            color: var(--mid-green);
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--mid-green);
+            color: white;
+        }
+
+        /* Season Content */
+        .season-content { display: none; animation: fadeIn 0.5s ease; }
+        .season-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .cal-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--honey);
+        }
+
+        .cal-card h3 { color: var(--dark-green); margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        .cal-card ul { padding-left: 20px; }
+        .cal-card li { margin-bottom: 10px; }
+
+        .harvest-tag {
+            font-size: 0.75rem;
+            background: var(--cream);
+            color: var(--mid-green);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer { text-align: center; padding: 60px; background: var(--dark-green); color: white; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="blog.html">BLOG</a>
+    <a href="glossary.html">GLOSSARY</a>
+</nav>
+
+<header>
+    <h1>The Seasonal Herbal Calendar</h1>
+    <p>A guide to harvesting and healing through the year.</p>
+</header>
+
+<div class="container">
+    <div class="season-tabs">
+        <button class="tab-btn active" onclick="openSeason(event, 'spring')">SPRING</button>
+        <button class="tab-btn" onclick="openSeason(event, 'summer')">SUMMER</button>
+        <button class="tab-btn" onclick="openSeason(event, 'autumn')">AUTUMN</button>
+        <button class="tab-btn" onclick="openSeason(event, 'winter')">WINTER</button>
+    </div>
+
+    <div id="spring" class="season-content active">
+        <div class="calendar-grid">
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-seedling"></i> Harvest Focus</h3>
+                <ul>
+                    <li><strong>Dandelion Roots:</strong> Harvest before flowers bloom for peak bitterness. <span class="harvest-tag">Dig Deep</span></li>
+                    <li><strong>Nettle Leaves:</strong> Pick young tops (wear gloves!) for nutrient-dense tea.</li>
+                    <li><strong>Cleavers:</strong> Best in early spring for lymphatic support.</li>
+                </ul>
+            </div>
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-heart-pulse"></i> Wellness Rituals</h3>
+                <p>Focus on liver support and clearing winter stagnation. Incorporate daily bitter tonics and gentle stretching to wake up the meridian lines.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="summer" class="season-content">
+        <div class="calendar-grid">
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-sun"></i> Harvest Focus</h3>
+                <ul>
+                    <li><strong>St. John’s Wort:</strong> Harvest the flowering tops on sunny days.</li>
+                    <li><strong>Peppermint:</strong> Pick mid-morning after dew has dried but before the sun is too hot.</li>
+                    <li><strong>Lavender:</strong> Harvest just as the first flowers on the spike open.</li>
+                </ul>
+            </div>
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-glass-water"></i> Wellness Rituals</h3>
+                <p>Cooling the body and protecting the skin. Use solar infusions (sun tea) and topical herbal mists like Rose water.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="autumn" class="season-content">
+        <div class="calendar-grid">
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-leaf"></i> Harvest Focus</h3>
+                <ul>
+                    <li><strong>Elderberries:</strong> Harvest when deep purple/black and drooping.</li>
+                    <li><strong>Rose Hips:</strong> Best picked after the first light frost.</li>
+                    <li><strong>Burdock Root:</strong> Dig in late autumn when energy returns to the root.</li>
+                </ul>
+            </div>
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-shield-virus"></i> Wellness Rituals</h3>
+                <p>Building the "Immune Shield." Transition to warming spices (Ginger, Cinnamon) and prepare syrups for the coming cold season.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="winter" class="season-content">
+        <div class="calendar-grid">
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-snowflake"></i> Apothecary Focus</h3>
+                <ul>
+                    <li><strong>Pine Needles:</strong> High in Vitamin C for winter teas.</li>
+                    <li><strong>Dried Roots:</strong> Utilize the stores of Dandelion and Burdock for decoctions.</li>
+                    <li><strong>Evergreens:</strong> Use for steam inhalations and chest rubs.</li>
+                </ul>
+            </div>
+            <div class="cal-card">
+                <h3><i class="fa-solid fa-bed"></i> Wellness Rituals</h3>
+                <p>Deep rest and restoration (Marrow health). Focus on kidney support and warming bone broths or mineral-rich infusions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Wise & Healthy Living</p>
+</footer>
+
+<script>
+    function openSeason(evt, seasonName) {
+        var i, content, tabs;
+        content = document.getElementsByClassName("season-content");
+        for (i = 0; i < content.length; i++) {
+            content[i].style.display = "none";
+            content[i].classList.remove("active");
+        }
+        tabs = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+        }
+        document.getElementById(seasonName).style.display = "block";
+        document.getElementById(seasonName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
