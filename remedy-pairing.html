@@ -371,6 +371,41 @@
     </div>
 </div>
 
+    
+<section class="container" style="margin-top: 60px;">
+    <div id="capture-area" style="background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee;">
+        <div style="text-align: center; margin-bottom: 30px;">
+            <h2 style="color: var(--dark-green); margin-bottom: 5px;"><i class="fa-solid fa-wand-magic-sparkles"></i> Custom Protocol Builder</h2>
+            <p style="color: #666; font-size: 0.9rem;">Wise & Healthy Living | Personalized Synergy Guide</p>
+        </div>
+
+        <div class="no-print" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 30px;">
+            <label style="cursor: pointer; background: #f0f4f8; padding: 10px 20px; border-radius: 50px; border: 2px solid transparent; transition: 0.3s;" id="label-stress">
+                <input type="checkbox" id="goal-stress" style="display:none" onchange="generateProtocol()"> 🧘 Stress
+            </label>
+            <label style="cursor: pointer; background: #f0f4f8; padding: 10px 20px; border-radius: 50px; border: 2px solid transparent; transition: 0.3s;" id="label-immune">
+                <input type="checkbox" id="goal-immune" style="display:none" onchange="generateProtocol()"> 🛡️ Immunity
+            </label>
+            <label style="cursor: pointer; background: #f0f4f8; padding: 10px 20px; border-radius: 50px; border: 2px solid transparent; transition: 0.3s;" id="label-joints">
+                <input type="checkbox" id="goal-joints" style="display:none" onchange="generateProtocol()"> 🦴 Joints
+            </label>
+        </div>
+
+        <div id="protocol-output" style="background: var(--cream); padding: 25px; border-radius: 15px; border-left: 5px solid var(--honey); min-height: 120px;">
+            <p style="text-align: center; color: #666;">Select a health focus above...</p>
+        </div>
+
+        <div id="builder-sources" style="margin-top: 20px; font-size: 0.7rem; color: #999; border-top: 1px solid #eee; padding-top: 10px; display: none;">
+            <strong>Clinical Basis:</strong> Cortisol/Adaptogen Study (PMID: 23439798), Curcumin Bioavailability (PMID: 9619120), Vagal Tone & Mentha (PMID: 16767770).
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="downloadProtocol()" style="background: var(--dark-green); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold;">
+            <i class="fa-solid fa-camera"></i> Save Protocol to Phone
+        </button>
+    </div>
+</section>
 
 <section class="container" style="margin-top: 40px;">
     <div style="background: var(--dark-green); color: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
@@ -460,6 +495,64 @@
 
     <p>&copy; 2026 Wise & Healthy Living | Synergy Guide</p>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
+    <script>
+function generateProtocol() {
+    const goals = {
+        stress: document.getElementById('goal-stress').checked,
+        immune: document.getElementById('goal-immune').checked,
+        joints: document.getElementById('goal-joints').checked
+    };
+
+    // UI Updates
+    Object.keys(goals).forEach(g => {
+        document.getElementById('label-' + g).style.borderColor = goals[g] ? 'var(--honey)' : 'transparent';
+        document.getElementById('label-' + g).style.background = goals[g] ? 'var(--white)' : '#f0f4f8';
+    });
+
+    const sources = document.getElementById('builder-sources');
+    let html = "<h4 style='margin-top:0; color:var(--dark-green)'>Your Daily Synergy Plan:</h4><ul style='list-style:none; padding:0; line-height:1.6;'>";
+
+    if (goals.stress) {
+        html += "<li>✅ <strong>Morning:</strong> Ashwagandha with fat to buffer cortisol spikes.</li>";
+        html += "<li>✅ <strong>Night:</strong> Peppermint to stimulate the Vagus nerve.</li>";
+    }
+    if (goals.immune) {
+        html += "<li>✅ <strong>Morning:</strong> Echinacea + Vit C to prime white blood cell activity.</li>";
+        html += "<li>✅ <strong>Lunch:</strong> Oil of Oregano for microbiome defense.</li>";
+    }
+    if (goals.joints) {
+        html += "<li>✅ <strong>Mealtime:</strong> Turmeric + Black Pepper (Piperine activation).</li>";
+        html += "<li>✅ <strong>Post-Meal:</strong> Cayenne to drive blood flow to connective tissue.</li>";
+    }
+
+    if (!goals.stress && !goals.immune && !goals.joints) {
+        html = "<p style='text-align: center; color: #666;'>Select a health focus above...</p>";
+        sources.style.display = "none";
+    } else {
+        html += "</ul>";
+        sources.style.display = "block";
+    }
+
+    document.getElementById('protocol-output').innerHTML = html;
+}
+
+function downloadProtocol() {
+    // Temporarily hide the checkboxes for a clean image
+    const selectors = document.querySelector('.no-print');
+    selectors.style.display = 'none';
+
+    html2canvas(document.querySelector("#capture-area")).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'my-herbal-protocol.png';
+        link.href = canvas.toDataURL();
+        link.click();
+        
+        // Show selectors again
+        selectors.style.display = 'flex';
+    });
+}
+    </script>
 </body>
 </html>
