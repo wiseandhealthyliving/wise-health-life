@@ -536,6 +536,12 @@
             </form>
         </div>
     </div>
+
+    <div class="mobile-only" style="display: flex; justify-content: center; gap: 8px; margin-top: 15px;">
+            <div id="dot1" style="width: 10px; height: 10px; border-radius: 50%; background: var(--mid-green);"></div>
+            <div id="dot2" style="width: 10px; height: 10px; border-radius: 50%; background: #ddd;"></div>
+        </div>
+</div>
 </section>
     
     <div class="disclaimer-box">
@@ -642,6 +648,21 @@ function downloadProtocol() {
 
 // Call this inside your generateProtocol() function so the links are always ready
 updateSocialLinks();
+
+        const container = document.getElementById('swipe-container');
+    const dot1 = document.getElementById('dot1');
+    const dot2 = document.getElementById('dot2');
+
+    container.addEventListener('scroll', () => {
+        const scrollPercent = container.scrollLeft / (container.scrollWidth - container.clientWidth);
+        if (scrollPercent > 0.5) {
+            dot1.style.background = '#ddd';
+            dot2.style.background = 'var(--mid-green)';
+        } else {
+            dot1.style.background = 'var(--mid-green)';
+            dot2.style.background = '#ddd';
+        }
+    });
     </script>
 </body>
 </html>
