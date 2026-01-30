@@ -66,6 +66,25 @@
             border-left: 3px solid var(--mid-green);
         }
 
+        .source-link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: var(--mid-green);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--mid-green);
+    padding: 5px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.source-link-btn:hover {
+    background: var(--mid-green);
+    color: white;
+}
+
+
         @media (max-width: 600px) {
             .synergy-card { flex-direction: column; text-align: center; }
             .plus-sign { margin: 15px 0; }
@@ -102,70 +121,86 @@
 <div class="container">
     
     <div class="synergy-card">
-        <div class="herb-circle">Turmeric</div>
-        <div class="plus-sign">+</div>
-        <div class="herb-circle">Black Pepper</div>
-        <div class="synergy-info">
-            <h3>The Absorption Duo</h3>
-            <p>Curcumin (in Turmeric) is difficult for the body to absorb on its own.</p>
-            <div class="scientific-why">
-                <strong>The Science:</strong> Piperine in black pepper inhibits the metabolic pathway (glucuronidation) that eliminates curcumin, increasing its bioavailability by up to 2,000%.
-            </div>
+    <div class="herb-circle">Turmeric</div>
+    <div class="plus-sign">+</div>
+    <div class="herb-circle">Black Pepper</div>
+    <div class="synergy-info">
+        <h3>The Absorption Duo</h3>
+        <p>Curcumin is poorly absorbed by the human digestive tract on its own.</p>
+        <div class="scientific-why">
+            <strong>The Science:</strong> Piperine inhibits the metabolic pathway (glucuronidation) that eliminates curcumin, increasing bioavailability by 2,000%.
         </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/9619120/" target="_blank" class="source-link-btn">
+            <i class="fa-solid fa-microscope"></i> View Clinical Study (PubMed)
+        </a>
     </div>
-    
+</div>
 
-    <div class="synergy-card">
-        <div class="herb-circle">Garlic</div>
-        <div class="plus-sign">+</div>
-        <div class="herb-circle">Cayenne</div>
-        <div class="synergy-info">
-            <h3>Cardiovascular Flow</h3>
-            <p>Garlic thins the blood slightly and supports arterial health.</p>
-            <div class="scientific-why">
-                <strong>The Science:</strong> Cayenne acts as a "vasodilator," opening up capillaries. This allows the sulfuric compounds in garlic to reach deep tissues and extremities much faster.
-            </div>
+<div class="synergy-card">
+    <div class="herb-circle">Garlic</div>
+    <div class="plus-sign">+</div>
+    <div class="herb-circle">Cayenne</div>
+    <div class="synergy-info">
+        <h3>Cardiovascular Flow</h3>
+        <p>Garlic supports arterial health, while Cayenne acts as a circulatory catalyst.</p>
+        <div class="scientific-why">
+            <strong>The Science:</strong> Capsaicin (Cayenne) acts as a vasodilator, opening capillaries to allow Garlic's sulfuric compounds to reach deep tissues faster.
         </div>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4734823/" target="_blank" class="source-link-btn">
+            <i class="fa-solid fa-microscope"></i> View Research (PMC)
+        </a>
     </div>
+</div>
 
-    <div class="synergy-card">
-        <div class="herb-circle">Ashwagandha</div>
-        <div class="plus-sign">+</div>
-        <div class="herb-circle">Healthy Fats</div>
-        <div class="synergy-info">
-            <h3>Endocrine Support</h3>
-            <p>Ashwagandha is a fat-soluble adaptogen.</p>
-            <div class="scientific-why">
-                <strong>The Science:</strong> Steroidal lactones (withanolides) are lipophilic. Taking Ashwagandha with coconut oil or full-fat milk ensures the compounds pass the gut barrier effectively.
-            </div>
+<div class="synergy-card">
+    <div class="herb-circle">Ashwagandha</div>
+    <div class="plus-sign">+</div>
+    <div class="herb-circle">Healthy Fats</div>
+    <div class="synergy-info">
+        <h3>Endocrine Support</h3>
+        <p>Ashwagandha’s active compounds (withanolides) are lipophilic (fat-soluble).</p>
+        <div class="scientific-why">
+            <strong>The Science:</strong> Lipids (fats) act as a transport vehicle, allowing adaptogens to pass the gut barrier more effectively.
         </div>
+        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8539134/" target="_blank" class="source-link-btn">
+            <i class="fa-solid fa-microscope"></i> View Bioavailability Study
+        </a>
     </div>
+</div>
 
-    <div class="synergy-card">
-        <div class="herb-circle">Echinacea</div>
-        <div class="plus-sign">+</div>
-        <div class="herb-circle">Vitamin C</div>
-        <div class="synergy-info">
-            <h3>The White Blood Cell Boost</h3>
-            <p>Echinacea stimulates the production of white blood cells.</p>
-            <div class="scientific-why">
-                <strong>The Science:</strong> While Echinacea increases the *number* of immune cells, Vitamin C increases their *activity* (chemotaxis), making the immune response faster and more efficient.
-            </div>
-        </div>
-    </div>
 
-    <div class="synergy-card">
-        <div class="herb-circle">Peppermint</div>
-        <div class="plus-sign">+</div>
-        <div class="herb-circle">Caraway</div>
-        <div class="synergy-info">
-            <h3>The Anti-Spasmodic Team</h3>
-            <p>Ideal for intense bloating or IBS symptoms.</p>
-            <div class="scientific-why">
-                <strong>The Science:</strong> Peppermint relaxes the smooth muscle of the gut, while Caraway prevents gas formation. Together, they reduce visceral hypersensitivity significantly.
-            </div>
+<div class="synergy-card">
+    <div class="herb-circle">Echinacea</div>
+    <div class="plus-sign">+</div>
+    <div class="herb-circle">Vitamin C</div>
+    <div class="synergy-info">
+        <h3>The Immune Response</h3>
+        <p>Echinacea increases white blood cell count, while Vitamin C fuels their activity.</p>
+        <div class="scientific-why">
+            <strong>The Science:</strong> Synergistic effects have been observed in shortening the duration of respiratory issues when taken together.
         </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/16175155/" target="_blank" class="source-link-btn">
+            <i class="fa-solid fa-microscope"></i> View Clinical Evidence
+        </a>
     </div>
+</div>
+
+<div class="synergy-card">
+    <div class="herb-circle">Peppermint</div>
+    <div class="plus-sign">+</div>
+    <div class="herb-circle">Caraway</div>
+    <div class="synergy-info">
+        <h3>The Digestive Calm</h3>
+        <p>A classic clinical pairing for relaxing the GI tract and reducing gas.</p>
+        <div class="scientific-why">
+            <strong>The Science:</strong> Peppermint relaxes smooth muscle while Caraway reduces foam/gas; the combination is more effective for IBS than either alone.
+        </div>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/11149444/" target="_blank" class="source-link-btn">
+            <i class="fa-solid fa-microscope"></i> View IBS Clinical Trial
+        </a>
+    </div>
+</div>
+
 
     <section class="container" style="margin-top: 40px;">
     <div style="background: #fff5f5; padding: 30px; border-radius: 15px; border: 2px solid #feb2b2; color: #742a2a;">
