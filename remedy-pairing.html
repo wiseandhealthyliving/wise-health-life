@@ -90,6 +90,21 @@
             .plus-sign { margin: 15px 0; }
             .synergy-info { padding-left: 0; }
         }
+
+            /* Show swipe hint only on small screens */
+    @media (max-width: 600px) {
+        .mobile-swipe-hint { display: block !important; }
+    }
+
+    @media print {
+        body * { visibility: hidden; }
+        #printableChecklist, #printableChecklist * { visibility: visible; }
+        #printableChecklist { position: absolute; left: 0; top: 0; width: 100%; border: none; }
+        .print-btn, .mobile-swipe-hint { display: none !important; }
+        /* Ensure table is not scrolled/hidden during print */
+        div { overflow: visible !important; }
+        table { min-width: 100% !important; }
+    }
     </style>
 </head>
 <body>
@@ -254,6 +269,67 @@
         <p style="font-size: 0.85rem; font-style: italic; margin-top: 15px;">
             *This information is for educational purposes and has not been evaluated by the FDA.
         </p>
+    </div>
+</section>
+
+    <section class="container" id="printableChecklist">
+    <div style="background: var(--white); border: 2px dashed var(--honey); padding: 30px; border-radius: 15px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+            <h2 style="color: var(--dark-green); margin: 0;"><i class="fa-solid fa-clipboard-list"></i> The Synergy Checklist</h2>
+            <button onclick="window.print()" class="print-btn" style="background: var(--honey); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                <i class="fa-solid fa-print"></i> Print Guide
+            </button>
+        </div>
+        
+        <p style="font-style: italic; color: #666; font-size: 0.9rem;">Keep this guide in your kitchen or supplement cabinet for quick reference.</p>
+        
+        <div class="mobile-swipe-hint" style="display: none; font-size: 0.75rem; color: var(--honey); margin-bottom: 5px; text-align: right;">
+            <i class="fa-solid fa-left-right"></i> Swipe to see more
+        </div>
+
+        <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 8px;">
+            <table style="width: 100%; min-width: 500px; border-collapse: collapse; margin-top: 10px; background: white;">
+                <thead>
+                    <tr style="background: var(--soft-gray); text-align: left;">
+                        <th style="padding: 12px; border-bottom: 2px solid var(--honey); white-space: nowrap;">Primary Herb</th>
+                        <th style="padding: 12px; border-bottom: 2px solid var(--honey); white-space: nowrap;">The Catalyst</th>
+                        <th style="padding: 12px; border-bottom: 2px solid var(--honey); white-space: nowrap;">Goal / Benefit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">Turmeric</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Black Pepper</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Anti-inflammatory Absorption</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">Ashwagandha</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Coconut Oil / Ghee</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Stress Support (Fat Soluble)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">Garlic</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Cayenne Pepper</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Circulation & Heart Health</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">Echinacea</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Vitamin C / Fruit</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Immune Cell Activation</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">Peppermint</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Caraway Seed</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Gas & Bloating Relief</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee; font-weight: bold;">Green Tea</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Lemon / Citrus</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #eee;">Antioxidant Stability</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </section>
 
