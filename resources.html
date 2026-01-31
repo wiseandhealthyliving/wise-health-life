@@ -56,25 +56,37 @@
             align-items: center;
         }
 
-        .nav-links { display: flex; gap: 20px; align-items: center; }
-        .nav-links a { color: #555; text-decoration: none; font-weight: 500; font-size: 0.9rem; }
+        .nav-links { 
+            display: flex; 
+            gap: 12px; 
+            align-items: center; 
+        }
+
+        .nav-links a { 
+            color: #555; 
+            text-decoration: none; 
+            font-weight: 500; 
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
         .nav-links a:hover { color: var(--mid-green); }
 
         .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; z-index: 1001; }
         .progress-bar { height: 5px; background: var(--honey); width: 0%; }
 
         /* Search Bar Styling */
-        .search-wrapper { position: relative; margin-left: 15px; }
+        .search-wrapper { position: relative; margin-left: 10px; z-index: 1002; }
         #site-search {
             padding: 8px 35px 8px 15px;
             border-radius: 20px;
             border: 1px solid #ddd;
-            font-size: 0.85rem;
-            width: 180px;
+            font-size: 0.8rem;
+            width: 130px;
             outline: none;
             transition: 0.3s;
         }
-        #site-search:focus { width: 220px; border-color: var(--honey); }
+        #site-search:focus { width: 180px; border-color: var(--honey); }
 
         /* Article/Sections */
         .post-header { text-align: center; margin: 60px 0; font-family: sans-serif; }
@@ -89,6 +101,7 @@
             transition: 0.3s;
             text-decoration: none;
             color: inherit;
+            display: block;
         }
         .resource-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--honey); }
 
@@ -97,91 +110,20 @@
         dd { margin: 5px 0 20px 0; color: #666; font-size: 0.95rem; }
 
         /* Mobile Adjustments */
-        @media (max-width: 850px) {
+        @media (max-width: 992px) {
             .nav-links { display: none; }
-            #menu-toggle { display: block !important; }
-            .search-wrapper { margin-right: 40px; }
-            #site-search { width: 140px; }
+            #menu-toggle { display: block !important; } /* Fixed visibility */
+            .search-wrapper { margin-right: 10px; }
             .post-header h1 { font-size: 2rem; }
         }
         
         @media print {
-    /* Hide non-essential UI elements */
-    nav, 
-    #menu-toggle, 
-    .search-wrapper, 
-    .theme-toggle, 
-    footer, 
-    button,
-    .progress-container {
-        display: none !important;
-    }
-
-    /* Reset background and text for paper efficiency */
-    body {
-        background: white !important;
-        color: black !important;
-        font-size: 12pt;
-    }
-
-    .container {
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    /* Optimize tables for readability */
-    table {
-        border: 1px solid #000 !important;
-        page-break-inside: auto;
-    }
-    
-    tr {
-        page-break-inside: avoid;
-        page-break-after: auto;
-    }
-
-    /* Ensure links show their URL so people can find them later */
-    a:after {
-        content: " (" attr(href) ")";
-        font-size: 0.8rem;
-        color: #555;
-    }
-
-    /* Style Headers for Print */
-    h1, h2, h3 {
-        color: black !important;
-        page-break-after: avoid;
-    }
-
-    /* Expand the Resource Cards to be full width on paper */
-    .resource-card {
-        border: 1px solid #ccc !important;
-        break-inside: avoid;
-        margin-bottom: 20px;
-    }
-}
-
-        .search-wrapper { 
-    position: relative; 
-    margin-left: 10px; 
-    z-index: 2001; /* Higher than the nav bar shadow */
-}
-
-        .nav-links { 
-    display: flex; 
-    gap: 12px; /* Reduced from 20px */
-    align-items: center; 
-}
-.nav-links a { 
-    color: #555; 
-    text-decoration: none; 
-    font-weight: 500; 
-    font-size: 0.8rem; /* Reduced from 0.9rem to fit all 7 links */
-}
-
-
+            nav, #menu-toggle, .search-wrapper, footer, .progress-container { display: none !important; }
+            body { background: white !important; color: black !important; font-size: 12pt; }
+            .container { max-width: 100% !important; width: 100% !important; margin: 0 !important; }
+            table { border: 1px solid #000 !important; }
+            .resource-card { border: 1px solid #ccc !important; break-inside: avoid; margin-bottom: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -190,28 +132,28 @@
 
 <nav>
     <div class="container nav-content">
-        <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-            <div style="background: var(--dark-green); color: white; width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
-                <i class="fa-solid fa-leaf" style="font-size: 0.9rem;"></i>
+        <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 8px;">
+            <div style="background: var(--dark-green); color: white; width: 30px; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                <i class="fa-solid fa-leaf" style="font-size: 0.8rem;"></i>
             </div>
-            <span style="font-weight: bold; color: var(--dark-green); font-family: sans-serif;">Wise & Healthy</span>
+            <span style="font-weight: bold; color: var(--dark-green); font-family: sans-serif; font-size: 1rem;">Wise & Healthy</span>
         </a>
 
         <div style="display: flex; align-items: center;">
-<div class="nav-links">
-    <a href="index.html#home">Home</a>
-    <a href="index.html#remedies">Remedies</a>
-    <a href="remedy-pairing.html">Pairings</a> <a href="blog.html">Blog</a>
-    <a href="about.html">About</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="resources.html" style="color: var(--mid-green); font-weight: bold;">Resources</a>
-</div>
-
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#remedies">Remedies</a>
+                <a href="remedy-pairing.html">Pairings</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="resources.html" style="color: var(--mid-green); font-weight: bold;">Resources</a>
+            </div>
 
             <div class="search-wrapper">
                 <input type="text" id="site-search" placeholder="Search...">
-                <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 12px; top: 10px; color: #aaa; font-size: 0.8rem;"></i>
-                <div id="search-results" style="display: none; position: absolute; top: 110%; right: 0; width: 250px; background: white; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid #eee; z-index: 2000; max-height: 300px; overflow-y: auto;"></div>
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 12px; top: 10px; color: #aaa; font-size: 0.7rem;"></i>
+                <div id="search-results" style="display: none; position: absolute; top: 110%; right: 0; width: 220px; background: white; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 1px solid #eee; z-index: 2000; max-height: 300px; overflow-y: auto;"></div>
             </div>
 
             <button id="menu-toggle" style="background: none; border: none; font-size: 1.4rem; color: var(--dark-green); cursor: pointer; display: none; margin-left: 10px;">
@@ -221,10 +163,11 @@
     </div>
 
     <div id="mobile-menu" style="display: none; background: var(--white); border-top: 1px solid #eee; padding: 20px; text-align: center;">
-        <div style="display: flex; flex-direction: column; gap: 15px;">
+        <div style="display: flex; flex-direction: column; gap: 15px; font-family: sans-serif;">
             <a href="index.html" style="text-decoration: none; color: var(--dark-green); font-weight: bold;">Home</a>
-            <a href="remedy-pairing.html" style="text-decoration: none; color: var(--dark-green); font-weight: bold;">Synergy Guide</a>
-            <a href="resources.html" style="text-decoration: none; color: var(--dark-green); font-weight: bold;">Resource Library</a>
+            <a href="remedy-pairing.html" style="text-decoration: none; color: var(--dark-green); font-weight: bold;">Pairings</a>
+            <a href="resources.html" style="text-decoration: none; color: var(--dark-green); font-weight: bold;">Resources</a>
+            <a href="blog.html" style="text-decoration: none; color: var(--dark-green); font-weight: bold;">Blog</a>
         </div>
     </div>
 </nav>
@@ -233,13 +176,16 @@
     <header class="post-header">
         <span class="post-category">Knowledge Base</span>
         <h1>Knowledge Repository</h1>
+        
         <div style="font-family: sans-serif; font-size: 0.8rem; color: #888; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 15px;">
-    <span><i class="fa-regular fa-clock"></i> 5 min read</span>
-    <span><i class="fa-solid fa-layer-group"></i> 12 Resources</span>
-</div>
+            <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+            <span><i class="fa-solid fa-layer-group"></i> 12 Resources</span>
+        </div>
 
         <p>Your centralized hub for synergy checklists, clinical guides, and research links.</p>
     </header>
+
+    </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
         <a href="remedy-pairing.html#printableChecklist" class="resource-card">
