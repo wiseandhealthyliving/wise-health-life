@@ -163,6 +163,25 @@
     }
 }
 
+        .search-wrapper { 
+    position: relative; 
+    margin-left: 10px; 
+    z-index: 2001; /* Higher than the nav bar shadow */
+}
+
+        .nav-links { 
+    display: flex; 
+    gap: 12px; /* Reduced from 20px */
+    align-items: center; 
+}
+.nav-links a { 
+    color: #555; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.8rem; /* Reduced from 0.9rem to fit all 7 links */
+}
+
+
     </style>
 </head>
 <body>
@@ -179,15 +198,15 @@
         </a>
 
         <div style="display: flex; align-items: center;">
-                    <div class="nav-links">
+<div class="nav-links">
     <a href="index.html#home">Home</a>
     <a href="index.html#remedies">Remedies</a>
-    <a href="remedy-pairing.html">Parings</a>
-    <a href="blog.html">Blog</a>
+    <a href="remedy-pairing.html">Pairings</a> <a href="blog.html">Blog</a>
     <a href="about.html">About</a>
     <a href="index.html#contact">Contact</a>
-    <a href="resources.html">Resources</a>
-                    </div>
+    <a href="resources.html" style="color: var(--mid-green); font-weight: bold;">Resources</a>
+</div>
+
 
             <div class="search-wrapper">
                 <input type="text" id="site-search" placeholder="Search...">
