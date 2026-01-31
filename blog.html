@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wise & Healthy Living: A science-backed directory for natural remedies, herbal wisdom, and longevity. Explore our research-verified library.">
+<meta name="keywords" content="Herbal Remedies, Natural Health, Moringa, Castor Oil, Bioavailability, Holistic Wellness">
+<meta name="author" content="Jamal">
+<meta property="og:title" content="Wise & Healthy Living | Natural Wisdom">
+<meta property="og:description" content="Explore clinical research on herbal remedies and natural vitality.">
+<meta property="og:image" content="wiselogo.png">
+<meta property="og:url" content="https://yourusername.github.io/wise-healthy-living/">
+
+    <title>The Wisdom Blog | Wise & Healthy Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --dark-green: #1b4332;
+            --mid-green: #2d6a4f;
+            --honey: #d4a373;
+            --cream: #fefae0;
+            --white: #ffffff;
+            --soft-gray: #f4f4f4;
+            --text-color: #333;
+        }
+
+        body.dark-theme {
+            --white: #121212;
+            --soft-gray: #1a1a1a;
+            --dark-green: #081c15;
+            --mid-green: #40916c;
+            --cream: #1e1e1a;
+            --text-color: #e0e0e0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+            transition: background 0.3s ease;
+        }
+
+        /* Progress Bar & Loader (Same as Index) */
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: transparent; z-index: 3001; }
+        .progress-bar { height: 5px; background: var(--honey); width: 0%; transition: width 0.1s ease-out; }
+        #loader-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.8); display: none; justify-content: center; align-items: center; z-index: 9999; }
+        .spinner { width: 50px; height: 50px; border: 5px solid var(--soft-gray); border-top: 5px solid var(--honey); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Navigation */
+        nav { background: var(--dark-green); padding: 15px 0; position: sticky; top: 0; z-index: 1000; text-align: center; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; font-size: 0.85rem; letter-spacing: 1px; }
+        nav a:hover { color: var(--honey); }
+
+        /* Blog Hero */
+        .blog-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover; background-position: center;
+            color: white; padding: 80px 20px; text-align: center;
+        }
+
+        /* Interactive Article Jump Menu */
+        .jump-menu {
+            background: var(--cream);
+            padding: 15px;
+            position: sticky;
+            top: 50px;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            overflow-x: auto;
+            border-bottom: 2px solid var(--honey);
+        }
+
+        .jump-menu {
+    top: 50px; /* Adjust this to match the exact height of your nav */
+    background: var(--white); /* Matches the body for a 'floating' feel */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+body.dark-theme .jump-menu {
+    background: var(--soft-gray);
+}
+
+        .jump-link {
+            white-space: nowrap;
+            padding: 8px 16px;
+            background: var(--white);
+            border-radius: 20px;
+            color: var(--dark-green);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border: 1px solid var(--honey);
+            transition: 0.3s;
+        }
+        .jump-link:hover { background: var(--honey); color: white; }
+
+        /* Main Blog Layout */
+        .blog-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 300px; /* Sidebar layout */
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* Blog Posts List */
+        .post-preview {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .post-img { width: 100%; height: 250px; background-size: cover; background-position: center; }
+        .post-details { padding: 30px; }
+        .post-details .tag { background: var(--honey); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; }
+        .post-details h2 { margin: 15px 0; color: var(--dark-green); }
+        body.dark-theme .post-details h2 { color: var(--honey); }
+        .post-meta { font-size: 0.8rem; color: #777; margin-bottom: 15px; }
+
+        .btn-read {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            background: var(--dark-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-read:hover { background: var(--mid-green); transform: translateX(5px); }
+
+        .blog-search-container {
+    max-width: 800px;
+    margin: -30px auto 40px; /* Overlaps slightly with hero for a modern look */
+    padding: 0 20px;
+    position: relative;
+    z-index: 1001;
+}
+
+.blog-search-wrapper {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 2px solid var(--honey);
+}
+
+.blog-search-wrapper input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--text-color);
+}
+
+.search-icon { color: var(--honey); font-size: 1.2rem; }
+
+.blog-clear-btn {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+body.dark-theme .blog-search-wrapper {
+    background: var(--soft-gray);
+}
+
+        #backToTop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--honey);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-5px);
+}
+
+.post-references {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.post-references h4 {
+    color: var(--dark-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.post-references ol {
+    padding-left: 20px;
+}
+
+.post-references li {
+    margin-bottom: 8px;
+}
+
+.post-references a {
+    color: var(--mid-green);
+    text-decoration: none;
+}
+
+.post-references a:hover {
+    text-decoration: underline;
+}
+
+        .site-footer {
+  background-color: var(--dark-green);
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+}
+
+.references {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.references h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.6px;
+}
+/* 🌿 Herbal Journal Theme */
+.journal-theme {
+  background: linear-gradient(
+      rgba(28, 61, 46, 0.92),
+      rgba(28, 61, 46, 0.92)
+    ),
+    url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  color: #f4f1ea;
+  padding: 3.5rem 1.5rem;
+  font-family: "Georgia", "Garamond", serif;
+}
+
+.references {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+}
+
+.references h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  color: #e6d7a3;
+}
+
+/* Accordion Styling */
+.accordion details {
+    font-family: 'Segoe UI', Arial, sans-serif;
+  background: rgba(255, 248, 235, 0.06);
+  border: 1px solid rgba(230, 215, 163, 0.25);
+  border-radius: 10px;
+  margin-bottom: 1.1rem;
+  padding: 1rem 1.25rem;
+}
+
+.accordion summary {
+    font-family: 'Segoe UI', Arial, sans-serif;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  list-style: none;
+  color: #f0e2b6;
+}
+
+.accordion summary::marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: "⌄";
+  float: right;
+  color: #e6d7a3;
+}
+
+.accordion details[open] summary::after {
+  content: "⌃";
+}
+
+.accordion ol {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+}
+
+.accordion li {
+  margin-bottom: 0.9rem;
+  line-height: 1.65;
+}
+
+/* Links */
+.accordion a {
+  color: #e6d7a3;
+  font-weight: 500;
+  margin-left: 0.4rem;
+}
+
+.accordion a:hover {
+  color: #ffffff;
+}
+
+/* 🧠 Tooltip */
+.tooltip {
+  position: relative;
+  cursor: help;
+  font-size: 0.85rem;
+  margin: 0 0.35rem;
+  color: #e6d7a3;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: 260px;
+  background: #2f4f3e;
+  color: #f4f1ea;
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 10;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border: 1px solid rgba(230, 215, 163, 0.4);
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Footer Text */
+copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  color: #e6d7a3;
+}
+
+        /* Sidebar Widgets */
+        .sidebar { position: sticky; top: 120px; height: fit-content; }
+        .widget {
+            background: var(--soft-gray);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .widget h4 { margin-top: 0; color: var(--dark-green); border-bottom: 2px solid var(--honey); padding-bottom: 10px; }
+
+        /* Theme Toggle (Same as Index) */
+        .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 2000; background: var(--honey); color: white; border: none; padding: 10px; border-radius: 50%; width: 45px; height: 45px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+        @media (max-width: 900px) {
+            .blog-container { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+        }
+
+            @keyframes slideUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+            }
+
+        @media print {
+    /* Hide interactive elements that don't belong on paper */
+    nav, .jump-menu, .blog-hero, .blog-search-container, 
+    .sidebar, .theme-toggle, footer, .progress-container, 
+    .btn-read, #backToTop {
+        display: none !important;
+    }
+
+    /* Expand the main content to full width */
+    .blog-container {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        width: 100% !important;
+    }
+
+    /* Format posts for paper */
+    .post-preview {
+        box-shadow: none;
+        border: 1px solid #eee;
+        page-break-inside: avoid; /* Prevents splitting a post across two pages */
+        margin-bottom: 50px;
+    }
+
+    .post-img {
+        height: 200px; /* Smaller images to save ink */
+    }
+
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 12pt;
+    }
+
+    h2 {
+        color: #1b4332 !important;
+    }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+<div id="loader-overlay"><div class="spinner"></div></div>
+
+<button class="theme-toggle" onclick="toggleTheme()">
+    <i class="fa-solid fa-moon"></i>
+</button>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="index.html#remedies">LIBRARY</a>
+    <a href="blog.html" style="color: var(--honey);">BLOG</a>
+    <a href="about.html">ABOUT</a>
+</nav>
+
+<section class="blog-hero">
+    <h1>The Wisdom Blog</h1>
+    <p>Articles on Longevity, Herbal Traditions, and Modern Science.</p>
+    
+</section>
+<!--<a href="bioavailability-guide.html" class="btn-read">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>-->
+<section class="blog-search-container">
+    <div class="blog-search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="blogSearchInput" onkeyup="searchBlog()" placeholder="Search articles (e.g., 'Bioavailability', 'Rituals')...">
+        <button class="blog-clear-btn" id="blogClearBtn" onclick="clearBlogSearch()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+</section>
+
+<div class="jump-menu" style="display: flex; flex-wrap: nowrap; overflow-x: auto;">
+    <a href="#post1" class="jump-link">Morning Rituals</a>
+    <a href="#post2" class="jump-link">Understanding Adaptogens</a>
+    <a href="#post3" class="jump-link">The Barrier of The Digestive System</a>
+    <a href="#post4" class="jump-link">Spring Detox Guide</a>
+    <a href="#post5" class="jump-link">Castor Oil Packs</a>
+    <a href="#post6" class="jump-link">Stress Management</a>
+</div>
+
+<div class="blog-container">
+    <main>
+        <div id="noResults" style="display:none; text-align:center; padding:50px; color:var(--honey);">
+    <i class="fa-solid fa-seedling" style="font-size:3rem; margin-bottom:20px;"></i>
+    <h3>No articles found matching your search.</h3>
+    <p>Try searching for "Detox", "Science", or "Rituals".</p>
+</div>
+
+        <article class="post-preview" id="post1" aria-label="Article About Morning Rituals">
+            <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&q=80&w=800')"></div>
+            <div class="post-details">
+                <span class="tag">Morning Rituals</span>
+                <h2>The 5 Best Morning Rituals with Herbs</h2>
+                <div class="post-meta">January 20, 2026 | 6 min read</div>
+                <p>Start your day with purpose. From ginger-lemon infusions to conscious breathing, discover how to kickstart your metabolism...</p>
+                <a href="rituals.html" class="btn-read">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+<div id="noResults" style="display:none; text-align:center; padding:50px; color:var(--honey);">
+    <i class="fa-solid fa-seedling" style="font-size:3rem; margin-bottom:20px;"></i>
+    <h3>No articles found matching your search.</h3>
+    <p>Try searching for "Detox", "Science", or "Rituals".</p>
+</div>
+
+        <article class="post-preview" id="post2" aria-label="Article About Adaptogens">
+            <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1505575967455-40e256f73376?auto=format&fit=crop&q=80&w=800')"></div>
+            <div class="post-details">
+                <span class="tag">Herbal Science</span>
+                <h2>Understanding Adaptogens</h2>
+                <div class="post-meta">January 18, 2026 | 8 min read</div>
+                <p>Explore the fascinating world of herbs that help your body manage stress. From Ashwagandha to Rhodiola, learn how these plants balance your HPA axis...</p>
+                <a href="adaptogens.html" class="btn-read">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </article>
+<div id="noResults" style="display:none; text-align:center; padding:50px; color:var(--honey);">
+    <i class="fa-solid fa-seedling" style="font-size:3rem; margin-bottom:20px;"></i>
+    <h3>No articles found matching your search.</h3>
+    <p>Try searching for "Detox", "Science", or "Rituals".</p>
+</div>
+
+        <article class="post-preview" id="post3" aria-label="Article About Barrier of the Digestive System">
+    <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800')"></div>
+    <div class="post-details">
+        <span class="tag">Education and Science</span>
+        <h2>The Barrier of the Digestive System</h2>
+        <div class="post-meta">January 15, 2026 | 10 min read</div>
+        <p>Our bodies are designed to be selective. The liver and digestive enzymes act as a filter, often breaking down complex plant compounds before they ever reach our bloodstream...</p>
+        <a href="bioavailability-guide.html" class="btn-read">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</article>
+
+<article class="post-preview" id="post4" aria-label="Article About Spring Detox Guide">
+    <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1610970882739-a69c1693c73a?auto=format&fit=crop&q=80&w=800')"></div>
+    <div class="post-details">
+        <span class="tag">Seasonal Health</span>
+        <h2>Spring Detox Guide</h2>
+        <div class="post-meta">January 10, 2026 | 7 min read</div>
+        <p>As the seasons shift, so should our focus. Discover how Dandelion Root and Milk Thistle can support your body's natural detoxification pathways...</p>
+        <a href="spring-detox.html" class="btn-read">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</article>
+
+<article class="post-preview" id="post5" aria-label="Article About Deep Tissue Ritual">
+    <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&q=80&w=800')"></div>
+    <div class="post-details">
+        <span class="tag">Topical Care</span>
+        <h2>Castor Oil Packs: The Deep Tissue Ritual</h2>
+        <div class="post-meta">January 05, 2026 | 5 min read</div>
+        <p>An ancient remedy for modern congestion. Learn the science of ricinoleic acid and how to properly apply packs for lymphatic and liver support...</p>
+        <a href="castor-oil-guide.html" class="btn-read">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</article>
+
+<article class="post-preview" id="post6" aria-label="Article About Morning Rituals">
+    <div class="post-img" style="background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800')"></div>
+    <div class="post-details">
+        <span class="tag">demo</span>
+        <h2>The Science-Backed Guide to Stress Management</h2>
+        <div class="post-meta">January 20, 2026 | 6 min read</div>
+        <p>Stress is not just a "feeling"—it is a physiological cascade managed by the <strong>HPA Axis</strong> (Hypothalamic-Pituitary-Adrenal)...</p>
+        <a href="comparisons.html" class="btn-read">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</article>
+
+    </main>
+
+    <aside class="sidebar">
+        <div class="widget">
+    <h4>Newsletter</h4>
+    <p style="font-size: 0.85rem;">Get herbal wisdom delivered to your inbox weekly.</p>
+    
+    <form id="newsletterForm" action="https://formspree.io/f/xojdbzwd" method="POST">
+        <input type="email" name="email" id="subscriberEmail" placeholder="Email Address" required 
+               style="width:100%; padding:10px; margin-bottom:10px; border-radius:5px; border:1px solid #ccc; box-sizing: border-box;">
+        <button type="submit" class="btn-read" style="width:100%; border:none; cursor:pointer;">Subscribe</button>
+    </form>
+
+    <div id="newsletterSuccess" style="display:none; text-align:center; padding:20px; background:var(--cream); color:var(--dark-green); border-radius:15px; margin-top:10px; border:2px dashed var(--honey); animation: slideUp 0.5s ease;">
+    <i class="fa-solid fa-gift" style="font-size: 2rem; color: var(--honey); margin-bottom: 10px;"></i>
+    <h4 style="margin: 5px 0;">You're Subscribed!</h4>
+    <p style="font-size: 0.85rem; margin-bottom: 15px;">As a thank you, here is your <strong>Free Herbal Starter Guide (PDF)</strong>.</p>
+    
+    <a href="downloads/herbal-starter-guide.pdf" download class="btn-read" style="width:100%; text-align:center; box-sizing: border-box;">
+        <i class="fa-solid fa-file-pdf"></i> Download Guide
+    </a>
+    </div>
+</div>
+
+        <div class="widget">
+            <h4>Categories</h4>
+            <ul style="list-style:none; padding:0; font-size:0.9rem;">
+    <li style="margin-bottom:10px;">
+        <a href="javascript:void(0)" onclick="filterByCategory('Seasonal Health')" style="color:var(--mid-green); text-decoration:none;">🌿 Seasonal Detox</a>
+    </li>
+    <li style="margin-bottom:10px;">
+        <a href="javascript:void(0)" onclick="filterByCategory('Morning Rituals')" style="color:var(--mid-green); text-decoration:none;">☀️ Morning Rituals</a>
+    </li>
+    <li style="margin-bottom:10px;">
+        <a href="javascript:void(0)" onclick="filterByCategory('Herbal Science')" style="color:var(--mid-green); text-decoration:none;">🧠 Herbal Science</a>
+    </li>
+            </ul>
+        </div>
+    </aside>
+</div>
+
+    <footer class="site-footer journal-theme">
+  <section style="font-family: 'Segoe UI', Arial, sans-serif;" class="references">
+    <h3>Scientific References</h3>
+
+    <div class="accordion">
+
+      <details open>
+        <summary>Metabolism & Hydration</summary>
+        <ol>
+          <li>
+            Boschmann, M., et al. (2003). Water-induced thermogenesis.
+            <em>The Journal of Clinical Endocrinology & Metabolism</em>.
+
+            <span class="tooltip">
+              ⓘ
+              <span class="tooltip-text">
+                Demonstrates how water intake can temporarily increase metabolic rate, supporting hydration-based wellness practices.
+              </span>
+            </span>
+
+            <a href="https://pubmed.ncbi.nlm.nih.gov/14671205/" target="_blank" rel="noopener">
+              View Study
+            </a>
+          </li>
+        </ol>
+      </details>
+
+      <details>
+        <summary>Anti-Inflammatory & Antioxidants</summary>
+        <ol>
+          <li>
+            Mashhadi, N. S., et al. (2013). Anti-inflammatory effects of ginger.
+            <em>International Journal of Preventive Medicine</em>.
+
+            <span class="tooltip">
+              ⓘ
+              <span class="tooltip-text">
+                Supports traditional ginger use for inflammation, pain reduction, and immune balance.
+              </span>
+            </span>
+
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3665023/" target="_blank" rel="noopener">
+              View Study
+            </a>
+          </li>
+
+          <li>
+            Lobo, V., et al. (2010). Free radicals and antioxidants.
+            <em>Pharmacognosy Reviews</em>.
+
+            <span class="tooltip">
+              ⓘ
+              <span class="tooltip-text">
+                Explains how antioxidants protect cells from oxidative stress, reinforcing whole-food and herbal nutrition.
+              </span>
+            </span>
+
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3249911/" target="_blank" rel="noopener">
+              View Study
+            </a>
+          </li>
+        </ol>
+      </details>
+
+      <details>
+        <summary>Breathing & Nervous System</summary>
+        <ol>
+          <li>
+            Zaccaro, A., et al. (2018). Breath-control and nervous system regulation.
+            <em>Frontiers in Human Neuroscience</em>.
+
+            <span class="tooltip">
+              ⓘ
+              <span class="tooltip-text">
+                Shows how slow, controlled breathing directly influences stress response and emotional regulation.
+              </span>
+            </span>
+
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6137615/" target="_blank" rel="noopener">
+              View Study
+            </a>
+          </li>
+        </ol>
+      </details>
+
+      <details>
+        <summary>Adaptogens & Stress Resilience</summary>
+        <ol>
+          <li>
+            Panossian, A., & Wikman, G. (2010). Adaptogens and CNS support.
+            <em>Pharmaceuticals</em>.
+
+            <span class="tooltip">
+              ⓘ
+              <span class="tooltip-text">
+                Establishes adaptogens as regulators of stress response and nervous system balance.
+              </span>
+            </span>
+
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3991026/" target="_blank" rel="noopener">
+              View Study
+            </a>
+          </li>
+        </ol>
+      </details>
+
+    </div>
+  </section>
+
+<div style="text-align: center; margin-top: 4rem;">
+<div class="disclaimer-box" style="font-family: 'Segoe UI', Arial, sans-serif;">
+        <strong>MEDICAL DISCLAIMER:</strong> This site does not provide medical advice. 
+        <br>
+        <a href="disclaimer.html" style="color: var(--honey); text-decoration: underline; margin-right: 15px;">Read Disclaimer</a>
+        <a href="privacy.html" style="color: var(--honey); text-decoration: underline;">Privacy Policy</a>
+    </div>
+    <p style="font-size: 0.85rem; opacity: 0.8;"><i class="fa-regular fa-calendar-check"></i> Research Last Verified: <span id="lastUpdated"></span></p>
+    
+  <p class="copyright" style="font-family: 'Segoe UI', Arial, sans-serif;">
+    © 2026 Wise &amp; Healthy Living | Wisdom Blog
+  </p>
+</div>
+</footer>
+
+<script>
+// Theme Toggle Logic
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+}
+
+// Progress Bar & Back to Top Toggle
+function handleScroll() {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Progress Bar
+    document.getElementById("myBar").style.width = ((winScroll / height) * 100) + "%";
+
+    // Back to Top Button
+    const btn = document.getElementById("backToTop");
+    if (winScroll > 200) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+}
+
+window.onscroll = () => handleScroll();
+
+// Initialize Theme and Read Times
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-theme');
+    calculateReadTime();
+    
+    // Set Last Verified Date
+    const today = new Date();
+    document.getElementById('lastUpdated').innerText = today.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+});
+
+// Search Logic
+function searchBlog() {
+    const input = document.getElementById('blogSearchInput');
+    const filter = input.value.toLowerCase();
+    const posts = document.querySelectorAll('.post-preview');
+    const clearBtn = document.getElementById('blogClearBtn');
+    const noResults = document.getElementById('noResults');
+    let visibleCount = 0;
+
+    clearBtn.style.display = input.value.length > 0 ? "block" : "none";
+
+    posts.forEach(post => {
+        const content = post.innerText.toLowerCase();
+        if (content.includes(filter)) {
+            post.style.display = "";
+            visibleCount++;
+        } else {
+            post.style.display = "none";
+        }
+    });
+    noResults.style.display = (visibleCount === 0) ? "block" : "none";
+}
+
+function clearBlogSearch() {
+    document.getElementById('blogSearchInput').value = '';
+    searchBlog();
+}
+
+// Newsletter Form Logic
+const newsletterForm = document.getElementById('newsletterForm');
+const successMsg = document.getElementById('newsletterSuccess');
+
+if(newsletterForm) {
+    newsletterForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = newsletterForm.querySelector('button');
+        const formData = new FormData(newsletterForm);
+        btn.innerText = "Sending Gift...";
+        btn.disabled = true;
+
+        try {
+            const response = await fetch(newsletterForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                newsletterForm.style.display = 'none';
+                successMsg.style.display = 'block';
+            } else { throw new Error(); }
+        } catch (error) {
+            alert("Error joining. Please try again.");
+            btn.innerText = "Subscribe";
+            btn.disabled = false;
+        }
+    });
+}
+
+function filterByCategory(catName) {
+    document.getElementById('blogSearchInput').value = catName;
+    searchBlog();
+    window.scrollTo({ top: 250, behavior: 'smooth' });
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function calculateReadTime() {
+    document.querySelectorAll('.post-preview').forEach(post => {
+        const text = post.innerText;
+        const time = Math.ceil(text.trim().split(/\s+/).length / 200);
+        const meta = post.querySelector('.post-meta');
+        if (meta) meta.innerHTML = meta.innerHTML.split('|')[0] + ` | <i class="fa-regular fa-clock"></i> ${time} min read`;
+    });
+}
+
+</script>
+<button id="backToTop" onclick="scrollToTop()" title="Go to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+</body>
+</html>
+
