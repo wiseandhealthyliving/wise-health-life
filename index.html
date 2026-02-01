@@ -145,6 +145,57 @@ body.dark-theme .comparison-table {
 body.dark-theme .comparison-table td {
     border-bottom: 1px solid #333;
 }
+        
+.tea-guide-cta {
+    background: var(--dark-green);
+    color: white;
+    padding: 60px 20px;
+    margin: 40px 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.tea-cta-text {
+    max-width: 500px;
+}
+
+.tea-cta-text h2 {
+    color: var(--honey);
+    margin-top: 0;
+}
+
+.tea-cta-visual {
+    font-size: 5rem;
+    color: var(--honey);
+    opacity: 0.9;
+    animation: steam 3s infinite ease-in-out;
+}
+
+@keyframes steam {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.btn-white {
+    background: var(--white);
+    color: var(--dark-green);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-white:hover {
+    background: var(--honey);
+    color: white;
+}
 
         /* Add this to your CSS block to make the "grid" work */
 .social-contact-grid {
@@ -805,6 +856,19 @@ body.dark-theme .recent-tag {
         </a>
     </div>
 </section>
+    <section class="tea-guide-cta">
+    <div class="tea-cta-text">
+        <h2>Perfect Your Brew</h2>
+        <p>Are you burning your delicate herbs? Our Steeping Guide teaches you the difference between an <strong>Infusion</strong> and a <strong>Decoction</strong> to ensure you get 100% of the medicinal benefits.</p>
+        <a href="tea-guide.html" class="btn-white">
+            <i class="fa-solid fa-clock-rotate-left"></i> Open Steeping Guide
+        </a>
+    </div>
+    <div class="tea-cta-visual">
+        <i class="fa-solid fa-mug-hot"></i>
+    </div>
+</section>
+
     <section class="container" id="blog-preview">
     <h2 style="text-align: center; color: var(--dark-green); margin-bottom: 40px; margin-top: 0px;">From the Wisdom Blog</h2>
     <div class="blog-preview-grid">
