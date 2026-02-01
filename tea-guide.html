@@ -120,6 +120,37 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        /* 1. The wrapper that handles the scroll */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 20px;
+    
+    /* This creates the 'shadow' indicator on the right */
+    background: linear-gradient(to right, white 30%, rgba(255,255,255,0)), 
+                linear-gradient(to right, rgba(255,255,255,0), white 70%) 0 100%, 
+                radial-gradient(farthest-side at 0 50%, rgba(0,0,0,.2), rgba(0,0,0,0)), 
+                radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+    background-repeat: no-repeat;
+    background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+    background-attachment: local, local, scroll, scroll;
+}
+
+/* 2. Ensure table has enough room to breathe */
+.tea-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Adjust based on how much content you have */
+    background-color: white;
+}
+
+/* 3. Keep headers on one line */
+.tea-table th {
+    white-space: nowrap;
+}
+
         
         /* Navigation Styles */
 nav { 
