@@ -28,11 +28,11 @@
 
         header { 
             text-align: center; 
-            padding: 80px 20px; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); 
+            padding: 60px 20px; 
+            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); 
             background-size: cover; 
             background-position: center; 
-            color: white; 
+            color: white;
         }
 
         .logo { max-width: 300px; height: auto; }
@@ -147,6 +147,43 @@
             border-top: 1px solid #eee;
         }
 
+        /* Beginner Badge Styling */
+.product-card {
+    position: relative; /* Necessary to position the badge absolute to the card */
+}
+
+.beginner-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--dark-green);
+    color: var(--honey); /* Using your brand gold for contrast */
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: 1px solid var(--honey);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Subtle pulse to catch the eye */
+.beginner-badge i {
+    font-size: 0.8rem;
+    animation: starPulse 2s infinite;
+}
+
+@keyframes starPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+
         /* --- FOOTER (From Index) --- */
         footer { background: var(--dark-green); color: white; text-align: center; padding: 60px 20px; margin-top: 60px;}
         .disclaimer-box { font-size: 0.8rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.8; border: 1px solid rgba(255,255,255,0.2); padding: 15px; }
@@ -169,8 +206,8 @@
 
 <header>
     <img src="wiselogo.png" alt="Wise Logo" class="logo">
-    <h1>The Herbalist's Toolbelt</h1>
-    <p>Hand-selected supplies to elevate your natural living journey.</p>
+    <h1 style="color: var(--dark-green);">The Herbalist's Toolbelt</h1>
+    <p style="color: var(--honey);">Hand-selected supplies to elevate your natural living journey.</p>
 </header>
 
 <main class="container">
@@ -184,6 +221,9 @@
     <div class="affiliate-grid" id="storeGrid">
         
         <div class="product-card" data-category="storage">
+            <div class="beginner-badge">
+        <i class="fa-solid fa-star"></i> Essential Starter
+            </div>
             <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=500');"></div>
             <div class="product-info">
                 <span class="product-category">Storage</span>
@@ -194,6 +234,9 @@
         </div>
 
         <div class="product-card" data-category="brewing">
+            <div class="beginner-badge">
+        <i class="fa-solid fa-star"></i> Essential Starter
+            </div>
             <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1576092729250-19c13731488a?auto=format&fit=crop&q=80&w=500');"></div>
             <div class="product-info">
                 <span class="product-category">Brewing</span>
