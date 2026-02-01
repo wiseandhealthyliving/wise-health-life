@@ -1,59 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Wellness Store | Wise & Healthy Living</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Shop | Wise & Healthy Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        /* Add these extra styles specifically for the store */
-        .store-header {
-            background: var(--dark-green);
+        /* --- BRAND STYLES (From Index) --- */
+        :root {
+            --dark-green: #1b4332;
+            --mid-green: #2d6a4f;
+            --honey: #d4a373;
+            --cream: #fefae0;
+            --white: #ffffff;
+            --soft-gray: #f4f4f4;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            color: var(--text-color);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        header { 
+            text-align: center; 
+            padding: 80px 20px; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); 
+            background-size: cover; 
+            background-position: center; 
+            color: white; 
+        }
+
+        .logo { max-width: 300px; height: auto; }
+
+        nav { 
+            background: var(--dark-green); 
+            padding: 15px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            text-align: center; 
+        }
+
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+        }
+
+        nav a:hover { color: var(--honey); }
+
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+
+        /* --- STORE SPECIFIC STYLES --- */
+        .filter-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--soft-gray);
+            border: 2px solid var(--honey);
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--dark-green);
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--honey);
+            color: white;
+        }
+
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .product-card:hover { transform: translateY(-5px); }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            background-color: #eee;
+        }
+
+        .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        
+        .product-category { 
+            font-size: 0.7rem; 
+            text-transform: uppercase; 
+            color: var(--honey); 
+            font-weight: bold; 
+            margin-bottom: 5px;
+        }
+
+        .product-info h3 { margin: 0 0 10px 0; color: var(--dark-green); }
+        .product-info p { font-size: 0.9rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
+
+        .buy-btn {
+            background: var(--mid-green);
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
         }
-        .category-title {
-            border-bottom: 2px solid var(--honey);
-            padding-bottom: 10px;
-            margin: 40px 0 20px;
-            color: var(--dark-green);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+
+        .buy-btn:hover { background: var(--honey); }
+
+        .affiliate-disclaimer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* --- FOOTER (From Index) --- */
+        footer { background: var(--dark-green); color: white; text-align: center; padding: 60px 20px; margin-top: 60px;}
+        .disclaimer-box { font-size: 0.8rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.8; border: 1px solid rgba(255,255,255,0.2); padding: 15px; }
+
+        @media (max-width: 600px) {
+            header { padding: 40px 20px; }
+            .product-card { max-width: 100%; }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="store.html" style="color: var(--honey);">Shop</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-    </nav>
 
-    <div class="store-header">
-        <h1>Curated Wellness Tools</h1>
-        <p>Verified gear for the modern herbalist.</p>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#remedies">Remedies</a>
+    <a href="store.html" style="color: var(--honey);">Shop</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+</nav>
+
+<header>
+    <img src="wiselogo.png" alt="Wise Logo" class="logo">
+    <h1>The Herbalist's Toolbelt</h1>
+    <p>Hand-selected supplies to elevate your natural living journey.</p>
+</header>
+
+<main class="container">
+    <div class="filter-group">
+        <button class="filter-btn active" onclick="filterStore('all', this)">All Items</button>
+        <button class="filter-btn" onclick="filterStore('storage', this)">Storage</button>
+        <button class="filter-btn" onclick="filterStore('brewing', this)">Brewing</button>
+        <button class="filter-btn" onclick="filterStore('topical', this)">Topicals</button>
     </div>
 
-    <div class="container">
-        <h2 class="category-title"><i class="fa-solid fa-jar"></i> Apothecary & Storage</h2>
-        <div class="affiliate-grid">
-            <div class="product-card">
-                <div class="product-img" style="background-image: url('JAR_IMAGE_URL');"></div>
-                <div class="product-info">
-                    <h3>Amber Glass Jars</h3>
-                    <p>Prevents light degradation of your dried herbs.</p>
-                    <a href="LINK" class="buy-btn">View on Amazon</a>
-                </div>
+    <div class="affiliate-grid" id="storeGrid">
+        
+        <div class="product-card" data-category="storage">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="product-info">
+                <span class="product-category">Storage</span>
+                <h3>Amber Glass Apothecary Jars</h3>
+                <p>Essential for protecting delicate herbs and volatile oils from UV light degradation.</p>
+                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
             </div>
-            </div>
+        </div>
 
-        <h2 class="category-title"><i class="fa-solid fa-mortar-pestle"></i> Preparation Tools</h2>
-        <div class="affiliate-grid">
-             </div>
+        <div class="product-card" data-category="brewing">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1576092729250-19c13731488a?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="product-info">
+                <span class="product-category">Brewing</span>
+                <h3>Fine Mesh Tea Infuser</h3>
+                <p>Stainless steel with extra-fine holes to keep sediment out of your medicinal infusions.</p>
+                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
+            </div>
+        </div>
+
+        <div class="product-card" data-category="topical">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="product-info">
+                <span class="product-category">Topical</span>
+                <h3>Organic Castor Oil</h3>
+                <p>Hexane-free and cold-pressed. Perfect for liver packs and skin hydration.</p>
+                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
+            </div>
+        </div>
+
     </div>
 
-    <footer style="margin-top: 100px;">
-        <p>&copy; 2026 Wise & Healthy Living</p>
-    </footer>
+    <p class="affiliate-disclaimer">
+        <strong>Transparency Notice:</strong> As an Amazon Associate, I earn from qualifying purchases. This means if you click a link and buy something, I receive a small commission at no extra cost to you. This helps keep the Research Library free!
+    </p>
+</main>
+
+<footer>
+    <div class="disclaimer-box">
+        <strong>MEDICAL DISCLAIMER:</strong> This store recommends tools, not prescriptions. Always consult a professional before beginning herbal protocols.
+    </div>
+    <p>&copy; 2026 Wise & Healthy Living | Natural Wisdom</p>
+</footer>
+
+<script>
+    function filterStore(category, btn) {
+        // Update button UI
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter cards
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
 </body>
 </html>
-
