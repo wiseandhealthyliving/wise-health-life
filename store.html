@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* --- BRAND STYLES (From Index) --- */
+        html {
+    scroll-behavior: smooth;
+}
+
         :root {
             --dark-green: #1b4332;
             --mid-green: #2d6a4f;
@@ -29,10 +32,9 @@
         header { 
             text-align: center; 
             padding: 60px 20px; 
-            background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); 
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); 
             background-size: cover; 
             background-position: center; 
-            color: white;
         }
 
         .logo { max-width: 300px; height: auto; }
@@ -60,7 +62,6 @@
 
         .container { max-width: 1100px; margin: auto; padding: 60px 20px; border-top: 3px solid var(--dark-green); }
 
-        /* --- STORE SPECIFIC STYLES --- */
         .filter-group {
             display: flex;
             justify-content: center;
@@ -98,8 +99,15 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, opacity 0.4s ease;
             border: 1px solid #eee;
+            position: relative;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .product-card:hover { transform: translateY(-5px); }
@@ -138,53 +146,36 @@
 
         .buy-btn:hover { background: var(--honey); }
 
-        .affiliate-disclaimer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 50px;
-            padding: 20px;
-            border-top: 1px solid #eee;
+        .beginner-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--dark-green);
+            color: var(--honey);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid var(--honey);
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        /* Beginner Badge Styling */
-.product-card {
-    position: relative; /* Necessary to position the badge absolute to the card */
-}
+        .beginner-badge i {
+            font-size: 0.8rem;
+            animation: starPulse 2s infinite;
+        }
 
-.beginner-badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: var(--dark-green);
-    color: var(--honey); /* Using your brand gold for contrast */
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    border: 1px solid var(--honey);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+        @keyframes starPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
 
-/* Subtle pulse to catch the eye */
-.beginner-badge i {
-    font-size: 0.8rem;
-    animation: starPulse 2s infinite;
-}
-
-@keyframes starPulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
-
-
-        /* --- FOOTER (From Index) --- */
         footer { background: var(--dark-green); color: white; text-align: center; padding: 60px 20px; margin-top: 60px;}
         .disclaimer-box { font-size: 0.8rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.8; border: 1px solid rgba(255,255,255,0.2); padding: 15px; }
 
@@ -205,10 +196,17 @@
 </nav>
 
 <header>
-    <img src="wiselogo.png" alt="Wise Logo" class="logo">
+    <img src="wiselogo.png" alt="Wise and Healthy Living Wellness Shop" class="logo">
     <h1 style="color: var(--dark-green);">The Herbalist's Toolbelt</h1>
     <p style="color: var(--honey);">Hand-selected supplies to elevate your natural living journey.</p>
 </header>
+<section style="max-width: 800px; margin: 40px auto 0; text-align: center; padding: 0 20px;">
+    <h2 style="color: var(--dark-green); font-family: 'Georgia', serif;">Equipping Your Home Apothecary</h2>
+    <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
+        Building a lifestyle centered on <strong>natural wellness</strong> requires more than just recipes; it requires the right tools for the craft. We have curated <em>The Herbalist's Toolbelt</em> to take the guesswork out of your journey. From <strong>organic apothecary supplies</strong> to professional-grade <strong>freeze drying equipment</strong>, every item here is selected for its quality, durability, and ability to preserve the potent life-force of your herbs.
+    </p>
+    <div style="width: 50px; height: 3px; background: var(--honey); margin: 20px auto;"></div>
+</section>
 
 <main class="container">
     <div class="filter-group">
@@ -218,29 +216,33 @@
         <button class="filter-btn" onclick="filterStore('brewing', this)">Brewing</button>
         <button class="filter-btn" onclick="filterStore('topical', this)">Topicals</button>
         <button class="filter-btn" onclick="filterStore('dryer', this)">Freeze Dryers</button>
-
     </div>
 
     <div class="affiliate-grid" id="storeGrid">
 
-<div class="product-card" data-category="storage">
-            <div class="beginner-badge">
-        <i class="fa-solid fa-star"></i> Essential Starter
-            </div>
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=500');"></div>
+        <div class="product-card" data-category="dryer">
+            <div class="beginner-badge"><i class="fa-solid fa-star"></i> Pro Choice</div>
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1584263347416-85a696b4eda7?auto=format&fit=crop&q=80&w=500');"></div>
             <div class="product-info">
                 <span class="product-category">Freeze Dryers</span>
-                <h3>Freeze Dryers</h3>
-                <p>Essential for long lasting Freeze dried herbs, fruits, meals, and so much more.</p>
-                <a href="#" target="_blank" class="buy-btn">Get yours today <i class="fa-solid fa-external-link"></i></a>
+                <h3>Home Freeze Dryer</h3>
+                <p>Essential for long lasting Freeze dried herbs, fruits, and medicinal meals.</p>
+                <a href="#" target="_blank" class="buy-btn">View Options <i class="fa-solid fa-external-link"></i></a>
             </div>
-</div>
+        </div>
 
-        
-        <div class="product-card" data-category="storage">
-            <div class="beginner-badge">
-        <i class="fa-solid fa-star"></i> Essential Starter
+        <div class="product-card" data-category="organic">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="product-info">
+                <span class="product-category">Organic Meds</span>
+                <h3>Elderberry Syrup Kit</h3>
+                <p>Organic dried elderberries with warming spices. Just add honey and water.</p>
+                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
             </div>
+        </div>
+
+        <div class="product-card" data-category="storage">
+            <div class="beginner-badge"><i class="fa-solid fa-star"></i> Essential</div>
             <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=500');"></div>
             <div class="product-info">
                 <span class="product-category">Storage</span>
@@ -251,9 +253,7 @@
         </div>
 
         <div class="product-card" data-category="brewing">
-            <div class="beginner-badge">
-        <i class="fa-solid fa-star"></i> Essential Starter
-            </div>
+            <div class="beginner-badge"><i class="fa-solid fa-star"></i> Essential</div>
             <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1576092729250-19c13731488a?auto=format&fit=crop&q=80&w=500');"></div>
             <div class="product-info">
                 <span class="product-category">Brewing</span>
@@ -273,10 +273,62 @@
             </div>
         </div>
 
+        <div class="product-card" data-category="organic">
+    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1599839441901-729930776960?auto=format&fit=crop&q=80&w=500');"></div>
+    <div class="product-info">
+        <span class="product-category">Organic Meds</span>
+        <h3>Bulk Organic Calendula</h3>
+        <p>Sun-dried whole petals. A must-have for creating soothing skin salves and lymphatic tea blends.</p>
+        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
+    </div>
+</div>
+
+        <div class="product-card" data-category="brewing">
+    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544787210-22166f364005?auto=format&fit=crop&q=80&w=500');"></div>
+    <div class="product-info">
+        <span class="product-category">Brewing</span>
+        <h3>Borosilicate Glass Tea Pot</h3>
+        <p>Heat-resistant glass perfect for simmering roots and barks without metallic interference.</p>
+        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
+    </div>
+</div>
+
+        <div class="product-card" data-category="storage">
+    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1601306359974-9896798031e4?auto=format&fit=crop&q=80&w=500');"></div>
+    <div class="product-info">
+        <span class="product-category">Storage</span>
+        <h3>Apothecary Labeling Kit</h3>
+        <p>Waterproof chalkboard labels. Never forget the "Date Created" or "Botanical Name" of your remedies again.</p>
+        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
+    </div>
+</div>
+
+        <div class="product-card" data-category="topical">
+    <div class="beginner-badge"><i class="fa-solid fa-star"></i> DIY Essential</div>
+    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1589134707255-8d5918739779?auto=format&fit=crop&q=80&w=500');"></div>
+    <div class="product-info">
+        <span class="product-category">Topical</span>
+        <h3>Organic Beeswax Pellets</h3>
+        <p>Triple-filtered and easy to melt. The secret ingredient to perfect herbal salves and lip balms.</p>
+        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
+    </div>
+</div>
+
+        <div class="product-card" data-category="dryer">
+    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=500');"></div>
+    <div class="product-info">
+        <span class="product-category">Freeze Dryers</span>
+        <h3>Silicone Tray Liners</h3>
+        <p>Custom-fit mats that make removing sticky herbs and powders from your freeze dryer a breeze.</p>
+        <a href="#" target="_blank" class="buy-btn">View Options <i class="fa-solid fa-external-link"></i></a>
+    </div>
+</div>
+
+        
     </div>
 
     <p class="affiliate-disclaimer">
-        <strong>Transparency Notice:</strong> As an Amazon Associate, I earn from qualifying purchases. This means if you click a link and buy something, I receive a small commission at no extra cost to you. This helps keep the Research Library free!
+        <strong>Transparency Notice:</strong> As an Amazon Associate, I earn from qualifying purchases. This helps keep the Research Library free!
     </p>
 </main>
 
@@ -293,8 +345,8 @@
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        // Filter cards
-        const cards = document.querySelectorAll('.product-card');
+        // Filter cards within the specific grid
+        const cards = document.querySelectorAll('#storeGrid .product-card');
         cards.forEach(card => {
             if (category === 'all' || card.getAttribute('data-category') === category) {
                 card.style.display = 'flex';
