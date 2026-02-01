@@ -213,12 +213,29 @@
 <main class="container">
     <div class="filter-group">
         <button class="filter-btn active" onclick="filterStore('all', this)">All Items</button>
+        <button class="filter-btn" onclick="filterStore('organic', this)">Organic Meds</button>
         <button class="filter-btn" onclick="filterStore('storage', this)">Storage</button>
         <button class="filter-btn" onclick="filterStore('brewing', this)">Brewing</button>
         <button class="filter-btn" onclick="filterStore('topical', this)">Topicals</button>
+        <button class="filter-btn" onclick="filterStore('dryer', this)">Freeze Dryers</button>
+
     </div>
 
     <div class="affiliate-grid" id="storeGrid">
+
+<div class="product-card" data-category="storage">
+            <div class="beginner-badge">
+        <i class="fa-solid fa-star"></i> Essential Starter
+            </div>
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=500');"></div>
+            <div class="product-info">
+                <span class="product-category">Freeze Dryers</span>
+                <h3>Freeze Dryers</h3>
+                <p>Essential for long lasting Freeze dried herbs, fruits, meals, and so much more.</p>
+                <a href="#" target="_blank" class="buy-btn">Get yours today <i class="fa-solid fa-external-link"></i></a>
+            </div>
+</div>
+
         
         <div class="product-card" data-category="storage">
             <div class="beginner-badge">
