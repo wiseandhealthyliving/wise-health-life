@@ -89,6 +89,7 @@
         .tea-table td {
             padding: 15px 10px;
             border-bottom: 1px solid #eee;
+            vertical-align: middle;
         }
 
         .temp-badge {
@@ -183,6 +184,33 @@ nav a:hover {
 .header {
     padding: 40px 20px;
 }
+        .mobile-hint {
+    display: none; /* Hidden by default on desktop */
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--mid-green);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.mobile-hint i {
+    animation: swipeHint 2s infinite;
+    margin-right: 5px;
+}
+
+@keyframes swipeHint {
+    0% { transform: translateX(0); opacity: 0; }
+    50% { transform: translateX(10px); opacity: 1; }
+    100% { transform: translateX(0); opacity: 0; }
+}
+
+/* Only show the hint on screens smaller than 768px */
+@media (max-width: 768px) {
+    .mobile-hint {
+        display: block;
+    }
+}
+
 
     </style>
 </head>
@@ -215,6 +243,10 @@ nav a:hover {
                 <p>Best for <strong>roots and bark</strong>. Simmer the herbs in boiling water for 15–20 minutes to extract minerals.</p>
             </div>
         </div>
+        <div class="mobile-hint">
+    <i class="fa-solid fa-hand-pointer"></i> <span>Swipe to view full guide</span>
+</div>
+
 <div class="table-container">
         <table class="tea-table">
             <thead>
