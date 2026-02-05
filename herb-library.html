@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Wise & Healthy Living: A science-backed directory for natural remedies, herbal wisdom, and longevity. Explore our research-verified library.">
+<meta name="keywords" content="Herbal Remedies, Natural Health, Moringa, Castor Oil, Bioavailability, Holistic Wellness">
+<meta name="author" content="Jamal">
+
+<meta property="og:title" content="Wise & Healthy Living | Natural Wisdom">
+<meta property="og:description" content="Explore clinical research on herbal remedies and natural vitality.">
+<meta property="og:image" content="wiselogo.png">
+<meta property="og:url" content="https://yourusername.github.io/wise-healthy-living/">
+
+    <title>Herbal Remedy Repository | Wise & Healthy Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --dark-green: #1b4332; --mid-green: #2d6a4f; --honey: #d4a373;
+            --cream: #fefae0; --white: #ffffff; --soft-gray: #f4f4f4; --text-color: #333;
+        }
+        body.dark-theme {
+            --white: #121212; --soft-gray: #1a1a1a; --dark-green: #081c15;
+            --mid-green: #40916c; --cream: #1e1e1a; --text-color: #e0e0e0;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; color: var(--text-color); background-color: var(--white); line-height: 1.6; transition: background 0.3s ease; }
+
+        /* Progress Bar */
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; background: transparent; z-index: 3001; }
+        .progress-bar { height: 5px; background: var(--honey); width: 0%; transition: width 0.1s ease-out; box-shadow: 0 0 10px rgba(212, 163, 115, 0.5); }
+
+        /* Navigation */
+        nav { background: var(--dark-green); padding: 15px 0; position: sticky; top: 0; z-index: 1000; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; }
+        nav a:hover { color: var(--honey); }
+
+        /* Hero Section */
+        .hero { background-color: var(--cream); padding: 80px 20px; text-align: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .hero h1 { color: var(--dark-green); font-size: 2.5rem; margin-bottom: 10px; }
+        .search-box-wrapper { position: relative; width: 90%; max-width: 500px; margin: 25px auto; }
+        #remedySearch { padding: 15px 45px 15px 25px; width: 100%; border: 2px solid var(--honey); border-radius: 30px; outline: none; font-size: 1rem; background: var(--white); color: var(--text-color); box-sizing: border-box; }
+        .clear-search { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #999; display: none; font-size: 1.2rem; }
+        .btn-group { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        .search-btn, .surprise-btn { border: none; padding: 12px 25px; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; color: white; }
+        .search-btn { background: var(--dark-green); }
+        .surprise-btn { background: var(--honey); }
+        .search-btn:hover, .surprise-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+        /* Cards Grid */
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--white); border-radius: 15px; padding: 30px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        .tag { background: var(--honey); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        .read-time { font-size: 0.75rem; color: var(--mid-green); margin-bottom: 10px; font-weight: 600; }
+        .more-content { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.9rem; }
+        .read-more-btn { color: var(--mid-green); cursor: pointer; font-weight: bold; background: none; border: none; margin-top: 15px; padding: 0; text-align: left; }
+        
+        .source-link { background: var(--soft-gray); padding: 12px; border-radius: 8px; margin-top: 15px; font-size: 0.8rem; border: 1px solid rgba(0,0,0,0.05); }
+        .source-link a { color: var(--mid-green); text-decoration: underline; font-weight: bold; display: block; margin-top: 4px; }
+        body.dark-theme .source-link { background: #222; }
+
+        /* Card Actions (Share/Print) */
+        .card-actions { display: flex; gap: 10px; margin-top: 20px; align-items: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 15px; }
+        .share-btn, .print-btn { background: var(--soft-gray); border: none; padding: 8px 15px; border-radius: 8px; color: var(--mid-green); cursor: pointer; transition: 0.3s; }
+        .share-btn:hover, .print-btn:hover { background: var(--honey); color: white; }
+        .copy-tooltip { font-size: 0.7rem; color: var(--honey); display: none; font-weight: bold; }
+
+    .cat-btn {
+        background: transparent;
+        border: 1px solid var(--mid-green);
+        color: var(--mid-green);
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .cat-btn:hover {
+        background: var(--mid-green);
+        color: white;
+    }
+    body.dark-theme .cat-btn {
+        border-color: var(--honey);
+        color: var(--honey);
+    }
+    body.dark-theme .cat-btn:hover {
+        background: var(--honey);
+        color: white;
+    }
+    
+    .jump-btn {
+    background: transparent; /*var(--mid-green);*/
+    color: var(--mid-green) !important;
+    padding: 7px 14px;
+    
+    border-radius: 8px;
+    border: 1px solid green;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.jump-btn.danger {
+    background: transparent; 
+    color: #c53030 !important;
+    border: 1px solid #feb2b2;
+}
+
+.jump-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Ensure smooth scrolling accounts for the sticky nav height */
+#prep-guide, #safety-section {
+    scroll-margin-top: 80px;
+}
+
+    
+        /* Controls */
+        .theme-toggle { position: fixed; top: 80px; right: 20px; z-index: 2000; background: var(--honey); color: white; border: none; padding: 10px; border-radius: 50%; cursor: pointer; width: 45px; height: 45px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10000; text-decoration: none; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); font-size: 30px; }
+        
+        #loader-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); display: none; justify-content: center; align-items: center; z-index: 9999; }
+        body.dark-theme #loader-overlay { background: rgba(18, 18, 18, 0.8); }
+        .spinner { width: 50px; height: 50px; border: 5px solid var(--soft-gray); border-top: 5px solid var(--honey); border-radius: 50%; animation: spin 0.8s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .recent-container { max-width: 1100px; margin: 20px auto; padding: 0 20px; display: flex; align-items: center; gap: 15px; }
+        .recent-tag { background: var(--soft-gray); color: var(--mid-green); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; cursor: pointer; transition: 0.3s; }
+        body.dark-theme .recent-tag { background: #2a2a2a; color: var(--honey); }
+
+        footer { background: var(--dark-green); color: white; text-align: center; padding: 60px 20px; margin-top: 40px; }
+        .highlight-flash { outline: 4px solid var(--honey); border-radius: 15px; }
+        
+        .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 100px; /* Positioned to the left of the WhatsApp button */
+    width: 50px;
+    height: 50px;
+    background-color: var(--honey);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background-color: var(--mid-green);
+}
+
+/* Ensure it looks good on mobile */
+@media (max-width: 600px) {
+    .back-to-top {
+        bottom: 95px;
+        right: 45px;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
+        @media print {
+            nav, .hero, .theme-toggle, .whatsapp-float, .card-actions, footer, .progress-container, .read-more-btn { display: none !important; }
+            .more-content { display: block !important; }
+            .card { border: 1px solid #ccc; break-inside: avoid; box-shadow: none; }
+        }
+        
+        @media print {
+    /* Hide everything except the cards */
+    nav, .hero, .theme-toggle, .whatsapp-float, .card-actions, footer, 
+    .progress-container, .read-more-btn, .back-to-top, .category-filters, 
+    .symptom-menu, .jump-links, #recentSearchesContainer, #printableChartSection {
+        display: none !important;
+    }
+
+    /* Force "Read More" content to be visible on paper */
+    .more-content {
+        display: block !important;
+    }
+
+    /* Layout adjustments for paper */
+    body { background: white !important; color: black !important; }
+    .container { width: 100%; max-width: none; padding: 0; }
+    
+    .grid { 
+        display: block; /* Stack cards vertically for better printing */
+    }
+
+    .card {
+        border: 2px solid #eee;
+        margin-bottom: 30px;
+        break-inside: avoid; /* Prevents a card from splitting across two pages */
+        padding: 20px;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .tag {
+        border: 1px solid #d4a373;
+        color: black !important;
+        background: transparent !important;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+<div id="loader-overlay"><div class="spinner"></div></div>
+
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">
+    <i class="fa-solid fa-moon"></i>
+</button>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#remedies" style="color: var(--honey);">Herbal Remedy List</a>
+    <a href="index.html#synergy-teaser">Pairings</a>
+    <a href="index.html#teaguide">Tea Guide</a>
+    <a href="about.html">About</a>
+</nav>
+
+<section class="hero">
+    <h1>Herbal Wisdom Library</h1>
+    <p>A specialized directory of research-backed botanical remedies.</p>
+    <div class="search-box-wrapper">
+        <input type="text" id="remedySearch" onkeyup="handleSearchInput()" placeholder="Search by benefit (Skin, Stress, Immunity)...">
+        <i class="fa-solid fa-circle-xmark clear-search" id="clearSearchBtn" onclick="clearSearch()"></i>
+    </div>
+        <div class="btn-group">
+        <button class="search-btn" onclick="handleSearchButton()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        <button class="surprise-btn" onclick="surpriseMe()"><i class="fa-solid fa-wand-magic-sparkles"></i> Random Herb</button>
+    </div>
+    
+    <div class="category-filters" style="margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+    <button class="cat-btn" onclick="quickSearch('')">All</button>
+    <button class="cat-btn" onclick="quickSearch('digestion')">Digestion</button>
+    <button class="cat-btn" onclick="quickSearch('skin')">Skin</button>
+    <button class="cat-btn" onclick="quickSearch('immunity')">Immunity</button>
+    <button class="cat-btn" onclick="quickSearch('nervine')">Nervines (Calming)</button>
+    <button class="cat-btn" onclick="quickSearch('memory')">Brain/Memory</button>
+    <button class="cat-btn" onclick="quickSearch('sleep')">Sleep</button>
+       <button class="cat-btn" onclick="quickSearch('stress')">Stress</button>
+           <button class="cat-btn" onclick="quickSearch('blood sugar')">Metabolism</button>
+    <button class="cat-btn" onclick="quickSearch('adaptogen')">Adaptogens (Stress)</button>
+       <button class="cat-btn" onclick="quickSearch('circulation')">Circulation</button>
+    <button class="cat-btn" onclick="quickSearch('detox')">Detox</button>
+    <button class="cat-btn" onclick="quickSearch('spice')">Warming Spices</button>
+       <button class="cat-btn" onclick="quickSearch('culinary')">Culinary</button>
+</div>
+
+<div class="symptom-menu" style="margin-top: 20px; text-align: center;">
+    <p style="font-size: 0.8rem; font-weight: bold; color: var(--mid-green); margin-bottom: 10px;">I NEED HELP WITH:</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+        <button class="cat-btn" onclick="quickSearch('headache')">🤕 Headaches</button>
+        <button class="cat-btn" onclick="quickSearch('bloating')">💨 Bloating/Gas</button>
+        <button class="cat-btn" onclick="quickSearch('sleep')">😴 Sleep/Insomnia</button>
+        <button class="cat-btn" onclick="quickSearch('inflammation')">🔥 Inflammation</button>
+        <button class="cat-btn" onclick="quickSearch('focus')">🧠 Focus/Memory</button>
+    </div>
+</div>
+<p style="margin-top: 25px; font-size: 0.8rem; font-weight: bold; color: var(--mid-green); margin-bottom: 10px;">Jump to a section below:</p>
+
+    <div class="jump-links" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
+        <a href="#remedies" class="jump-btn"><i class="fa-solid fa-mortar-pestle"></i> Herbal Library</a>
+        <a style="color: var(--mid-green);" href="#printableChartSection" class="jump-btn"><i class="fa-solid fa-list"></i>Reference Guide</a>
+    </div>
+        <div class="jump-links" style="margin-top: 15px; display: flex; justify-content: center; gap: 15px;">
+        <a href="#prep-guide" class="jump-btn"><i class="fa-solid fa-mug-hot"></i> Preparation Guide</a>
+        <a style="color: red;" href="#safety-section" class="jump-btn danger"><i class="fa-solid fa-shield-halved"></i> Safety & Cautions</a>
+    </div>
+</section>
+
+<div class="container" id="remedies">
+    <div id="recentSearchesContainer" class="recent-container" style="display:none;">
+        <span style="font-size: 0.8rem; font-weight: bold; color: var(--honey);">RECENT:</span>
+        <div id="recentList" style="display: flex; gap: 10px; flex-wrap: wrap;"></div>
+    </div>
+
+    <div id="noResults" style="display:none; text-align:center; padding: 40px; color: var(--mid-green);">
+        <h3>No herbs found.</h3>
+        <p>Try searching for benefits like "Inflammation" or "Memory."</p>
+    </div>
+
+    <div class="grid" id="remedyGrid">
+
+        <div class="card" data-tags="skin burns digestion soothing gut health healing">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Topical & Internal</span>
+                <h3>Aloe Vera</h3>
+                <p>Famous for its cooling gel that accelerates skin healing and supports gastrointestinal lining.</p>
+                <div class="more-content">
+                    <p>Aloe contains acemannan, a polysaccharide that supports immune function and reduces intestinal inflammation.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6330525/" target="_blank">National Institutes of Health (NIH)</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Aloe Vera')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Aloe Vera')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+             <div class="card" data-tags="mint digestion soothing apple mint">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Mint Variety</span>
+                <h3>Apple Mint</h3>
+                <p>Often called "Woolly Mint," it is prized for its mild flavor and digestive-soothing properties.</p>
+                <div class="more-content">
+                    <p>Contains phenolic compounds that act as antioxidants. Used traditionally for stomach upset and as a cooling tea.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.sciencedirect.com/" target="_blank">Botanical Archive</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Apple Mint')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Apple Mint')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+         <div class="card" data-tags="stress anxiety sleep cortisol adaptogen">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Mental Well-being</span>
+                <h3>Ashwagandha</h3>
+                <p>An adaptogen that helps balance cortisol and improve stress resilience.</p>
+                <div class="more-content">
+                    <p>Clinically shown to lower perceived stress and improve sleep quality.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.healthline.com/nutrition/ashwagandha" target="_blank">Healthline Review</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Ashwagandha')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Ashwagandha')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+              <div class="card" data-tags="culinary stress immunity antibacterial basil inflammation">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Culinary & Immune</span>
+                <h3>Basil</h3>
+                <p>Rich in essential oils like eugenol, basil acts as a powerful anti-inflammatory and antibacterial agent.</p>
+                <div class="more-content">
+                    <p>Basil contains high levels of magnesium which improves blood flow. It is also an adaptogen, helping the body manage oxidative stress.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/24302425/" target="_blank">Nutritional Review - Basil</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Basil')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Basil')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+       
+        <div class="card" data-tags="mint intense digestion respiratory headaches menthol black peppermint">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">High-Menthol Nervine</span>
+                <h3>Black Peppermint</h3>
+                <p>The "Mitcham" variety, recognized by its dark purple stems and significantly higher menthol concentration.</p>
+                <div class="more-content">
+                    <p>Due to its intense potency, Black Peppermint is the gold standard for clearing sinus congestion and relieving tension headaches. It provides a more profound "cooling" effect on the digestive tract compared to standard green peppermint.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/mentha-x-piperita" target="_blank">Agricultural & Biological Archive</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Black Peppermint')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Black Peppermint')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+        <div class="card" data-tags="stress liver detox nerves tension blue vervain">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Tension Release</span>
+                <h3>Blue Vervain</h3>
+                <p>Known as a "bitter nervine," it is highly effective for people who carry stress in their neck and shoulders.</p>
+                <div class="more-content">
+                    <p>Acts as both a nervous system relaxant and a liver tonic. It helps clear heat from the body and is often used to soothe intense mental tension and "type A" burnout.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/27530361/" target="_blank">Ethnopharmacology Review</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Blue Vervain')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Blue Vervain')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+        
+               <div class="card" data-tags="skin hair detox digestion packs">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Topical Care</span>
+                <h3>Castor Oil</h3>
+                <p>Rich in ricinoleic acid, ideal for skin hydration and deep tissue support.</p>
+                <div class="more-content">
+                    <p>Used in packs for lymphatic support and liver detox. Promotes hair growth.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.medicalnewstoday.com/articles/313523" target="_blank">Medical News Today</a>
+                    </div>
+                </div>
+              <button class="read-more-btn" onclick="toggleReadMore(this, 'Castor Oil')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Castor Oil')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+              <div class="card" data-tags="circulation metabolism pain relief cayenne pepper capsaicin">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Circulatory Catalyst</span>
+                <h3>Cayenne Pepper</h3>
+                <p>Utilizes capsaicin to stimulate circulation and boost metabolic rate.</p>
+                <div class="more-content">
+                    <p>Acts as a "catalyst" herb to help transport other active compounds to cells.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4477151/" target="_blank">BMJ Open Heart</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Cayenne Pepper')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Cayenne Pepper')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+               <div class="card" data-tags="culinary heart health immunity chives">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Culinary & Heart</span>
+                <h3>Chives</h3>
+                <p>Contains allicin, which is linked to reduced blood pressure and lower cholesterol levels.</p>
+                <div class="more-content">
+                    <p>Chives are rich in quercetin, an antioxidant that helps reduce the risk of plaque buildup in the arteries.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.nutrition-and-you.com/chives.html" target="_blank">Nutrition Data Center</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Chives')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Chives')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+              <div class="card" data-tags="mint aromatherapy digestion chocolate mint">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Mint Variety</span>
+                <h3>Chocolate Mint</h3>
+                <p>A cultivar of peppermint with a distinct cocoa aroma; excellent for aromatherapy and nausea.</p>
+                <div class="more-content">
+                    <p>Like its peppermint parent, it contains menthol which helps dissipate gas and ease intestinal cramps.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.nccih.nih.gov/" target="_blank">NCCIH Mint Overview</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Chocolate Mint')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Chocolate Mint')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+              <div class="card" data-tags="culinary blood sugar metabolism spice cinnamon ceylon">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Metabolic Support</span>
+                <h3>Cinnamon</h3>
+                <p>A warm spice clinically shown to improve insulin sensitivity and lower fasting blood sugar levels.</p>
+                <div class="more-content">
+                    <p>Ceylon cinnamon (True Cinnamon) is preferred over Cassia to avoid high coumarin levels. It mimics insulin and improves glucose uptake by cells.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4466762/" target="_blank">Diabetes Care Research</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Cinnamon')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Cinnamon')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+        <div class="card" data-tags="dental pain antioxidants immunity digestion cloves eugenol">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Oral & Immune</span>
+                <h3>Cloves</h3>
+                <p>Contains eugenol, clinically recognized for its analgesic and antiseptic properties.</p>
+                <div class="more-content">
+                    <p>Used for dental pain and digestive motility. High polyphenol source.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3819475/" target="_blank">Microbiology Research</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Cloves')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Cloves')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+              <div class="card" data-tags="liver detox digestion kidney diuretic">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Detoxification</span>
+                <h3>Dandelion Root</h3>
+                <p>Natural diuretic that stimulates bile production and supports liver function.</p>
+                <div class="more-content">
+                    <p>Acts as a prebiotic for gut health. High in vitamins A, C, and K.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.mountsinai.org/health-library/herb/dandelion" target="_blank">Mount Sinai</a>
+                    </div>
+                </div>
+            <button class="read-more-btn" onclick="toggleReadMore(this, 'Dandelion Root')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Dandelion')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+           <div class="card" data-tags="immunity cold flu antioxidants">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Immunity</span>
+                <h3>Elderberry</h3>
+                <p>Powerful antioxidants used to shorten the duration of seasonal issues.</p>
+                <div class="more-content">
+                    <p>Rich in anthocyanins for cell protection. Inhibits viral replication.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://health.clevelandclinic.org/elderberry-benefits" target="_blank">Cleveland Clinic</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Elderberry')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Elderberry')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+        <div class="card" data-tags="bloating gas digestion nursing infant colic">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Digestive Aid</span>
+                <h3>Fennel</h3>
+                <p>Seeds used to relax the smooth muscles of the digestive system, reducing gas and bloating.</p>
+                <div class="more-content">
+                    <p>Effective for relieving gas and used historically to support lactation and soothe digestive distress.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/25164449/" target="_blank">Journal of Food Science</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Fennel')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Fennel')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+             <div class="card" data-tags="immunity lymphatic cold prevention echinacea">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Immune Stimulant</span>
+                <h3>Echinacea</h3>
+                <p>One of the most well-researched herbs for stimulating white blood cell activity and lymphatic drainage.</p>
+                <div class="more-content">
+                    <p>Best used at the very first sign of a cold. It increases the number of circulating immune cells to fight pathogens faster.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.nccih.nih.gov/health/echinacea" target="_blank">NCCIH Clinical Review</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Echinacea')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Echinacea')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+        <div class="card" data-tags="nausea digestion inflammation motion sickness">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Digestive Health</span>
+                <h3>Ginger Root</h3>
+                <p>A potent rhizome used globally to alleviate nausea and support digestive motility.</p>
+                <div class="more-content">
+                    <p>Contains gingerols with powerful anti-inflammatory effects.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7019938/" target="_blank">NIH Ginger Research</a>
+                    </div>
+                </div>
+            <button class="read-more-btn" onclick="toggleReadMore(this, 'Ginger Root')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Ginger')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+             <div class="card" data-tags="memory blood flow brain cognitive ginkgo">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Cognitive Flow</span>
+                <h3>Ginkgo Biloba</h3>
+                <p>Improves microcirculation by dilating small blood vessels, particularly increasing oxygen flow to the brain.</p>
+                <div class="more-content">
+                    <p>Studies focus on its ability to enhance mental clarity, focus, and long-term memory in both healthy adults and the elderly.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/24548738/" target="_blank">Ginkgo Cognitive Trial</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Ginkgo')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Ginkgo')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+               <div class="card" data-tags="stress cortisol energy anxiety adaptogen holy basil tulsi">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">The Queen of Herbs</span>
+                <h3>Holy Basil (Tulsi)</h3>
+                <p>A premier adaptogen that reduces physical, chemical, and metabolic stress via cortisol regulation.</p>
+                <div class="more-content">
+                    <p>Tulsi protects organs and tissues against chemical stress from environmental pollutants and heavy metals.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296439/" target="_blank">Journal of Ayurveda</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Holy Basil')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Holy Basil')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+            <div class="card" data-tags="anxiety sleep relaxation skin">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Nervous System</span>
+                <h3>Lavender</h3>
+                <p>A floral powerhouse used to reduce serum cortisol levels and promote deep sleep.</p>
+                <div class="more-content">
+                    <p>Linalool acts on the parasympathetic nervous system to induce calm.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.proquest.com/openview/8d8a7c1b5a5e3e2b" target="_blank">Natural Medicine Journal</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Lavender')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Lavender')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+               <div class="card" data-tags="anxiety sleep antiviral focus mood lemon balm">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Calming Nervine</span>
+                <h3>Lemon Balm</h3>
+                <p>A member of the mint family specifically used to reduce excitability and improve sleep quality.</p>
+                <div class="more-content">
+                    <p>Contains rosmarinic acid, which increases GABA availability in the brain, helping to soothe the nervous system and combat restlessness. It also has potent topical antiviral effects against cold sores.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4245564/" target="_blank">Nutrients Journal Study</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Lemon Balm')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Lemon Balm')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+               <div class="card" data-tags="liver fatty liver detox silymarin">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Organ Protection</span>
+                <h3>Milk Thistle</h3>
+                <p>Contains Silymarin, known for protecting liver cells from toxins.</p>
+                <div class="more-content">
+                    <p>Helps stabilize cell membranes and stimulates protein synthesis for repair.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.mayoclinic.org/drugs-supplements-milk-thistle/art-20362885" target="_blank">Mayo Clinic</a>
+                    </div>
+                </div>
+           <button class="read-more-btn" onclick="toggleReadMore(this, 'Milk Thistle')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Milk Thistle')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+           <div class="card" data-tags="nutrition energy vitamins minerals">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Nutritional Support</span>
+                <h3>Moringa</h3>
+                <p>A nutrient-dense superfood containing 7x more Vitamin C than oranges.</p>
+                <div class="more-content">
+                    <p>Supports energy levels and metabolic health. Contains 9 essential amino acids.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5745501/" target="_blank">NIH Moringa Research</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Moringa')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Moringa')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+
+        
+               <div class="card" data-tags="sleep brain health digestion pain nutmeg">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Neuro-Support</span>
+                <h3>Nutmeg</h3>
+                <p>In small medicinal doses, nutmeg acts as a sedative for the central nervous system to aid sleep.</p>
+                <div class="more-content">
+                    <p>Contains myristicin and elemicin, which have been studied for their ability to protect brain tissue from degenerative conditions.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5222521/" target="_blank">Neurology Research</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Nutmeg')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Nutmeg')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+               <div class="card" data-tags="antibacterial gut health sibo immunity oregano carvacrol">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Microbiome Support</span>
+                <h3>Oregano</h3>
+                <p>Rich in carvacrol and thymol, offering potent antimicrobial activity.</p>
+                <div class="more-content">
+                    <p>Studied for its role in managing SIBO and respiratory infections.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/24779581/" target="_blank">Health & Medicine Journal</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Oregano')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Oregano')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+        <div class="card" data-tags="ibs focus headaches bloating">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Cognitive & Gut</span>
+                <h3>Peppermint</h3>
+                <p>Known for relaxing the smooth muscles of the GI tract and improving mental focus.</p>
+                <div class="more-content">
+                    <p>Clinical trials suggest it reduces abdominal pain in IBS patients.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.nccih.nih.gov/health/peppermint-oil" target="_blank">NCCIH</a>
+                    </div>
+                </div>
+            <button class="read-more-btn" onclick="toggleReadMore(this, 'Peppermint')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Peppermint')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+              <div class="card" data-tags="memory focus brain health circulation hair growth">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Cognitive Support</span>
+                <h3>Rosemary</h3>
+                <p>A fragrant herb clinically linked to improved memory retention and increased scalp circulation.</p>
+                <div class="more-content">
+                    <p>Inhaling rosemary aroma can increase concentration and support the nervous system through 1,8-cineole exposure.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.therapeuticresearch.com/" target="_blank">Therapeutic Research</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Rosemary')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Rosemary')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+            <div class="card" data-tags="mint digestion hormones memory spearmint">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Mint Variety</span>
+                <h3>Spearmint</h3>
+                <p>Gentler than peppermint, spearmint is excellent for digestion and has been studied for hormone balance.</p>
+                <div class="more-content">
+                    <p>Clinical studies suggest spearmint tea may help lower androgens in women and improve working memory in older adults.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/19585478/" target="_blank">Hormonal Research</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Spearmint')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Spearmint')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+               <div class="card" data-tags="menopause hot flashes throat oral health memory">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Hormonal & Oral</span>
+                <h3>Sage</h3>
+                <p>Highly effective for reducing the frequency of hot flashes and soothing sore throats.</p>
+                <div class="more-content">
+                    <p>Sage has potent antibacterial properties making it an excellent mouthwash for gingivitis and oral inflammation.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.nccih.nih.gov/health/sage" target="_blank">NCCIH Review</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Sage')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Sage')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+              <div class="card" data-tags="culinary vitamins iron eyes energy spinach">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Nutritional Powerhouse</span>
+                <h3>Spinach</h3>
+                <p>A dense source of iron, Vitamin K, and lutein, crucial for bone health and eye protection.</p>
+                <div class="more-content">
+                    <p>High in nitrates which help moderate blood pressure levels and improve muscle efficiency during exercise.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3999804/" target="_blank">Clinical Nutrition Study</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Spinach')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Spinach')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+             <div class="card" data-tags="immunity antiviral respiratory flu shikimic acid star anise">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Immune Defense</span>
+                <h3>Star Anise</h3>
+                <p>The primary source of Shikimic Acid, a key compound used to produce antiviral medications like Tamiflu.</p>
+                <div class="more-content">
+                    <p>Powerful against seasonal respiratory issues. It contains anethole, which provides anti-fungal and antibacterial benefits.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://pubmed.ncbi.nlm.nih.gov/21535824/" target="_blank">Antiviral Chemistry Journal</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Star Anise')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Star Anise')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+       <div class="card" data-tags="sleep appetite insulin blood sugar antioxidant">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Metabolic Support</span>
+                <h3>Tarragon</h3>
+                <p>Known for its ability to improve insulin sensitivity and support restorative sleep cycles.</p>
+                <div class="more-content">
+                    <p>Rich in phytonutrients that help regulate blood sugar levels and protect cellular health.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3586073/" target="_blank">Research Article</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Tarragon')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Tarragon')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+        
+        <div class="card" data-tags="respiratory cough immunity antibacterial lungs">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Respiratory Support</span>
+                <h3>Thyme</h3>
+                <p>Contains thymol, known for powerful antispasmodic and antimicrobial properties.</p>
+                <div class="more-content">
+                    <p>Often used to soothe coughs and clear chest congestion.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8468409/" target="_blank">Frontiers Research</a>
+                    </div>
+                </div>
+          <button class="read-more-btn" onclick="toggleReadMore(this, 'Thyme')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Thyme')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+        <div class="card" data-tags="joints pain inflammation tumeric turmeric curcumin">
+            <div class="card-top">
+                <div class="read-time"><i class="fa-regular fa-clock"></i> <span class="minutes"></span> min read</div>
+                <span class="tag">Joint Health</span>
+                <h3>Turmeric</h3>
+                <p>Reduces joint stiffness and supports systemic anti-inflammatory pathways.</p>
+                <div class="more-content">
+                    <p>Best paired with black pepper for maximum absorption. Curcumin is the active compound.</p>
+                    <div class="source-link">
+                        <i class="fa-solid fa-microscope"></i> <strong>Scientific Source:</strong>
+                        <a href="https://www.arthritis.org/health-wellness/treatment/complementary-therapies/supplements-and-vitamins/turmeric" target="_blank">Arthritis Foundation</a>
+                    </div>
+                </div>
+                <button class="read-more-btn" onclick="toggleReadMore(this, 'Turmeric')">Read More...</button>
+            </div>
+            <div class="card-actions">
+                <button class="share-btn" onclick="copyCardLink(this, 'Turmeric')"><i class="fa-solid fa-share-nodes"></i></button>
+                <button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i></button>
+                <span class="copy-tooltip">Copied!</span>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<section class="container" id="printableChartSection">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h2 style="color: var(--dark-green); margin: 0;">Quick Reference Chart</h2>
+        <button class="print-btn" onclick="printChart()" style="background: var(--dark-green); color: white;">
+            <i class="fa-solid fa-print"></i> Print Chart Only
+        </button>
+    </div>
+    
+    <div id="herbChartContainer" style="overflow-x: auto; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+            <thead>
+                <tr style="background: var(--dark-green); color: white;">
+                    <th style="padding: 15px; border: 1px solid #ddd;">Herb Name</th>
+                    <th style="padding: 15px; border: 1px solid #ddd;">Primary Benefit</th>
+                    <th style="padding: 15px; border: 1px solid #ddd;">Best Preparation</th>
+                    <th style="padding: 15px; border: 1px solid #ddd;">Quick Tip</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Ginger</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Nausea & Digestion</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Decoction (Simmer)</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Fresh root is most potent.</td>
+                </tr>
+                <tr style="background: var(--soft-gray);">
+                    <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Lemon Balm</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Anxiety & Sleep</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Infusion (Tea)</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Cover cup while steeping.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Turmeric</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Inflammation</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Golden Milk / Pack</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Always add black pepper.</td>
+                </tr>
+                <tr style="background: var(--soft-gray);">
+                    <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Echinacea</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Immunity</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Tincture / Tea</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Take at the very first sniffle.</td>
+                </tr>
+                <tr>
+                    <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Cinnamon</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Blood Sugar</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Culinary / Simmer</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Use 'Ceylon' variety.</td>
+                </tr>
+                <tr style="background: var(--soft-gray);">
+                    <td style="padding: 12px; border: 1px solid #ddd; font-weight: bold;">Castor Oil</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Detox & Skin</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Topical Pack</td>
+                    <td style="padding: 12px; border: 1px solid #ddd;">Avoid during pregnancy.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="prep-guide" class="container" style="border-top: 2px solid var(--soft-gray); margin-top: 40px;">
+    <h2 style="color: var(--dark-green); text-align: center;">Preparation Guide</h2>
+    <div class="grid">
+        <div class="card" style="background: var(--cream);">
+            <h4><i class="fa-solid fa-mug-hot"></i> Infusion (Tea)</h4>
+            <p><strong>Best for:</strong> Leaves and flowers (Mint, Lemon Balm, Basil).</p>
+            <p>Pour hot water over herbs and steep covered for 5-10 minutes to keep essential oils from escaping.</p>
+        </div>
+        <div class="card" style="background: var(--cream);">
+            <h4><i class="fa-solid fa-flask"></i> Decoction</h4>
+            <p><strong>Best for:</strong> Roots and bark (Dandelion, Ginger, Cinnamon).</p>
+            <p>Simmer the herb in boiling water for 15-20 minutes to extract tougher compounds.</p>
+        </div>
+        <div class="card" style="background: var(--cream);">
+            <h4><i class="fa-solid fa-bandage"></i> Poultice/Pack</h4>
+            <p><strong>Best for:</strong> External use (Castor Oil, Aloe, Turmeric).</p>
+            <p>Apply the herb directly to the skin or via a soaked cloth for localized relief.</p>
+        </div>
+    </div>
+</section>
+
+<section id="safety-section" class="container" style="background: #fff5f5; border-radius: 15px; padding: 30px; border: 1px solid #feb2b2;">
+    <h3 style="color: #c53030;"><i class="fa-solid fa-triangle-exclamation"></i> Safety & Cautions</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; font-size: 0.9rem;">
+        <div>
+            <strong>Pregnancy:</strong> Some powerful herbs like Blue Vervain or high doses of Nutmeg should be avoided. Always consult a midwife or doctor.
+        </div>
+        <div>
+            <strong>Blood Thinners:</strong> Herbs like Turmeric, Ginger, and Cayenne Pepper can naturally thin the blood. Be cautious if on medication like Warfarin.
+        </div>
+        <div>
+            <strong>Diabetes:</strong> Cinnamon and Aloe significantly lower blood sugar. Monitor levels closely to avoid hypoglycemia.
+        </div>
+        <div>
+            <strong>Potency:</strong> Essential oils and "Black" mint varieties are highly concentrated. Start with small "tester" doses.
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="disclaimer-box">
+        <strong>MEDICAL DISCLAIMER:</strong> This site does not provide medical advice. 
+        <br>
+        <a href="disclaimer.html" style="color: var(--honey); text-decoration: underline; margin-right: 15px;">Read Disclaimer</a>
+        <a href="privacy.html" style="color: var(--honey); text-decoration: underline;">Privacy Policy</a>
+    </div>
+    <p>&copy; 2026 Wise & Healthy Living | Natural Wisdom Library</p>
+    <p style="font-size: 0.8rem; opacity: 0.7;">This information is for educational purposes only. Consult a professional before use.</p>
+</footer>
+
+<button id="backToTop" class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<a href="https://wa.me/17587235872" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+    // Theme Toggle
+    function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+        const isDark = document.body.classList.contains('dark-theme');
+        document.querySelector('#themeBtn i').className = isDark ? "fa-solid fa-sun" : "fa-solid fa-moon";
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
+
+    // Search Logic
+    function handleSearchInput() {
+        const input = document.getElementById('remedySearch');
+        document.getElementById('clearSearchBtn').style.display = input.value.length > 0 ? "block" : "none";
+        filterCards();
+    }
+
+    function clearSearch() {
+        document.getElementById('remedySearch').value = '';
+        handleSearchInput();
+    }
+
+    function filterCards() {
+        const val = document.getElementById('remedySearch').value.toLowerCase();
+        const cards = document.querySelectorAll('#remedyGrid .card');
+        let visibleCount = 0;
+        cards.forEach(card => {
+            const content = card.getAttribute('data-tags') + card.querySelector('h3').innerText.toLowerCase();
+            if (content.includes(val)) {
+                card.style.display = ""; visibleCount++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+        document.getElementById('noResults').style.display = (visibleCount === 0) ? "block" : "none";
+    }
+
+    async function handleSearchButton() {
+        document.getElementById('loader-overlay').style.display = 'flex';
+        await new Promise(r => setTimeout(r, 400));
+        document.getElementById('loader-overlay').style.display = 'none';
+        filterCards();
+    }
+
+    // Interactive Features
+    async function surpriseMe() {
+        clearSearch();
+        const cards = document.querySelectorAll('#remedyGrid .card');
+        const target = cards[Math.floor(Math.random() * cards.length)];
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.add('highlight-flash');
+        setTimeout(() => target.classList.remove('highlight-flash'), 2000);
+    }
+
+    function toggleReadMore(btn, herbName) {
+        const content = btn.previousElementSibling;
+        const isOpen = content.style.display === "block";
+        content.style.display = isOpen ? "none" : "block";
+        btn.innerText = isOpen ? "Read More..." : "Read Less";
+        if (!isOpen && herbName) addToHistory(herbName);
+    }
+
+    // Share Functionality
+    function copyCardLink(btn, herbName) {
+        // Creates a deep link that will search for this herb when opened
+        const url = window.location.origin + window.location.pathname + '?search=' + encodeURIComponent(herbName);
+        
+        navigator.clipboard.writeText(url).then(() => {
+            const tooltip = btn.parentElement.querySelector('.copy-tooltip');
+            tooltip.style.display = 'inline';
+            setTimeout(() => {
+                tooltip.style.display = 'none';
+            }, 2000);
+        });
+    }
+
+    // History Tracking
+    function addToHistory(term) {
+        let history = JSON.parse(localStorage.getItem('remedyHistory')) || [];
+        history = history.filter(item => item !== term);
+        history.unshift(term);
+        if (history.length > 5) history.pop();
+        localStorage.setItem('remedyHistory', JSON.stringify(history));
+        displayHistory();
+    }
+
+    function displayHistory() {
+        const history = JSON.parse(localStorage.getItem('remedyHistory')) || [];
+        const container = document.getElementById('recentSearchesContainer');
+        const list = document.getElementById('recentList');
+        if (history.length === 0) { container.style.display = "none"; return; }
+        container.style.display = "flex";
+        list.innerHTML = history.map(term => `<span class="recent-tag" onclick="quickSearch('${term}')">${term}</span>`).join('');
+    }
+
+    function quickSearch(term) {
+    const searchInput = document.getElementById('remedySearch');
+    searchInput.value = term;
+    
+    // Trigger the search visual loader for a premium feel
+    document.getElementById('loader-overlay').style.display = 'flex';
+    
+    setTimeout(() => {
+        filterCards();
+        document.getElementById('loader-overlay').style.display = 'none';
+        // Scroll to results
+        document.getElementById('remedies').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 300);
+}
+
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+        // Theme load
+        if (localStorage.getItem('theme') === 'dark') toggleTheme();
+        
+        // Handle Shared Links
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchVal = urlParams.get('search');
+        if (searchVal) {
+            document.getElementById('remedySearch').value = searchVal;
+            filterCards();
+        }
+
+        displayHistory();
+
+        // Calc read times
+        document.querySelectorAll('.card').forEach(card => {
+            const words = card.innerText.split(/\s+/).length;
+            const span = card.querySelector('.minutes');
+            if(span) span.innerText = Math.ceil(words / 200);
+        });
+    });
+
+    window.onscroll = () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById("myBar").style.width = ((winScroll / height) * 100) + "%";
+    };
+    
+    function printChart() {
+        const chartContent = document.getElementById('herbChartContainer').innerHTML;
+        const printWindow = window.open('', '', 'height=600,width=800');
+        printWindow.document.write('<html><head><title>Herbal Quick Reference Chart</title>');
+        printWindow.document.write('<style>table { width: 100%; border-collapse: collapse; font-family: sans-serif; } th, td { border: 1px solid #000; padding: 10px; text-align: left; } th { background-color: #f2f2f2; }</style>');
+        printWindow.document.write('</head><body>');
+        printWindow.document.write('<h1>Wise & Healthy Living: Herb Cheat Sheet</h1>');
+        printWindow.document.write(chartContent);
+        printWindow.document.write('<p style="font-size: 0.7rem; margin-top: 20px;">Disclaimer: For educational use only. Consult a doctor before use.</p>');
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
+    }
+    
+    // Get the button
+const backToTopBtn = document.getElementById("backToTop");
+
+// Show button when user scrolls down 400px
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+        backToTopBtn.style.display = "flex";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+});
+
+// Smooth scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+    
+</script>
+
+</body>
+</html>
