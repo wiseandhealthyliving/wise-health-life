@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wise & Healthy Living: A science-backed directory for natural remedies, herbal wisdom, and longevity. Explore our research-verified library.">
-<meta name="keywords" content="Herbal Remedies, Natural Health, Moringa, Castor Oil, Bioavailability, Holistic Wellness">
-<meta name="author" content="Jamal">
+    <meta name="description" content="Wise & Healthy Living: A science-backed directory for natural remedies, herbal wisdom, and longevity.">
+    <meta name="keywords" content="Herbal Remedies, Natural Health, Moringa, Castor Oil, Bioavailability, Holistic Wellness">
+    <meta name="author" content="Jamal">
 
-<meta property="og:title" content="Wise & Healthy Living | Natural Wisdom">
-<meta property="og:description" content="Explore clinical research on herbal remedies and natural vitality.">
-<meta property="og:image" content="wiselogo.png">
-<meta property="og:url" content="https://yourusername.github.io/wise-healthy-living/">
+    <meta property="og:title" content="Wise & Healthy Living | Natural Wisdom">
+    <meta property="og:description" content="Explore clinical research on herbal remedies and natural vitality.">
+    <meta property="og:image" content="wiselogo.png">
+    <meta property="og:url" content="https://yourusername.github.io/wise-healthy-living/">
 
     <title>Wise & Healthy Living | Natural Wisdom</title>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
@@ -60,181 +59,49 @@
         /* Theme Toggle */
         .theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 2000; background: var(--honey); color: white; border: none; padding: 10px; border-radius: 50%; cursor: pointer; width: 45px; height: 45px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
 
-        /* Header & Parallax */
-        header { text-align: center; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center; background-attachment: fixed; color: white; }
-        .logo { width: 100%; height: auto; }
+        /* Header */
+        header { text-align: center; padding: 120px 20px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center; background-attachment: fixed; color: white; }
+        .logo { max-width: 300px; height: auto; }
 
         /* Navigation */
         nav { background: var(--dark-green); padding: 15px 0; position: sticky; top: 0; z-index: 1000; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; }
+        nav a { color: white; text-decoration: none; padding: 10px 15px; font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; display: inline-block; }
         nav a:hover { color: var(--honey); }
 
-        /* Hero & Search */
-        .hero { background-color: var(--cream); padding: 80px 20px; text-align: center; }
-        .search-box-wrapper { position: relative; width: 90%; max-width: 500px; margin: 0 auto; }
-        .search-container input { padding: 15px 45px 15px 25px; width: 100%; border: 2px solid var(--honey); border-radius: 30px; outline: none; font-size: 1rem; background: var(--white); color: var(--text-color); box-sizing: border-box; }
-        .clear-search { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #999; display: none; font-size: 1.2rem; }
-        .btn-group { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        /* General Container */
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-        /* Buttons */
-        .search-btn, .surprise-btn { border: none; padding: 12px 25px; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-        .search-btn { background: var(--dark-green); color: white; }
-        .surprise-btn { background: var(--honey); color: white; }
-        .search-btn:hover, .surprise-btn:hover { background: var(--mid-green); transform: scale(1.05); }
+        /* Library Focus Section */
+        .library-focus { margin-bottom: 0px; padding: 80px 20px; background: var(--white); text-align: center; }
+        .sole-card { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: var(--cream); 
+            border-radius: 20px; 
+            padding: 50px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-top: 10px solid var(--mid-green);
+        }
+        .btn-primary, .search-btn { 
+            background: var(--dark-green); 
+            color: white; 
+            padding: 15px 30px; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-weight: bold; 
+            display: inline-block;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover, .search-btn:hover { background: var(--mid-green); transform: scale(1.05); }
 
-        /* Cards Grid */
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--white); border-radius: 15px; padding: 30px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; }
-        .card:hover { transform: translateY(-10px); }
-        
-        .featured-card { border: 3px solid var(--honey) !important; background: var(--cream) !important; transform: scale(1.02); }
-        .featured-badge { background: var(--honey); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px; display: inline-block; }
+        /* Synergism Section */
+        .synergy-teaser { background: var(--cream); padding: 60px 20px; text-align: center; border-top: 3px solid var(--honey); border-bottom: 3px solid var(--honey); margin-bottom: 50px; }
 
-        .tag { background: var(--honey); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; display: inline-block; }
-        .read-time { font-size: 0.75rem; color: var(--mid-green); margin-bottom: 10px; font-weight: 600; }
-        .more-content { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.9rem; }
-        .read-more-btn { color: var(--mid-green); cursor: pointer; font-weight: bold; background: none; border: none; margin-top: 15px; padding: 0; }
+        /
 
-        .comparison-section {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
-    text-align: center;
-}
-
-.table-wrapper {
-    overflow-x: auto; /* For mobile responsiveness */
-    margin-top: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    text-align: left;
-}
-
-.comparison-table th {
-    background: var(--dark-green);
-    color: white;
-    padding: 20px;
-    font-size: 1.1rem;
-}
-
-.comparison-table td {
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.comparison-table tr:nth-child(even) {
-    background-color: var(--soft-gray);
-}
-
-.comparison-table tr:hover {
-    background-color: var(--cream);
-}
-
-body.dark-theme .comparison-table {
-    background: #1a1a1a;
-    color: #e0e0e0;
-}
-
-body.dark-theme .comparison-table td {
-    border-bottom: 1px solid #333;
-}
-        
-.tea-guide-cta {
-    background: var(--dark-green);
-    color: white;
-    padding: 50px 20px;
-    margin: 40px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.tea-cta-text {
-    max-width: 500px;
-}
-
-.tea-cta-text h2 {
-    color: var(--honey);
-    margin-top: 0;
-}
-
-.tea-cta-visual {
-    font-size: 5rem;
-    color: var(--honey);
-    opacity: 0.9;
-    animation: steam 3s infinite ease-in-out;
-}
-
-@keyframes steam {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.btn-white {
-    background: var(--white);
-    color: var(--dark-green);
-    text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.btn-white:hover {
-    background: var(--honey);
-    color: white;
-}
-
-        /* Add this to your CSS block to make the "grid" work */
-.social-contact-grid {
-    display: flex; /* Use flex for easier row management */
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 8px; /* Slightly tighter gap for mobile safety */
-    width: 100%;
-}
-
-.social-item {
-    flex: 1; /* Forces all 4 items to take up equal width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    padding: 15px 5px; /* Reduced side padding to prevent overflow */
-    background: var(--dark-green);
-    border-radius: 10px;
-    transition: 0.3s;
-    color: var(--text-color);
-    min-width: 0; /* Prevents flex items from breaking layout */
-}
-
-.social-item:hover {
-    background: var(--cream);
-    transform: translateY(-5px);
-}
-
-.social-icon {
-    font-size: 1.8rem; /* Slightly smaller to ensure fit */
-    margin-bottom: 5px;
-}
-
-.social-item span {
-    font-size: 0.85rem; /* Standard size */
-    text-align: center;
-    white-space: nowrap; /* Keeps text on one line */
-}
+          /* Blog Guide */
         .blog-preview-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -298,283 +165,111 @@ body.dark-theme .blog-content h3 { color: var(--honey); }
     margin-left: 5px;
 }
 
-/* Responsive adjustment for small screens */
-@media (max-width: 600px) {
-    .blog-item { flex-direction: column; }
-    .blog-img { width: 100%; height: 150px; }
-    .blog-content { width: 100%; }
-}
 
-/* Specific Icon Colors 
-.fa-whatsapp { color: #25d366; }
-.fa-envelope { color: var(--honey); }*/
+        /* Affiliate Section */
+        .affiliate-section { padding: 60px 0; background: var(--cream); margin: 40px 0px; }
+        .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; padding: 20px; }
+        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: 0.3s; border: 1px solid rgba(0,0,0,0.05); }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-img { width: 100%; height: 200px; background-size: cover; background-position: center; background-color: #eee; }
+        .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .buy-btn { background: var(--mid-green); color: white; text-align: center; text-decoration: none; padding: 10px; border-radius: 8px; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .buy-btn:hover { background: var(--honey); }
+        .affiliate-disclaimer { text-align: center; font-size: 0.75rem; color: #999; margin-top: 20px; font-style: italic; }
 
-@media (max-width: 600px) {
-    .social-contact-grid { 
-        flex-direction: column; /* This stacks them properly */
-        align-items: center;
-    }
-}
-        /* Affiliate Section Styles */
-.affiliate-section {
-    padding: 60px 0;
-    background-color: var(--soft-gray);
-    border-radius: 20px;
-    margin: 40px 10px;
-}
-
-.affiliate-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 20px;
-}
-
-.product-card {
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-    border: 1px solid #eee;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-}
-
-.product-img {
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    background-color: #eee;
-}
-
-.product-info {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-info h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.1rem;
-    color: var(--dark-green);
-}
-
-.product-info p {
-    font-size: 0.85rem;
-    color: #666;
-    margin-bottom: 15px;
-    flex-grow: 1;
-}
-
-.buy-btn {
-    background: var(--mid-green);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.buy-btn:hover {
-    background: var(--honey);
-}
-
-.affiliate-disclaimer {
-    text-align: center;
-    font-size: 0.75rem;
-    color: #999;
-    margin-top: 20px;
-    font-style: italic;
-}
-
-
-        /* Source Link Boxes */
-        .source-link { background: var(--soft-gray); padding: 12px; border-radius: 8px; margin-top: 15px; font-size: 0.8rem; border: 1px solid rgba(0,0,0,0.05); }
-        .source-link a { color: var(--mid-green); text-decoration: underline; font-weight: bold; display: block; margin-top: 4px; }
-        body.dark-theme .source-link { background: #222; }
-
-        /* Card Actions */
-        .card-actions { display: flex; gap: 10px; margin-top: 20px; align-items: center; }
-        .share-btn, .print-btn { background: var(--soft-gray); border: none; padding: 8px 15px; border-radius: 8px; color: var(--mid-green); cursor: pointer; }
-        .share-btn:hover, .print-btn:hover { background: var(--honey); color: white; }
-        .copy-tooltip { font-size: 0.7rem; color: var(--honey); display: none; }
-
-        /* Facts Pop-up */
-        #fact-popup { position: fixed; bottom: -200px; left: 20px; width: 280px; background: var(--white); border-left: 5px solid var(--honey); box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 20px; border-radius: 8px; z-index: 10001; transition: bottom 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
-        #fact-popup.show { bottom: 30px; }
-        .close-fact { position: absolute; top: 10px; right: 10px; cursor: pointer; opacity: 0.5; }
-
-        /* Footer & Float */
-        #backToTop { position: fixed; bottom: 100px; right: 35px; width: 50px; height: 50px; background: var(--dark-green); color: white; border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer; border: none; z-index: 999; }
-
-        /* Rectified WhatsApp Float */
-.whatsapp-float { 
-    position: fixed; 
-    width: 60px; 
-    height: 60px; 
-    bottom: 30px; 
-    right: 30px; 
-    background-color: #25d366; 
+        /* Social Grid */
+        .social-contact-grid { display: flex; justify-content: center; gap: 15px; width: 100%; flex-wrap: wrap; margin-top: 20px; }
+        .social-item { 
+            flex: 1; min-width: 60px; max-width: 100px;
+            display: flex; flex-direction: column; align-items: center; 
+            padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px; 
+            color: var(--white); text-decoration: none; transition: 0.3s;
+        }
+        .social-item:hover { background: var(--honey); transform: translateY(-5px); }
+        .social-icon { font-size: 1.8rem; }
+        
+   /* --- TEA GUIDE SECTION --- */
+.tea-guide-cta { 
+    background: var(--dark-green); 
     color: white; 
-    border-radius: 50%; 
+    padding: 50px 20px; 
+    margin: 20px 10px; 
+    border-radius: 20px; 
     display: flex; 
     align-items: center; 
-    justify-content: center; 
-    z-index: 10000; /* Increased z-index to stay above everything */
+    justify-content: space-around; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+}
+
+.btn-white { 
+    background: var(--white); 
+    color: var(--dark-green); 
     text-decoration: none; 
-    animation: pulse 2s infinite; 
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    padding: 12px 30px; 
+    border-radius: 30px; 
+    font-weight: bold; 
+    display: inline-block; 
+    transition: 0.3s; 
 }
 
-.whatsapp-float i {
-    font-size: 35px; /* Define size specifically for the icon */
-    line-height: 60px;
-    display: block;
+.btn-white:hover { 
+    background: var(--honey); 
+    color: white; 
 }
 
-                /* Featured Library Card Section */
-        .library-focus { padding: 80px 20px; background: var(--cream); text-align: center; }
-        .sole-card { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            background: var(--white); 
-            border-radius: 20px; 
-            padding: 50px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            border-top: 10px solid var(--mid-green);
-        }
-        .sole-card h2 { color: var(--dark-green); font-size: 2.2rem; margin-top: 0; }
-        .sole-card p { font-size: 1.2rem; color: #555; margin-bottom: 30px; }
-        
-
-        .seasonal-banner {
-    background: var(--cream);
-    border-bottom: 2px solid var(--honey);
-    padding: 15px 20px;
-    display: none; /* Hidden until JS determines season */
-    transition: all 0.5s ease;
-    align: center;
+/* --- TEA CUP & STEAM ANIMATIONS --- */
+@keyframes cupFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
-.banner-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+@keyframes wispRise {
+    0% { transform: translateY(0) scale(0.8); opacity: 0; }
+    20% { opacity: 0.4; }
+    100% { transform: translateY(-50px) scale(1.4); opacity: 0; }
 }
 
-#seasonIcon {
-    font-size: 2rem;
-    color: var(--mid-green);
-}
-
-.banner-text h4 {
-    margin: 0;
-    color: var(--dark-green);
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-}
-
-.banner-text p {
-    margin: 0;
-    font-size: 0.95rem;
-    font-style: italic;
-}
-
-.banner-link {
-    margin-left: auto;
-    color: var(--mid-green);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.85rem;
-}
-
-body.dark-theme .seasonal-banner {
-    background: #1e1e1a;
-}
-
-@media (max-width: 600px) {
-    .banner-content { flex-direction: column; text-align: center; }
-    .banner-link { margin: 10px auto 0; }
-}
-
-        .recent-container {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    font-family: sans-serif;
-}
-
-.recent-label {
-    font-size: 0.8rem;
-    font-weight: bold;
+.tea-cta-visual {
+    position: relative;
+    font-size: 5rem;
     color: var(--honey);
-    text-transform: uppercase;
+    animation: cupFloat 3s infinite ease-in-out;
+    display: inline-block;
 }
 
-.recent-list {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.recent-tag {
-    background: var(--soft-gray);
-    color: var(--mid-green);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: 0.3s;
-}
-
-.recent-tag:hover {
-    border-color: var(--honey);
-    background: var(--white);
-}
-
-.clear-history {
-    background: none;
-    border: none;
-    color: #999;
-    font-size: 0.75rem;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-body.dark-theme .recent-tag {
-    background: #2a2a2a;
+/* Styling the new steam icons */
+.steam-wisp {
+    position: absolute;
+    top: -10px;
+    font-size: 1.5rem !important; /* Forces the steam to be smaller than the cup */
     color: var(--honey);
+    opacity: 0;
+    pointer-events: none;
 }
 
+.wisp-1 {
+    left: 10%;
+    animation: wispRise 2s infinite linear;
+}
 
+.wisp-2 {
+    right: 10%;
+    animation: wispRise 2.8s infinite linear;
+    animation-delay: 1s;
+}
 
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        .highlight-flash { outline: 4px solid var(--honey); border-radius: 15px; }
-
+        /* Footer */
         footer { background: var(--dark-green); color: white; text-align: center; padding: 60px 20px; }
         .disclaimer-box { font-size: 0.8rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.8; border: 1px solid rgba(255,255,255,0.2); padding: 15px; }
 
-        @media print {
-            nav, header, .hero, .theme-toggle, .whatsapp-float, #backToTop, .card-actions, footer, .progress-container, #fact-popup { display: none !important; }
-            .more-content { display: block !important; }
-            .card { border: 1px solid #ccc; break-inside: avoid; }
+        /* Floating Buttons */
+        #backToTop { position: fixed; bottom: 100px; right: 35px; width: 50px; height: 50px; background: var(--dark-green); color: white; border-radius: 50%; display: none; align-items: center; justify-content: center; cursor: pointer; border: none; z-index: 999; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 10000; text-decoration: none; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); }
+
+        @media (max-width: 600px) {
+            nav a { padding: 8px 10px; font-size: 0.7rem; }
+            .tea-guide-cta { text-align: center; }
         }
     </style>
 </head>
@@ -583,12 +278,12 @@ body.dark-theme .recent-tag {
 <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
 <div id="loader-overlay"><div class="spinner"></div></div>
 
-<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
     <i class="fa-solid fa-moon"></i>
 </button>
 
 <header id="home">
-    <img src="wiselogo.png" alt="Wise and Healthy Living - Natural Herbal Remedies Logo" class="logo">
+    <img src="wiselogo.png" alt="Wise and Healthy Living Logo" class="logo">
 </header>
 
 <nav>
@@ -604,62 +299,43 @@ body.dark-theme .recent-tag {
     <a href="glossary.html">Glossary</a>
 </nav>
 
-    <section id="seasonalBanner" class="seasonal-banner">
-    <div class="banner-content">
-        <span id="seasonIcon"></span>
-        <div class="banner-text">
-            <h4 id="seasonTitle"></h4>
-            <p id="seasonTip"></p>
-        </div>
-        <a href="calendar.html" class="banner-link">View Harvest Guide <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    </section>
-    
 <section class="library-focus">
     <div class="sole-card">
         <i class="fa-solid fa-book-leaf" style="font-size: 4rem; color: var(--honey); margin-bottom: 20px;"></i>
         <h2>The Complete Herbal Directory</h2>
         <p>Explore our research-verified library of over 50 potent herbs. Learn about their clinical benefits, history, and how to use them safely in your home apothecary.</p>
-        <br>
-        <a href="herb-library.html" class="btn-primary">
-            Enter the Herb Library <i class="fa-solid fa-arrow-right"></i>
-        </a>
+        <a href="herb-library.html" class="btn-primary">Enter the Herb Library <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 </section>
-    
-<div class="container" id="remedies">
-     
-</div>
-<section id="fact-popup">
-    <i class="fa-solid fa-xmark close-fact" onclick="closeFact()"></i>
-    <h4><i class="fa-solid fa-lightbulb"></i> Did You Know?</h4>
-    <p id="fact-text"></p>
-</section>
-    <section id="synergy-teaser" class="synergy-teaser" style="background: var(--cream); padding: 60px 20px; text-align: center; border-top: 3px solid var(--honey); border-bottom: 3px solid var(--honey); margin: 40px 0;">
+
+<section id="synergy-teaser" class="synergy-teaser">
     <div style="max-width: 800px; margin: auto;">
         <i class="fa-solid fa-flask-vial" style="font-size: 3rem; color: var(--mid-green); margin-bottom: 20px;"></i>
         <h2 style="color: var(--dark-green); margin-bottom: 15px;">Unlock Herbal Synergism</h2>
-        <p style="font-size: 1.1rem; color: var(--text-color); margin-bottom: 25px;">
+        <p style="font-size: 1.1rem; margin-bottom: 25px;">
             Did you know that Turmeric is <strong>2,000% more effective</strong> when paired with Black Pepper? 
             In the world of natural science, some herbs were meant to work together.
         </p>
-        <a href="remedy-pairing.html" class="search-btn" style="text-decoration: none; padding: 15px 40px;">
+        <a href="remedy-pairing.html" class="search-btn" style="text-decoration: none;">
             Explore Remedy Pairings <i class="fa-solid fa-bolt" style="margin-left: 10px;"></i>
         </a>
     </div>
 </section>
-    <section id="teaguide" class="tea-guide-cta">
+
+<section id="teaguide" class="tea-guide-cta">
     <div class="tea-cta-text">
         <h2>Perfect Your Brew</h2>
-        <p>Are you burning your delicate herbs? Our Steeping Guide teaches you the difference between an <strong>Infusion</strong> and a <strong>Decoction</strong> to ensure you get 100% of the medicinal benefits.</p>
-        <a href="tea-guide.html" class="btn-white">
-            <i class="fa-solid fa-clock-rotate-left"></i> Open Steeping Guide
-        </a>
+        <p>Our Steeping Guide teaches you the difference between an <strong>Infusion</strong> and a <strong>Decoction</strong>.</p>
+        <a href="tea-guide.html" class="btn-white"><i class="fa-solid fa-clock-rotate-left"></i> Open Steeping Guide</a>
     </div>
-    <div class="tea-cta-visual">
-        <i class="fa-solid fa-mug-hot"></i>
+    
+    <div style="margin-top: 40px;" class="tea-cta-visual">
+    <i class="fa-solid fa-mug-hot"></i>
+    <i class="fa-solid fa-wind steam-wisp wisp-1"></i>
+    <i class="fa-solid fa-wind steam-wisp wisp-2"></i>
     </div>
 </section>
+
 
     <section class="container" id="blog-preview">
     <h2 style="text-align: center; color: var(--dark-green); margin-bottom: 40px; margin-top: 0px;">From the Wisdom Blog</h2>
@@ -687,87 +363,72 @@ body.dark-theme .recent-tag {
         <a href="blog.html" class="search-btn" style="text-decoration: none;">View All Articles</a>
     </div>
     </section>
-    
-    <section id="affiliates" class="container affiliate-section">
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="color: var(--dark-green);">Recommended Tools & Supplies</h2>
-        <p>The essentials I use for preparing and storing natural remedies.</p>
-    </div>
 
+<section id="affiliates" class="container affiliate-section">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 style="color: var(--dark-green); padding: 5px 20px;">Recommended Tools, Supplies, and more for a Happier Healthier You</h2>
+        <p style="padding: 5px 20px;">Extra product ideas to accompany your healing, herbal joirney.</p>
+    </div>
     <div class="affiliate-grid">
         <div class="product-card">
             <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=500');"></div>
             <div class="product-info">
-                <h3>Glass Apothecary Jars</h3>
-                <p>Amber glass protects your herbs from UV light, preserving their potency for much longer.</p>
-                <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <h3>Boroscillate Tea Kettles</h3>
+                <p style="font-size: 0.85rem; flex-grow: 1;">Amber glass protects your herbs from UV light, preserving their potency.</p>
+                <a href="https://amzn.to/3ZoqZcI" target="_blank" class="buy-btn">View on Amazon</a>
             </div>
         </div>
-
         <div class="product-card">
             <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1576092729250-19c13731488a?auto=format&fit=crop&q=80&w=500');"></div>
             <div class="product-info">
                 <h3>Stainless Steel Infuser</h3>
-                <p>Fine-mesh strainer perfect for those delicate leaf infusions and medicinal flower teas.</p>
-                <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&q=80&w=500');"></div>
-            <div class="product-info">
-                <h3>Organic Castor Oil</h3>
-                <p>Hexane-free, cold-pressed castor oil—ideal for topical packs and skin hydration.</p>
-                <a href="YOUR_AFFILIATE_LINK_HERE" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <p style="font-size: 0.85rem; flex-grow: 1;">Fine-mesh strainer perfect for delicate leaf infusions and medicinal teas.</p>
+                <a href="https://amzn.to/4chI6EB" target="_blank" class="buy-btn">View on Amazon</a>
             </div>
         </div>
     </div>
-        
-<div style="margin-top: 30px;">
-            <a href="store.html" class="search-btn" style="text-decoration: none; padding: 18px 45px; font-size: 1.1rem;">
-                Browse All Recommendations <i class="fa-solid fa-basket-shopping" style="margin-left: 10px;"></i>
-            </a>
-</div>
-        
-    <p class="affiliate-disclaimer">
-        * As an Amazon Associate, I earn from qualifying purchases. This helps support the research for this library!
-    </p>
+    <p class="affiliate-disclaimer">* As an Amazon Associate, I earn from qualifying purchases.</p>
 </section>
 
 <footer>
-    <section class="contact-section" id="contact">
-    <div style="max-width: 100%; margin: auto; background: var(--dark-green); padding: 10px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
-        <h2 style="text-align: center; margin-bottom: 25px; color: --var(white);">Let's Connect</h2>
+    <section id="contact">
+        <h2 style="color: var(--white);">Let's Connect</h2>
         <div class="social-contact-grid">
-    <a href="https://wa.me/17587235872" class="social-item" target="_blank">
-        <i style="color: --var(white);" class="fa-brands fa-whatsapp social-icon"></i>
-    </a>
-    <a href="https://www.facebook.com/share/1HLipef9e8/" class="social-item" target="_blank">
-        <i style="color: --var(white);" class="fa-brands fa-facebook social-icon"></i>
-    </a>
-    <a href="https://www.instagram.com/wiseandhealthy_living" class="social-item" target="_blank">
-        <i style="color: --var(white);" class="fa-brands fa-instagram social-icon"></i>        
-    </a>
-    <a href="mailto:wiseandhealthyliving@yahoo.com" class="social-item">
-        <i style="color: --var(white);" class="fa-solid fa-envelope social-icon"></i>
-    </a>
-</div>
-    </div>
+            <a href="https://wa.me/17587235872" class="social-item" target="_blank" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp social-icon"></i>
+            </a>
+            <a href="mailto:wiseandhealthyliving@yahoo.com" class="social-item" aria-label="Email">
+                <i class="fa-solid fa-envelope social-icon"></i>
+            </a>
+            
+            <a href="https://www.facebook.com/share/1CHbx9WVR6/" class="social-item" target="_blank" aria-label="WhatsApp">
+                <i class="fa-brands fa-facebook social-icon"></i>
+            </a>
+            <a href="https://www.threads.com/@wiseandhealthy_living" class="social-item" aria-label="Email">
+                <i class="fa-brands fa-threads social-icon"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/wiseandhealthy_living?igsh=eDU0bGE4N2MweXp4" class="social-item" target="_blank" aria-label="WhatsApp">
+                <i class="fa-brands fa-instagram social-icon"></i>
+            </a>
+            <a href="https://pin.it/1l3TyDXOS" class="social-item" aria-label="Email">
+                <i class="fa-brands fa-pinterest social-icon"></i>
+            </a>
+        </div>
     </section>
-    <br/>
+    <br>
     <div class="disclaimer-box">
         <strong>MEDICAL DISCLAIMER:</strong> This site does not provide medical advice. 
         <br>
-        <a href="disclaimer.html" style="color: var(--honey); text-decoration: underline; margin-right: 15px;">Read Disclaimer</a>
-        <a href="privacy.html" style="color: var(--honey); text-decoration: underline;">Privacy Policy</a>
+        <a href="disclaimer.html" style="color: var(--honey);">Read Disclaimer</a>
     </div>
-    <p style="font-size: 0.85rem; opacity: 0.8;"><i class="fa-regular fa-calendar-check"></i> Research Last Verified: <span id="lastUpdated"></span></p>
-    <p>&copy; 2026 Wise & Healthy Living | Natural Wisdom</p>
+    <p>&copy; 2026 Wise & Healthy Living</p>
 </footer>
-<button id="backToTop" onclick="scrollToTop()"><i class="fa-solid fa-arrow-up"></i></button>
-<a href="https://wa.me/17587235872" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<button id="backToTop" onclick="scrollToTop()" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<a href="https://wa.me/17587235872" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp" style="font-size: 2rem;"></i></a>
+
 <script>
-    // --- THEME MANAGEMENT ---
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
     const isDark = document.body.classList.contains('dark-theme');
@@ -775,162 +436,10 @@ function toggleTheme() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
-// --- LOADER & SEARCH LOGIC ---
-async function showLoader(ms = 500) {
-    const loader = document.getElementById('loader-overlay');
-    loader.style.display = 'flex';
-    await new Promise(r => setTimeout(r, ms));
-    loader.style.display = 'none';
-}
-
-function handleSearchInput() {
-    const input = document.getElementById('remedySearch');
-    document.getElementById('clearSearchBtn').style.display = input.value.length > 0 ? "block" : "none";
-    filterCards();
-}
-
-function clearSearch() {
-    document.getElementById('remedySearch').value = '';
-    handleSearchInput();
-}
-
-function filterCards() {
-    const val = document.getElementById('remedySearch').value.toLowerCase();
-    const cards = document.querySelectorAll('#remedyGrid .card');
-    const noResults = document.getElementById('noResults');
-    let visibleCount = 0;
-
-    cards.forEach(card => {
-        const content = card.getAttribute('data-tags') + card.querySelector('h3').innerText.toLowerCase();
-        if (content.includes(val)) {
-            card.style.display = "";
-            visibleCount++;
-        } else {
-            card.style.display = "none";
-        }
-    });
-
-    // Show or hide the "No Results" message
-    noResults.style.display = (visibleCount === 0) ? "block" : "none";
-}
-
-
-async function handleSearchButton() {
-    await showLoader(400);
-    filterCards();
-}
-
-// --- INTERACTIVE CARD FEATURES ---
-async function surpriseMe() {
-    await showLoader(600);
-    clearSearch();
-    const cards = document.querySelectorAll('#remedyGrid .card');
-    const target = cards[Math.floor(Math.random() * cards.length)];
-    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    target.classList.add('highlight-flash');
-    setTimeout(() => target.classList.remove('highlight-flash'), 2000);
-}
-
-function toggleReadMore(btn, herbName) {
-    const content = btn.previousElementSibling;
-    const isOpen = content.style.display === "block";
-    content.style.display = isOpen ? "none" : "block";
-    btn.innerText = isOpen ? "Read More..." : "Read Less";
-    
-    // Only add to history if opening the card
-    if (!isOpen && herbName) {
-        addToHistory(herbName);
-    }
-}
-
-// --- SEARCH HISTORY LOGIC ---
-const MAX_HISTORY = 5;
-
-function addToHistory(term) {
-    let history = JSON.parse(localStorage.getItem('remedyHistory')) || [];
-    history = history.filter(item => item !== term);
-    history.unshift(term);
-    if (history.length > MAX_HISTORY) history.pop();
-    localStorage.setItem('remedyHistory', JSON.stringify(history));
-    displayHistory();
-}
-
-function displayHistory() {
-    const history = JSON.parse(localStorage.getItem('remedyHistory')) || [];
-    const container = document.getElementById('recentSearchesContainer');
-    const list = document.getElementById('recentList');
-    
-    if (history.length === 0) {
-        container.style.display = "none";
-        return;
-    }
-    
-    container.style.display = "flex";
-    list.innerHTML = history.map(term => 
-        `<span class="recent-tag" onclick="quickSearch('${term}')">${term}</span>`
-    ).join('');
-}
-
-function quickSearch(term) {
-    const searchInput = document.getElementById('remedySearch'); // Fixed ID
-    searchInput.value = term;
-    filterCards();
-    searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-function clearHistory() {
-    localStorage.removeItem('remedyHistory');
-    displayHistory();
-}
-
-// --- SEASONAL & DYNAMIC CONTENT ---
-function updateSeasonalBanner() {
-    const month = new Date().getMonth();
-    const banner = document.getElementById('seasonalBanner');
-    const icon = document.getElementById('seasonIcon');
-    const title = document.getElementById('seasonTitle');
-    const tip = document.getElementById('seasonTip');
-
-    let seasonData = {};
-
-    if (month >= 2 && month <= 4) { // Spring
-        seasonData = { name: "Spring Awakening", icon: "fa-solid fa-seedling", tip: "Time for Dandelion & Nettles. Focus on liver support." };
-    } else if (month >= 5 && month <= 7) { // Summer
-        seasonData = { name: "Summer Vitality", icon: "fa-solid fa-sun", tip: "Harvest Peppermint. Stay hydrated with solar infusions." };
-    } else if (month >= 8 && month <= 10) { // Autumn
-        seasonData = { name: "Autumn Harvest", icon: "fa-solid fa-leaf", tip: "Elderberries are ripe! Build your immune shield." };
-    } else { // Winter
-        seasonData = { name: "Winter Restoration", icon: "fa-solid fa-snowflake", tip: "Focus on warming roots. Pine tea is rich in Vitamin C." };
-    }
-
-    title.innerText = seasonData.name;
-    icon.innerHTML = `<i class="${seasonData.icon}"></i>`;
-    tip.innerText = seasonData.tip;
-    banner.style.display = "block";
-}
-
-// --- UTILITIES ---
-function setLastUpdated() {
-    const d = new Date();
-    const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    document.getElementById("lastUpdated").innerText = `${months[d.getMonth()]} ${d.getFullYear()}`;
-}
-
 function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-// --- INITIALIZATION ---
 window.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('theme') === 'dark') toggleTheme();
-    updateSeasonalBanner();
-    displayHistory();
-    setLastUpdated();
-    
-    // Calculate read times
-    document.querySelectorAll('.card').forEach(card => {
-        const words = card.innerText.split(/\s+/).length;
-        const span = card.querySelector('.minutes');
-        if(span) span.innerText = Math.ceil(words / 200);
-    });
 });
 
 window.onscroll = () => {
@@ -942,4 +451,4 @@ window.onscroll = () => {
 </script>
 
 </body>
-    </html>
+</html>
