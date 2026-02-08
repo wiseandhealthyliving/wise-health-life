@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        html {
-    scroll-behavior: smooth;
-}
-
+        html { scroll-behavior: smooth; }
         :root {
             --dark-green: #1b4332;
             --mid-green: #2d6a4f;
@@ -21,341 +18,293 @@
             --text-color: #333;
         }
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            color: var(--text-color);
-            background-color: var(--white);
-            line-height: 1.6;
-        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; color: var(--text-color); background-color: var(--white); line-height: 1.6; }
 
-        header { 
-            text-align: center; 
-            padding: 60px 20px; 
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); 
-            background-size: cover; 
-            background-position: center; 
-        }
-
+        header { text-align: center; padding: 60px 20px; background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1502330029746-60143f8045d5?auto=format&fit=crop&q=80&w=1000'); background-size: cover; background-position: center; }
         .logo { max-width: 300px; height: auto; }
 
-        nav { 
-            background: var(--dark-green); 
-            padding: 15px 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            text-align: center; 
-        }
-
-        nav a { 
-            color: white; 
-            text-decoration: none; 
-            padding: 10px 20px; 
-            font-weight: 600; 
-            text-transform: uppercase; 
-            font-size: 0.85rem; 
-            transition: 0.3s; 
-        }
-
+        nav { background: var(--dark-green); padding: 15px 0; position: sticky; top: 0; z-index: 1000; text-align: center; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
         nav a:hover { color: var(--honey); }
 
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; border-top: 3px solid var(--dark-green); }
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-        .filter-group {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
+        .search-container { max-width: 500px; margin: 0 auto 30px; position: relative; }
+        .search-input { width: 100%; padding: 15px 45px 15px 20px; border-radius: 30px; border: 2px solid var(--honey); font-size: 1rem; outline: none; box-sizing: border-box; }
 
-        .filter-btn {
-            background: var(--soft-gray);
-            border: 2px solid var(--honey);
-            padding: 8px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            color: var(--dark-green);
-            transition: 0.3s;
-        }
+        .filter-group { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+        .filter-btn { background: var(--soft-gray); border: 2px solid var(--honey); padding: 8px 20px; border-radius: 30px; cursor: pointer; font-weight: bold; color: var(--dark-green); transition: 0.3s; font-size: 0.85rem; }
+        .filter-btn.active, .filter-btn:hover { background: var(--honey); color: white; }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--honey);
-            color: white;
-        }
-
-        .affiliate-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, opacity 0.4s ease;
-            border: 1px solid #eee;
-            position: relative;
-            animation: fadeIn 0.5s ease forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        .affiliate-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid #eee; position: relative; }
         .product-card:hover { transform: translateY(-5px); }
-
-        .product-img {
-            width: 100%;
-            height: 220px;
-            background-size: cover;
-            background-position: center;
-            background-color: #eee;
+        
+        .product-img { 
+            width: 100%; 
+            height: 220px; 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-color: #eee; 
         }
 
         .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-category { font-size: 0.7rem; text-transform: uppercase; color: var(--honey); font-weight: bold; margin-bottom: 5px; }
         
-        .product-category { 
-            font-size: 0.7rem; 
-            text-transform: uppercase; 
-            color: var(--honey); 
-            font-weight: bold; 
-            margin-bottom: 5px;
-        }
-
-        .product-info h3 { margin: 0 0 10px 0; color: var(--dark-green); }
-        .product-info p { font-size: 0.9rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
-
-        .buy-btn {
-            background: var(--mid-green);
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
+        .buy-btn { background: var(--mid-green); color: white; text-align: center; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; transition: 0.3s; border: none; cursor: pointer; width: 100%; font-family: inherit; display: inline-block; }
         .buy-btn:hover { background: var(--honey); }
 
-        .beginner-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--dark-green);
-            color: var(--honey);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            z-index: 10;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            border: 1px solid var(--honey);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        .beginner-badge { position: absolute; top: 15px; left: 15px; background: var(--dark-green); color: var(--honey); padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; z-index: 10; border: 1px solid var(--honey); }
 
-        .beginner-badge i {
-            font-size: 0.8rem;
-            animation: starPulse 2s infinite;
-        }
-
-        @keyframes starPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        #disclaimerModal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter: blur(5px); align-items:center; justify-content:center; }
+        .modal-content { background:white; padding:30px; border-radius:15px; max-width:450px; width:90%; text-align:center; position:relative; border-top: 5px solid var(--honey); }
 
         footer { background: var(--dark-green); color: white; text-align: center; padding: 60px 20px; margin-top: 60px;}
-        .disclaimer-box { font-size: 0.8rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.8; border: 1px solid rgba(255,255,255,0.2); padding: 15px; }
-
-        @media (max-width: 600px) {
-            header { padding: 40px 20px; }
-            .product-card { max-width: 100%; }
-        }
+        .stats-bar { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+        .stat-item { text-align: center; }
+        .stat-number { display: block; font-size: 1.5rem; font-weight: bold; color: var(--honey); }
+        .stat-label { font-size: 0.8rem; text-transform: uppercase; opacity: 0.8; }
     </style>
 </head>
 <body>
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="index.html#remedies">Remedies</a>
-    <a href="store.html" style="color: var(--honey);">Shop</a>
-    <a href="blog.html">Blog</a>
+    <a style="color: var(--honey);" href="herbal-store.html">Herb Store</a>
+    <a href="#safety">Safety</a>
     <a href="about.html">About</a>
 </nav>
 
 <header>
-    <img src="wiselogo.png" alt="Wise and Healthy Living Wellness Shop" class="logo">
+    <img src="wiselogo.png" alt="Wise & Healthy Living" class="logo">
     <h1 style="color: var(--dark-green);">The Herbalist's Toolbelt</h1>
-    <p style="color: var(--honey);">Hand-selected supplies to elevate your natural living journey.</p>
+    <p style="color: var(--honey);">Curated supplies for a natural, grounded lifestyle.</p>
 </header>
-<section style="max-width: 800px; margin: 40px auto 0; text-align: center; padding: 0 20px;">
-    <h2 style="color: var(--dark-green); font-family: 'Georgia', serif;">Equipping Your Home Apothecary</h2>
-    <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
-        Building a lifestyle centered on <strong>natural wellness</strong> requires more than just recipes; it requires the right tools for the craft. We have curated <em>The Herbalist's Toolbelt</em> to take the guesswork out of your journey. From <strong>organic apothecary supplies</strong> to professional-grade <strong>freeze drying equipment</strong>, every item here is selected for its quality, durability, and ability to preserve the potent life-force of your herbs.
-    </p>
-    <div style="width: 50px; height: 3px; background: var(--honey); margin: 20px auto;"></div>
-</section>
 
 <main class="container">
+    <div id="checklist-cta" style="background: var(--cream); border: 2px dashed var(--honey); padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 40px;">
+        <h3 style="color: var(--dark-green);">Free: The Home Apothecary Inventory Checklist</h3>
+        <p>A 2-page guide to organizing your 37 essential herbs.</p>
+        <button onclick="toggleSignup()" class="buy-btn" style="width: auto; padding: 12px 30px;"><i class="fa-solid fa-file-pdf"></i> Get the Free Guide</button>
+        <div id="signup-form" style="display: none; margin-top: 20px;">
+            <input type="email" placeholder="Your Email Address" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 250px;">
+            <button onclick="alert('PDF Sent! Check your inbox.')" style="background: var(--dark-green); color: white; border: none; padding: 10px 24px; border-radius: 5px; cursor: pointer; font-weight: bold;">Send PDF</button>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <input type="text" id="herbSearch" class="search-input" onkeyup="searchHerbs()" placeholder="Search by name or action (e.g. 'Sleep' or 'Nettle')...">
+        <i class="fa-solid fa-magnifying-glass" style="position: absolute; right: 20px; top: 18px; color: var(--mid-green);"></i>
+    </div>
+
     <div class="filter-group">
-        <button class="filter-btn active" onclick="filterStore('all', this)">All Items</button>
-        <button class="filter-btn" onclick="filterStore('organic', this)">Organic Meds</button>
-        <button class="filter-btn" onclick="filterStore('storage', this)">Storage</button>
-        <button class="filter-btn" onclick="filterStore('brewing', this)">Brewing</button>
+        <button class="filter-btn active" onclick="filterStore('all', this)">All Herbs</button>
+        <button class="filter-btn" onclick="filterStore('adaptogen', this)">Adaptogens</button>
+        <button class="filter-btn" onclick="filterStore('nervine', this)">Sleep & Calm</button>
+        <button class="filter-btn" onclick="filterStore('nutritive', this)">Daily Nutrition</button>
+        <button class="filter-btn" onclick="filterStore('respiratory', this)">Respiratory</button>
         <button class="filter-btn" onclick="filterStore('topical', this)">Topicals</button>
-        <button class="filter-btn" onclick="filterStore('dryer', this)">Freeze Dryers</button>
+        <button class="filter-btn" onclick="filterStore('culinary', this)">Kitchen Healers</button>
     </div>
 
-    <div class="affiliate-grid" id="storeGrid">
-
-        <div class="product-card" data-category="dryer">
-            <div class="beginner-badge"><i class="fa-solid fa-star"></i> Pro Choice</div>
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1584263347416-85a696b4eda7?auto=format&fit=crop&q=80&w=500');"></div>
-            <div class="product-info">
-                <span class="product-category">Freeze Dryers</span>
-                <h3>Home Freeze Dryer</h3>
-                <p>Essential for long lasting Freeze dried herbs, fruits, and medicinal meals.</p>
-                <a href="#" target="_blank" class="buy-btn">View Options <i class="fa-solid fa-external-link"></i></a>
-            </div>
-        </div>
-
-        <div class="product-card" data-category="organic">
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?auto=format&fit=crop&q=80&w=500');"></div>
-            <div class="product-info">
-                <span class="product-category">Organic Meds</span>
-                <h3>Elderberry Syrup Kit</h3>
-                <p>Organic dried elderberries with warming spices. Just add honey and water.</p>
-                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-            </div>
-        </div>
-
-        <div class="product-card" data-category="storage">
-            <div class="beginner-badge"><i class="fa-solid fa-star"></i> Essential</div>
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544650039-22886fbb4323?auto=format&fit=crop&q=80&w=500');"></div>
-            <div class="product-info">
-                <span class="product-category">Storage</span>
-                <h3>Amber Glass Apothecary Jars</h3>
-                <p>Essential for protecting delicate herbs and volatile oils from UV light degradation.</p>
-                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-            </div>
-        </div>
-
-        <div class="product-card" data-category="brewing">
-            <div class="beginner-badge"><i class="fa-solid fa-star"></i> Essential</div>
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1576092729250-19c13731488a?auto=format&fit=crop&q=80&w=500');"></div>
-            <div class="product-info">
-                <span class="product-category">Brewing</span>
-                <h3>Fine Mesh Tea Infuser</h3>
-                <p>Stainless steel with extra-fine holes to keep sediment out of your medicinal infusions.</p>
-                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-            </div>
-        </div>
-
-        <div class="product-card" data-category="topical">
-            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&q=80&w=500');"></div>
-            <div class="product-info">
-                <span class="product-category">Topical</span>
-                <h3>Organic Castor Oil</h3>
-                <p>Hexane-free and cold-pressed. Perfect for liver packs and skin hydration.</p>
-                <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-            </div>
-        </div>
-
-        <div class="product-card" data-category="organic">
-    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1599839441901-729930776960?auto=format&fit=crop&q=80&w=500');"></div>
-    <div class="product-info">
-        <span class="product-category">Organic Meds</span>
-        <h3>Bulk Organic Calendula</h3>
-        <p>Sun-dried whole petals. A must-have for creating soothing skin salves and lymphatic tea blends.</p>
-        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-    </div>
-</div>
-
-        <div class="product-card" data-category="brewing">
-    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544787210-22166f364005?auto=format&fit=crop&q=80&w=500');"></div>
-    <div class="product-info">
-        <span class="product-category">Brewing</span>
-        <h3>Borosilicate Glass Tea Pot</h3>
-        <p>Heat-resistant glass perfect for simmering roots and barks without metallic interference.</p>
-        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-    </div>
-</div>
-
-        <div class="product-card" data-category="storage">
-    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1601306359974-9896798031e4?auto=format&fit=crop&q=80&w=500');"></div>
-    <div class="product-info">
-        <span class="product-category">Storage</span>
-        <h3>Apothecary Labeling Kit</h3>
-        <p>Waterproof chalkboard labels. Never forget the "Date Created" or "Botanical Name" of your remedies again.</p>
-        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-    </div>
-</div>
-
-        <div class="product-card" data-category="topical">
-    <div class="beginner-badge"><i class="fa-solid fa-star"></i> DIY Essential</div>
-    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1589134707255-8d5918739779?auto=format&fit=crop&q=80&w=500');"></div>
-    <div class="product-info">
-        <span class="product-category">Topical</span>
-        <h3>Organic Beeswax Pellets</h3>
-        <p>Triple-filtered and easy to melt. The secret ingredient to perfect herbal salves and lip balms.</p>
-        <a href="#" target="_blank" class="buy-btn">View on Amazon <i class="fa-solid fa-external-link"></i></a>
-    </div>
-</div>
-
-        <div class="product-card" data-category="dryer">
-    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=500');"></div>
-    <div class="product-info">
-        <span class="product-category">Freeze Dryers</span>
-        <h3>Silicone Tray Liners</h3>
-        <p>Custom-fit mats that make removing sticky herbs and powders from your freeze dryer a breeze.</p>
-        <a href="#" target="_blank" class="buy-btn">View Options <i class="fa-solid fa-external-link"></i></a>
-    </div>
-</div>
-
-        
+    <div style="text-align: center; margin-bottom: 40px;">
+        <a href="#safety" class="buy-btn" style="width: auto; padding: 12px 25px;">
+            <i class="fa-solid fa-shield-halved"></i> Jump to the Safety Guide
+        </a>
     </div>
 
-    <p class="affiliate-disclaimer">
-        <strong>Transparency Notice:</strong> As an Amazon Associate, I earn from qualifying purchases. This helps keep the Research Library free!
-    </p>
+    <div class="affiliate-grid" id="storeGrid"></div>
 </main>
 
-<footer>
-    <div class="disclaimer-box">
-        <strong>MEDICAL DISCLAIMER:</strong> This store recommends tools, not prescriptions. Always consult a professional before beginning herbal protocols.
+<div id="disclaimerModal">
+    <div class="modal-content">
+        <h3 style="color: var(--dark-green);">Medical Disclaimer</h3>
+        <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;">While herbs are natural, they are powerful. Consult a healthcare professional before starting new protocols.</p>
+        <a id="modalConfirmBtn" href="#" target="_blank" onclick="closeDisclaimer()" class="buy-btn" style="display: block; margin-bottom: 20px;">Accept & View on Amazon</a>
+        
+        <div id="relatedSection" style="border-top: 1px solid #eee; padding-top: 15px; display:none;">
+            <p style="font-size: 0.75rem; color: var(--honey); font-weight: bold; text-transform: uppercase;">Essential Tool for this Herb:</p>
+            <a id="toolLink" href="#" target="_blank" style="display: flex; align-items: center; gap: 10px; text-decoration: none; background: var(--soft-gray); padding: 12px; border-radius: 8px;">
+                <i class="fa-solid fa-mortar-pestle" style="color: var(--mid-green);"></i>
+                <span id="toolName" style="font-size: 0.9rem; color: var(--dark-green); font-weight: bold;"></span>
+            </a>
+        </div>
+        <button onclick="closeDisclaimer()" style="background:none; border:none; color:#999; margin-top:20px; cursor:pointer; font-size: 0.8rem;">Cancel</button>
     </div>
-    <p>&copy; 2026 Wise & Healthy Living | Natural Wisdom</p>
+</div>
+
+<section id="safety" class="container" style="background: var(--soft-gray); border-radius: 15px; padding: 30px; margin-top: 40px; border-left: 5px solid var(--mid-green); scroll-margin-top: 100px;">
+    <h3 style="color: var(--dark-green); margin-top: 0;"><i class="fa-solid fa-shield-halved"></i> Apothecary Safety & Storage</h3>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; font-size: 0.9rem;">
+        <div>
+            <h4 style="color: var(--mid-green); margin-bottom: 5px;">Storage Rules</h4>
+            <ul style="padding-left: 20px; margin: 0;">
+                <li><strong>Cool & Dark:</strong> Store in a cupboard away from the stove or sunlight.</li>
+                <li><strong>Airtight:</strong> Use glass jars with tight lids to prevent oxidation.</li>
+                <li><strong>Labeling:</strong> Always mark the date of purchase and the common/Latin name.</li>
+            </ul>
+        </div>
+        <div>
+            <h4 style="color: var(--mid-green); margin-bottom: 5px;">Safety First</h4>
+            <ul style="padding-left: 20px; margin: 0;">
+                <li>Check for interactions if you are on prescription medication.</li>
+                <li>Verify "Pregnancy Safe" status for each herb before use.</li>
+                <li>Discard any herbs that show signs of moisture or mold.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div style="max-width: 800px; margin: 0 auto 20px; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; opacity: 0.7; line-height: 1.4;">
+        <p style="margin-bottom: 15px;">
+            <strong>Affiliate Disclosure:</strong> Wise & Healthy Living is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, I earn from qualifying purchases at no additional cost to you.
+        </p>
+        <p>
+            <strong>Disclaimer & Terms:</strong> All information provided on this site is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. These statements have not been evaluated by the Food and Drug Administration. The products listed are not intended to diagnose, treat, cure, or prevent any disease. By using this site, you acknowledge that you are responsible for your own health decisions.
+        </p>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item"><span class="stat-number">50</span><span class="stat-label">Herbal Actions</span></div>
+        <div class="stat-item"><span class="stat-number">2026</span><span class="stat-label">Edition</span></div>
+        <div class="stat-item"><span class="stat-number">Expert</span><span class="stat-label">Curation</span></div>
+    </div>
+    <p>&copy; 2026 Wise & Healthy Living | Live Healthy • Live Wisely</p>
 </footer>
 
+<button id="backToTop" onclick="scrollToTop()" style="display: none; position: fixed; bottom: 30px; right: 30px; z-index: 1000; background: var(--honey); color: white; border: none; padding: 15px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: 0.3s; width: 50px; height: 50px;">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
 <script>
-    function filterStore(category, btn) {
-        // Update button UI
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+// HERB DATA (Sorted Alphabetically)
+const herbData = [
+    { img: "images/apple-mint.jpg", name: "Apple Mint", cat: "culinary", badge: "Refreshing", desc: "Fuzzy leaves with a fruity undertone, excellent for cooling summer infusions.", link: "#" },
+    { img: "images/demo.jpg", name: "Arnica", cat: "topical", badge: "Aches", desc: "The go-to for muscle trauma and swelling.", link: "#" },
+    { img: "images/arrowroot.jpg", name: "Arrowroot", cat: "nutritive", badge: "Gut Soothing", desc: "A gentle, starchy powder used to soothe the digestive lining and thicken remedies.", link: "#" },
+    { img: "images/ashwagandha.jpg", name: "Ashwagandha", cat: "adaptogen", badge: "Stress", desc: "Helps the body adapt to physical and mental stress.", link: "#", relatedTool: "Amber Storage Jars", toolLink: "#" },
+    { img: "images/astragalus.jpg", name: "Astragalus", cat: "adaptogen", badge: "Vitality", desc: "Root used for building long-term immune strength.", link: "#" },
+    { img: "images/burdock.jpg", name: "Burdock Root", cat: "nutritive", badge: "Blood Purifier", desc: "Deeply grounding root used to clear the skin and support liver detoxification.", link: "#" },
+    { img: "images/calendula.jpg", name: "Calendula", cat: "topical", badge: "Skin", desc: "Gentle healing petals for salves and oils.", link: "#", relatedTool: "Organic Beeswax", toolLink: "#" },
+    { img: "images/celery-seed.jpg", name: "Celery Seed", cat: "nutritive", badge: "Fluid Balance", desc: "Concentrated seeds used to support healthy kidney function and joint comfort.", link: "#" },
+    { img: "images/chamomile.jpg", name: "Chamomile", cat: "nervine", badge: "Sleep", desc: "Calming bedtime flower tea.", link: "#" },
+    { img: "images/chia.jpg", name: "Chia Seeds", cat: "nutritive", badge: "Omega-3", desc: "Fiber-rich seeds that provide sustained energy and support healthy hydration.", link: "#" },
+    { img: "images/chives.jpg", name: "Chives", cat: "culinary", badge: "Bone Health", desc: "Rich in Vitamin K; a nutrient-dense kitchen staple.", link: "#" },
+    { img: "images/chocolate-mint.jpg", name: "Chocolate Mint", cat: "culinary", badge: "Dessert Herb", desc: "Indulgent aroma used in teas and tinctures for a healthy 'sweet' fix.", link: "#" },
+    { img: "images/cinnamon.jpg", name: "Cinnamon", cat: "culinary", badge: "Warming", desc: "Supports healthy blood sugar and warmth.", link: "#" },
+    { img: "images/cloves.jpg", name: "Cloves", cat: "culinary", badge: "Antioxidant", desc: "Highest antioxidant spice for deep health support.", link: "#", relatedTool: "Mortar & Pestle", toolLink: "#" },
+    { img: "images/comfrey.jpg", name: "Comfrey", cat: "topical", badge: "Repair", desc: "Used externally for bruises and bone support.", link: "#" },
+    { img: "images/curry-leaf.jpg", name: "Curry Leaf", cat: "culinary", badge: "Metabolism", desc: "Aromatic leaves used in traditional medicine to support healthy blood sugar and digestion.", link: "#" },
+    { img: "images/dandelion.jpg", name: "Dandelion Root", cat: "nutritive", badge: "Liver", desc: "Earthy root that supports healthy detoxification.", link: "#" },
+    { img: "images/echinacea.jpg", name: "Echinacea", cat: "respiratory", badge: "Defense", desc: "Builds seasonal resistance and immune health.", link: "#" },
+    { img: "images/elderberry.jpg", name: "Elderberry", cat: "respiratory", badge: "Immune", desc: "Potent berry for seasonal immune support.", link: "#", relatedTool: "Fine Mesh Strainer", toolLink: "#" },
+    { img: "images/ginger.jpg", name: "Ginger Root", cat: "culinary", badge: "Digestion", desc: "Warming spice that aids digestion and circulation.", link: "#", relatedTool: "Ceramic Ginger Grater", toolLink: "#" },
+    { img: "images/hibiscus.jpg", name: "Hibiscus", cat: "nutritive", badge: "Heart", desc: "Tart berry rich in heart-healthy Vitamin C.", link: "#" },
+    { img: "images/tulsi.jpg", name: "Holy Basil (Tulsi)", cat: "adaptogen", badge: "Mind", desc: "Promotes mental clarity and emotional resilience.", link: "#" },
+    { img: "images/lavender.jpg", name: "Lavender Buds", cat: "nervine", badge: "Calm", desc: "Aromatic flowers for relaxation and sleep.", link: "#" },
+    { img: "images/lemon-balm.jpg", name: "Lemon Balm", cat: "nervine", badge: "Uplifting", desc: "Calms the nerves while lifting the spirits.", link: "#" },
+    { img: "images/lemon-mint.jpg", name: "Lemon Mint", cat: "nervine", badge: "Aromatic", desc: "Citrus-scented mint that supports relaxation and eases digestive tension.", link: "#" },
+    { img: "images/licorice.jpg", name: "Licorice Root", cat: "adaptogen", badge: "Adrenals", desc: "Harmonizing root for energy and hormone support.", link: "#" },
+    { img: "images/marshmallow.jpg", name: "Marshmallow Root", cat: "respiratory", badge: "Soothing", desc: "Mucilage-rich root for throat and gut coatings.", link: "#" },
+    { img: "images/milk-thistle.jpg", name: "Milk Thistle", cat: "nutritive", badge: "Protection", desc: "Protects the liver from environmental toxins.", link: "#" },
+    { img: "images/moringa.jpg", name: "Moringa", cat: "nutritive", badge: "Superfood", desc: "The 'Miracle Tree' packed with proteins and minerals.", link: "#" },
+    { img: "images/mullein.jpg", name: "Mullein", cat: "respiratory", badge: "Lungs", desc: "Soft leaf used to support clear, deep breathing.", link: "#" },
+    { img: "images/oatstraw.jpg", name: "Oatstraw", cat: "nutritive", badge: "Nervous System", desc: "Highly nutritive herb for frayed nerves.", link: "#" },
+    { img: "images/parsley.jpg", name: "Parsley", cat: "nutritive", badge: "Vitamin K", desc: "Deeply alkalizing and rich in chlorophyll, minerals, and bone-building nutrients.", link: "#" },
+    { img: "images/passionflower.jpg", name: "Passionflower", cat: "nervine", badge: "Anti-Anxiety", desc: "Helps turn off 'brain chatter' before bed.", link: "#" },
+    { img: "images/peppermint.jpg", name: "Peppermint", cat: "nervine", badge: "Focus", desc: "High menthol content to clear the mind and cool the digestive tract.", link: "#", relatedTool: "Fine Mesh Tea Infuser", toolLink: "#" },
+    { img: "images/plantain.jpg", name: "Plantain", cat: "topical", badge: "Drawing", desc: "Extracts toxins from bites and stings.", link: "#" },
+    { img: "images/raspberry-leaf.jpg", name: "Raspberry Leaf", cat: "nutritive", badge: "Womens", desc: "Reproductive tonic rich in iron and magnesium.", link: "#" },
+    { img: "images/rosehips.jpg", name: "Rosehips", cat: "nutritive", badge: "Antioxidant", desc: "Vitamin C powerhouse for skin and immunity.", link: "#" },
+    { img: "images/rosemary.jpg", name: "Rosemary", cat: "topical", badge: "Stimulating", desc: "Improves circulation for hair and memory.", link: "#" },
+    { img: "images/sage.jpg", name: "Sage", cat: "culinary", badge: "Focus", desc: "Traditional herb for memory and throat health.", link: "#" },
+    { img: "images/skullcap.jpg", name: "Skullcap", cat: "nervine", badge: "Nerve Tonic", desc: "Excellent for tension and mental racing.", link: "#" },
+    { img: "images/slippery-elm.jpg", name: "Slippery Elm", cat: "nutritive", badge: "Healing", desc: "Powdered bark to soothe the entire digestive tract.", link: "#" },
+    { img: "images/sorrel.jpg", name: "Sorrel", cat: "nutritive", badge: "Vitamin C", desc: "Tart herb known for high fiber and cooling properties.", link: "#" },
+    { img: "images/spearmint.jpg", name: "Spearmint", cat: "culinary", badge: "Gentle", desc: "A milder mint perfect for daily refreshment and soothing the stomach.", link: "#" },
+    { img: "images/star-anise.jpg", name: "Star Anise", cat: "respiratory", badge: "Immune Support", desc: "Beautiful seed pods containing shikimic acid, traditionally used for winter wellness.", link: "#" },
+    { img: "images/nettle.jpg", name: "Stinging Nettle", cat: "nutritive", badge: "Vitamins", desc: "Mineral-rich leaves for daily nourishing infusions.", link: "#" },
+    { img: "images/tarragon.jpg", name: "Tarragon", cat: "culinary", badge: "Digestive", desc: "Helps soothe digestion and dental discomfort.", link: "#" },
+    { img: "images/thyme.jpg", name: "Thyme", cat: "respiratory", badge: "Clearance", desc: "Kitchen herb that supports clear lungs.", link: "#" },
+    { img: "images/turmeric.jpg", name: "Turmeric", cat: "culinary", badge: "Anti-Inflammatory", desc: "Golden root rich in curcumin for joint health and whole-body vitality.", link: "#", relatedTool: "Mortar & Pestle", toolLink: "#" },
+    { img: "images/valerian.jpg", name: "Valerian Root", cat: "nervine", badge: "Deep Sleep", desc: "Powerful root for reaching a heavy, restful state.", link: "#" },
+    { img: "images/yarrow.jpg", name: "Yarrow", cat: "topical", badge: "First Aid", desc: "Stops minor bleeding and supports fevers.", link: "#" }
+];
 
-        // Filter cards within the specific grid
-        const cards = document.querySelectorAll('#storeGrid .product-card');
-        cards.forEach(card => {
-            if (category === 'all' || card.getAttribute('data-category') === category) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+function initStore() {
+    const grid = document.getElementById('storeGrid');
+    const defaultImg = "images/coming-soon.jpg";
+
+    grid.innerHTML = herbData.map(herb => `
+        <div class="product-card" data-category="${herb.cat}">
+            <div class="beginner-badge"><i class="fa-solid fa-star"></i> ${herb.badge}</div>
+            <div class="product-img" style="background-image: url('${herb.img || defaultImg}');"></div>
+            <div class="product-info">
+                <span class="product-category">
+                    ${herb.cat.replace('adaptogen','Stress Support')
+                              .replace('nervine','Sleep & Calm')
+                              .replace('nutritive','Daily Nutrition')}
+                </span>
+                <h3>${herb.name}</h3>
+                <p>${herb.desc}</p>
+                <button onclick="openDisclaimer('${herb.name}')" class="buy-btn">
+                    View on Amazon <i class="fa-solid fa-external-link"></i>
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function searchHerbs() {
+    const input = document.getElementById('herbSearch').value.toLowerCase();
+    document.querySelectorAll('.product-card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(input) ? "flex" : "none";
+    });
+}
+
+function filterStore(cat, btn) {
+    document.getElementById('herbSearch').value = "";
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.category === cat) ? "flex" : "none";
+    });
+}
+
+function openDisclaimer(name) {
+    const herb = herbData.find(h => h.name === name);
+    const modal = document.getElementById('disclaimerModal');
+    document.getElementById('modalConfirmBtn').href = herb.link;
+    const rel = document.getElementById('relatedSection');
+    if(herb.relatedTool) {
+        rel.style.display = "block";
+        document.getElementById('toolName').innerText = herb.relatedTool;
+        document.getElementById('toolLink').href = herb.toolLink;
+    } else { rel.style.display = "none"; }
+    modal.style.display = "flex";
+}
+
+function closeDisclaimer() { document.getElementById('disclaimerModal').style.display = "none"; }
+function toggleSignup() { const f = document.getElementById('signup-form'); f.style.display = f.style.display === 'none' ? 'block' : 'none'; }
+
+// Global Scroll Event
+window.onscroll = function() {
+    const btn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
     }
-</script>
+};
 
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.onload = initStore;
+</script>
 </body>
 </html>
