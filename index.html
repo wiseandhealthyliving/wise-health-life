@@ -105,6 +105,49 @@
 
         /
 
+           .herbs-store {
+        background: var(--white);
+        color: var(--dark-green);
+        padding: 50px 20px;
+        margin: 20px 10px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* The "lift" effect */
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .herbs-store h2 {
+        color: var(--dark-green);
+        margin-top: 0;
+    }
+
+    .btn-dark-green {
+        background: var(--dark-green);
+        color: var(--white);
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: bold;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .btn-dark-green:hover {
+        background: var(--mid-green);
+        transform: translateY(-2px);
+    }
+
+    /* Target dark theme adjustment */
+    body.dark-theme .herbs-store {
+        background: #1a1a1a; /* Slightly lighter than the background to maintain the "lift" */
+        color: var(--honey);
+    }
+    body.dark-theme .herbs-store h2 { color: var(--honey); }
+
           /* Blog Guide */
         .blog-preview-grid {
     display: grid;
@@ -327,6 +370,18 @@ body.dark-theme .blog-content h3 { color: var(--honey); }
     </div>
 </section>
 
+    <section id="herbsStore" class="herbs-store">
+    <div class="tea-cta-visual" style="color: var(--mid-green); animation: none;">
+        <i class="fa-solid fa-leaf"></i>
+    </div>
+    
+    <div class="tea-cta-text" style="text-align: center;">
+        <h2>Premium Botanical Sourcing</h2>
+        <p>Looking for the highest quality dried herbs? Visit our curated shop for lab-tested, organic selections.</p>
+        <a href="store.html" class="btn-dark-green"><i class="fa-solid fa-shop"></i> Browse the Herb Store</a>
+    </div>
+    </section>
+
 <section id="teaguide" class="tea-guide-cta">
     <div class="tea-cta-text">
         <h2>Perfect Your Brew</h2>
@@ -394,8 +449,7 @@ body.dark-theme .blog-content h3 { color: var(--honey); }
                 <a href="https://amzn.to/4chI6EB" target="_blank" class="buy-btn">View on Amazon</a>
             </div>
         </div>
-    </div>
-    <a href="store.html" class="center-block btn-primary" style="margin: 5% auto;">Check Out the Store <i class="fa-solid fa-arrow-right"></i></a>
+    </div>    
 </div>
     <p class="affiliate-disclaimer">* As an Amazon Associate, I earn from qualifying purchases.</p>
 </section>
