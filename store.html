@@ -179,58 +179,58 @@
 </button>
 
 <script>
-// HERB DATA (Sorted Alphabetically)
+// HERB DATA (Sorted Alphabetically with dual links)
 const herbData = [
-    { img: "images/applemint.jpg", name: "Apple Mint", cat: "culinary", badge: "Refreshing", desc: "Fuzzy leaves with a fruity undertone, excellent for cooling summer infusions.", link: "https://amzn.to/403GnLU" },
-    { img: "images/arnica.jpg", name: "Arnica", cat: "topical", badge: "Aches", desc: "The go-to for muscle trauma and swelling.", link: "https://amzn.to/4atQxu9" },
-    { img: "images/arrowroot.jpg", name: "Arrowroot", cat: "nutritive", badge: "Gut Soothing", desc: "A gentle, starchy powder used to soothe the digestive lining and thicken remedies.", link: "#" },
-    { img: "images/ashwagandha.jpg", name: "Ashwagandha", cat: "adaptogen", badge: "Stress", desc: "Helps the body adapt to physical and mental stress.", link: "#", relatedTool: "Amber Storage Jars", toolLink: "#" },
-    { img: "images/astragalus.jpg", name: "Astragalus", cat: "adaptogen", badge: "Vitality", desc: "Root used for building long-term immune strength.", link: "#" },
-    { img: "images/burdock.jpg", name: "Burdock Root", cat: "nutritive", badge: "Blood Purifier", desc: "Deeply grounding root used to clear the skin and support liver detoxification.", link: "#" },
-    { img: "images/calendula.jpg", name: "Calendula", cat: "topical", badge: "Skin", desc: "Gentle healing petals for salves and oils.", link: "#", relatedTool: "Organic Beeswax", toolLink: "#" },
-    { img: "images/celery-seed.jpg", name: "Celery Seed", cat: "nutritive", badge: "Fluid Balance", desc: "Concentrated seeds used to support healthy kidney function and joint comfort.", link: "#" },
-    { img: "images/chamomile.jpg", name: "Chamomile", cat: "nervine", badge: "Sleep", desc: "Calming bedtime flower tea.", link: "#" },
-    { img: "images/chia.jpg", name: "Chia Seeds", cat: "nutritive", badge: "Omega-3", desc: "Fiber-rich seeds that provide sustained energy and support healthy hydration.", link: "#" },
-    { img: "images/chives.jpg", name: "Chives", cat: "culinary", badge: "Bone Health", desc: "Rich in Vitamin K; a nutrient-dense kitchen staple.", link: "#" },
-    { img: "images/chocolate-mint.jpg", name: "Chocolate Mint", cat: "culinary", badge: "Dessert Herb", desc: "Indulgent aroma used in teas and tinctures for a healthy 'sweet' fix.", link: "#" },
-    { img: "images/cinnamon.jpg", name: "Cinnamon", cat: "culinary", badge: "Warming", desc: "Supports healthy blood sugar and warmth.", link: "#" },
-    { img: "images/cloves.jpg", name: "Cloves", cat: "culinary", badge: "Antioxidant", desc: "Highest antioxidant spice for deep health support.", link: "#", relatedTool: "Mortar & Pestle", toolLink: "#" },
-    { img: "images/comfrey.jpg", name: "Comfrey", cat: "topical", badge: "Repair", desc: "Used externally for bruises and bone support.", link: "#" },
-    { img: "images/curryleaf.jpg", name: "Curry Leaf", cat: "culinary", badge: "Metabolism", desc: "Aromatic leaves used in traditional medicine to support healthy blood sugar and digestion.", link: "#" },
-    { img: "images/dandelion.jpg", name: "Dandelion Root", cat: "nutritive", badge: "Liver", desc: "Earthy root that supports healthy detoxification.", link: "#" },
-    { img: "images/echinacea.jpg", name: "Echinacea", cat: "respiratory", badge: "Defense", desc: "Builds seasonal resistance and immune health.", link: "#" },
-    { img: "images/elderberry.jpg", name: "Elderberry", cat: "respiratory", badge: "Immune", desc: "Potent berry for seasonal immune support.", link: "#", relatedTool: "Fine Mesh Strainer", toolLink: "#" },
-    { img: "images/ginger.jpg", name: "Ginger Root", cat: "culinary", badge: "Digestion", desc: "Warming spice that aids digestion and circulation.", link: "#", relatedTool: "Ceramic Ginger Grater", toolLink: "#" },
-    { img: "images/hibiscus.jpg", name: "Hibiscus", cat: "nutritive", badge: "Heart", desc: "Tart berry rich in heart-healthy Vitamin C.", link: "#" },
-    { img: "images/tulsi.jpg", name: "Holy Basil (Tulsi)", cat: "adaptogen", badge: "Mind", desc: "Promotes mental clarity and emotional resilience.", link: "#" },
-    { img: "images/lavender.jpg", name: "Lavender Buds", cat: "nervine", badge: "Calm", desc: "Aromatic flowers for relaxation and sleep.", link: "#" },
-    { img: "images/lemonbalm.jpg", name: "Lemon Balm", cat: "nervine", badge: "Uplifting", desc: "Calms the nerves while lifting the spirits.", link: "#" },
-    { img: "images/lemon-mint.jpg", name: "Lemon Mint", cat: "nervine", badge: "Aromatic", desc: "Citrus-scented mint that supports relaxation and eases digestive tension.", link: "#" },
-    { img: "images/licorice.jpg", name: "Licorice Root", cat: "adaptogen", badge: "Adrenals", desc: "Harmonizing root for energy and hormone support.", link: "#" },
-    { img: "images/marshmallow.jpg", name: "Marshmallow Root", cat: "respiratory", badge: "Soothing", desc: "Mucilage-rich root for throat and gut coatings.", link: "#" },
-    { img: "images/milkthistle.jpg", name: "Milk Thistle", cat: "nutritive", badge: "Protection", desc: "Protects the liver from environmental toxins.", link: "#" },
-    { img: "images/moringa.jpg", name: "Moringa", cat: "nutritive", badge: "Superfood", desc: "The 'Miracle Tree' packed with proteins and minerals.", link: "#" },
-    { img: "images/mullein.jpg", name: "Mullein", cat: "respiratory", badge: "Lungs", desc: "Soft leaf used to support clear, deep breathing.", link: "#" },
-    { img: "images/oatstraw.jpg", name: "Oatstraw", cat: "nutritive", badge: "Nervous System", desc: "Highly nutritive herb for frayed nerves.", link: "#" },
-    { img: "images/parsley.jpg", name: "Parsley", cat: "nutritive", badge: "Vitamin K", desc: "Deeply alkalizing and rich in chlorophyll, minerals, and bone-building nutrients.", link: "#" },
-    { img: "images/passionflower.jpg", name: "Passionflower", cat: "nervine", badge: "Anti-Anxiety", desc: "Helps turn off 'brain chatter' before bed.", link: "#" },
-    { img: "images/peppermint.jpg", name: "Peppermint", cat: "nervine", badge: "Focus", desc: "High menthol content to clear the mind and cool the digestive tract.", link: "#", relatedTool: "Fine Mesh Tea Infuser", toolLink: "#" },
-    { img: "images/plantain.jpg", name: "Plantain", cat: "topical", badge: "Drawing", desc: "Extracts toxins from bites and stings.", link: "#" },
-    { img: "images/raspberry-leaf.jpg", name: "Raspberry Leaf", cat: "nutritive", badge: "Womens", desc: "Reproductive tonic rich in iron and magnesium.", link: "#" },
-    { img: "images/rosehips.jpg", name: "Rosehips", cat: "nutritive", badge: "Antioxidant", desc: "Vitamin C powerhouse for skin and immunity.", link: "#" },
-    { img: "images/rosemary.jpg", name: "Rosemary", cat: "topical", badge: "Stimulating", desc: "Improves circulation for hair and memory.", link: "#" },
-    { img: "images/sage.jpg", name: "Sage", cat: "culinary", badge: "Focus", desc: "Traditional herb for memory and throat health.", link: "#" },
-    { img: "images/skullcap.jpg", name: "Skullcap", cat: "nervine", badge: "Nerve Tonic", desc: "Excellent for tension and mental racing.", link: "#" },
-    { img: "images/slippery-elm.jpg", name: "Slippery Elm", cat: "nutritive", badge: "Healing", desc: "Powdered bark to soothe the entire digestive tract.", link: "#" },
-    { img: "images/sorrel.jpg", name: "Sorrel", cat: "nutritive", badge: "Vitamin C", desc: "Tart herb known for high fiber and cooling properties.", link: "#" },
-    { img: "images/spearmint.jpg", name: "Spearmint", cat: "culinary", badge: "Gentle", desc: "A milder mint perfect for daily refreshment and soothing the stomach.", link: "#" },
-    { img: "images/star-anise.jpg", name: "Star Anise", cat: "respiratory", badge: "Immune Support", desc: "Beautiful seed pods containing shikimic acid, traditionally used for winter wellness.", link: "#" },
-    { img: "images/nettle.jpg", name: "Stinging Nettle", cat: "nutritive", badge: "Vitamins", desc: "Mineral-rich leaves for daily nourishing infusions.", link: "#" },
-    { img: "images/tarragon.jpg", name: "Tarragon", cat: "culinary", badge: "Digestive", desc: "Helps soothe digestion and dental discomfort.", link: "#" },
-    { img: "images/thyme.jpg", name: "Thyme", cat: "respiratory", badge: "Clearance", desc: "Kitchen herb that supports clear lungs.", link: "#" },
-    { img: "images/turmeric.jpg", name: "Turmeric", cat: "culinary", badge: "Anti-Inflammatory", desc: "Golden root rich in curcumin for joint health and whole-body vitality.", link: "#", relatedTool: "Mortar & Pestle", toolLink: "#" },
-    { img: "images/valerian.jpg", name: "Valerian Root", cat: "nervine", badge: "Deep Sleep", desc: "Powerful root for reaching a heavy, restful state.", link: "#" },
-    { img: "images/yarrow.jpg", name: "Yarrow", cat: "topical", badge: "First Aid", desc: "Stops minor bleeding and supports fevers.", link: "#" }
+    { img: "images/applemint.jpg", name: "Apple Mint", cat: "culinary", badge: "Refreshing", desc: "Fuzzy leaves with a fruity undertone, excellent for cooling summer infusions.", herbLink: "https://amzn.to/403GnLU", productLink: "#" },
+    { img: "images/arnica.jpg", name: "Arnica", cat: "topical", badge: "Aches", desc: "The go-to for muscle trauma and swelling.", herbLink: "https://amzn.to/4atQxu9", productLink: "#" },
+    { img: "images/arrowroot.jpg", name: "Arrowroot", cat: "nutritive", badge: "Gut Soothing", desc: "A gentle, starchy powder used to soothe the digestive lining and thicken remedies.", herbLink: "#", productLink: "#" },
+    { img: "images/ashwagandha.jpg", name: "Ashwagandha", cat: "adaptogen", badge: "Stress", desc: "Helps the body adapt to physical and mental stress.", herbLink: "#", productLink: "#", relatedTool: "Amber Storage Jars", toolLink: "#" },
+    { img: "images/astragalus.jpg", name: "Astragalus", cat: "adaptogen", badge: "Vitality", desc: "Root used for building long-term immune strength.", herbLink: "#", productLink: "#" },
+    { img: "images/burdock.jpg", name: "Burdock Root", cat: "nutritive", badge: "Blood Purifier", desc: "Deeply grounding root used to clear the skin and support liver detoxification.", herbLink: "#", productLink: "#" },
+    { img: "images/calendula.jpg", name: "Calendula", cat: "topical", badge: "Skin", desc: "Gentle healing petals for salves and oils.", herbLink: "#", productLink: "#", relatedTool: "Organic Beeswax", toolLink: "#" },
+    { img: "images/celery-seed.jpg", name: "Celery Seed", cat: "nutritive", badge: "Fluid Balance", desc: "Concentrated seeds used to support healthy kidney function and joint comfort.", herbLink: "#", productLink: "#" },
+    { img: "images/chamomile.jpg", name: "Chamomile", cat: "nervine", badge: "Sleep", desc: "Calming bedtime flower tea.", herbLink: "#", productLink: "#" },
+    { img: "images/chia.jpg", name: "Chia Seeds", cat: "nutritive", badge: "Omega-3", desc: "Fiber-rich seeds that provide sustained energy and support healthy hydration.", herbLink: "#", productLink: "#" },
+    { img: "images/chives.jpg", name: "Chives", cat: "culinary", badge: "Bone Health", desc: "Rich in Vitamin K; a nutrient-dense kitchen staple.", herbLink: "#", productLink: "#" },
+    { img: "images/chocolate-mint.jpg", name: "Chocolate Mint", cat: "culinary", badge: "Dessert Herb", desc: "Indulgent aroma used in teas and tinctures for a healthy 'sweet' fix.", herbLink: "#", productLink: "#" },
+    { img: "images/cinnamon.jpg", name: "Cinnamon", cat: "culinary", badge: "Warming", desc: "Supports healthy blood sugar and warmth.", herbLink: "#", productLink: "#" },
+    { img: "images/cloves.jpg", name: "Cloves", cat: "culinary", badge: "Antioxidant", desc: "Highest antioxidant spice for deep health support.", herbLink: "#", productLink: "#", relatedTool: "Mortar & Pestle", toolLink: "#" },
+    { img: "images/comfrey.jpg", name: "Comfrey", cat: "topical", badge: "Repair", desc: "Used externally for bruises and bone support.", herbLink: "#", productLink: "#" },
+    { img: "images/curryleaf.jpg", name: "Curry Leaf", cat: "culinary", badge: "Metabolism", desc: "Aromatic leaves used in traditional medicine to support healthy blood sugar and digestion.", herbLink: "#", productLink: "#" },
+    { img: "images/dandelion.jpg", name: "Dandelion Root", cat: "nutritive", badge: "Liver", desc: "Earthy root that supports healthy detoxification.", herbLink: "#", productLink: "#" },
+    { img: "images/echinacea.jpg", name: "Echinacea", cat: "respiratory", badge: "Defense", desc: "Builds seasonal resistance and immune health.", herbLink: "#", productLink: "#" },
+    { img: "images/elderberry.jpg", name: "Elderberry", cat: "respiratory", badge: "Immune", desc: "Potent berry for seasonal immune support.", herbLink: "#", productLink: "#", relatedTool: "Fine Mesh Strainer", toolLink: "#" },
+    { img: "images/ginger.jpg", name: "Ginger Root", cat: "culinary", badge: "Digestion", desc: "Warming spice that aids digestion and circulation.", herbLink: "#", productLink: "#", relatedTool: "Ceramic Ginger Grater", toolLink: "#" },
+    { img: "images/hibiscus.jpg", name: "Hibiscus", cat: "nutritive", badge: "Heart", desc: "Tart berry rich in heart-healthy Vitamin C.", herbLink: "#", productLink: "#" },
+    { img: "images/tulsi.jpg", name: "Holy Basil (Tulsi)", cat: "adaptogen", badge: "Mind", desc: "Promotes mental clarity and emotional resilience.", herbLink: "#", productLink: "#" },
+    { img: "images/lavender.jpg", name: "Lavender Buds", cat: "nervine", badge: "Calm", desc: "Aromatic flowers for relaxation and sleep.", herbLink: "#", productLink: "#" },
+    { img: "images/lemonbalm.jpg", name: "Lemon Balm", cat: "nervine", badge: "Uplifting", desc: "Calms the nerves while lifting the spirits.", herbLink: "#", productLink: "#" },
+    { img: "images/lemon-mint.jpg", name: "Lemon Mint", cat: "nervine", badge: "Aromatic", desc: "Citrus-scented mint that supports relaxation and eases digestive tension.", herbLink: "#", productLink: "#" },
+    { img: "images/licorice.jpg", name: "Licorice Root", cat: "adaptogen", badge: "Adrenals", desc: "Harmonizing root for energy and hormone support.", herbLink: "#", productLink: "#" },
+    { img: "images/marshmallow.jpg", name: "Marshmallow Root", cat: "respiratory", badge: "Soothing", desc: "Mucilage-rich root for throat and gut coatings.", herbLink: "#", productLink: "#" },
+    { img: "images/milkthistle.jpg", name: "Milk Thistle", cat: "nutritive", badge: "Protection", desc: "Protects the liver from environmental toxins.", herbLink: "#", productLink: "#" },
+    { img: "images/moringa.jpg", name: "Moringa", cat: "nutritive", badge: "Superfood", desc: "The 'Miracle Tree' packed with proteins and minerals.", herbLink: "#", productLink: "#" },
+    { img: "images/mullein.jpg", name: "Mullein", cat: "respiratory", badge: "Lungs", desc: "Soft leaf used to support clear, deep breathing.", herbLink: "#", productLink: "#" },
+    { img: "images/oatstraw.jpg", name: "Oatstraw", cat: "nutritive", badge: "Nervous System", desc: "Highly nutritive herb for frayed nerves.", herbLink: "#", productLink: "#" },
+    { img: "images/parsley.jpg", name: "Parsley", cat: "nutritive", badge: "Vitamin K", desc: "Deeply alkalizing and rich in chlorophyll, minerals, and bone-building nutrients.", herbLink: "#", productLink: "#" },
+    { img: "images/passionflower.jpg", name: "Passionflower", cat: "nervine", badge: "Anti-Anxiety", desc: "Helps turn off 'brain chatter' before bed.", herbLink: "#", productLink: "#" },
+    { img: "images/peppermint.jpg", name: "Peppermint", cat: "nervine", badge: "Focus", desc: "High menthol content to clear the mind and cool the digestive tract.", herbLink: "#", productLink: "#", relatedTool: "Fine Mesh Tea Infuser", toolLink: "#" },
+    { img: "images/plantain.jpg", name: "Plantain", cat: "topical", badge: "Drawing", desc: "Extracts toxins from bites and stings.", herbLink: "#", productLink: "#" },
+    { img: "images/raspberry-leaf.jpg", name: "Raspberry Leaf", cat: "nutritive", badge: "Womens", desc: "Reproductive tonic rich in iron and magnesium.", herbLink: "#", productLink: "#" },
+    { img: "images/rosehips.jpg", name: "Rosehips", cat: "nutritive", badge: "Antioxidant", desc: "Vitamin C powerhouse for skin and immunity.", herbLink: "#", productLink: "#" },
+    { img: "images/rosemary.jpg", name: "Rosemary", cat: "topical", badge: "Stimulating", desc: "Improves circulation for hair and memory.", herbLink: "#", productLink: "#" },
+    { img: "images/sage.jpg", name: "Sage", cat: "culinary", badge: "Focus", desc: "Traditional herb for memory and throat health.", herbLink: "#", productLink: "#" },
+    { img: "images/skullcap.jpg", name: "Skullcap", cat: "nervine", badge: "Nerve Tonic", desc: "Excellent for tension and mental racing.", herbLink: "#", productLink: "#" },
+    { img: "images/slippery-elm.jpg", name: "Slippery Elm", cat: "nutritive", badge: "Healing", desc: "Powdered bark to soothe the entire digestive tract.", herbLink: "#", productLink: "#" },
+    { img: "images/sorrel.jpg", name: "Sorrel", cat: "nutritive", badge: "Vitamin C", desc: "Tart herb known for high fiber and cooling properties.", herbLink: "#", productLink: "#" },
+    { img: "images/spearmint.jpg", name: "Spearmint", cat: "culinary", badge: "Gentle", desc: "A milder mint perfect for daily refreshment and soothing the stomach.", herbLink: "#", productLink: "#" },
+    { img: "images/star-anise.jpg", name: "Star Anise", cat: "respiratory", badge: "Immune Support", desc: "Beautiful seed pods containing shikimic acid, traditionally used for winter wellness.", herbLink: "#", productLink: "#" },
+    { img: "images/nettle.jpg", name: "Stinging Nettle", cat: "nutritive", badge: "Vitamins", desc: "Mineral-rich leaves for daily nourishing infusions.", herbLink: "#", productLink: "#" },
+    { img: "images/tarragon.jpg", name: "Tarragon", cat: "culinary", badge: "Digestive", desc: "Helps soothe digestion and dental discomfort.", herbLink: "#", productLink: "#" },
+    { img: "images/thyme.jpg", name: "Thyme", cat: "respiratory", badge: "Clearance", desc: "Kitchen herb that supports clear lungs.", herbLink: "#", productLink: "#" },
+    { img: "images/turmeric.jpg", name: "Turmeric", cat: "culinary", badge: "Anti-Inflammatory", desc: "Golden root rich in curcumin for joint health and whole-body vitality.", herbLink: "#", productLink: "#", relatedTool: "Mortar & Pestle", toolLink: "#" },
+    { img: "images/valerian.jpg", name: "Valerian Root", cat: "nervine", badge: "Deep Sleep", desc: "Powerful root for reaching a heavy, restful state.", herbLink: "#", productLink: "#" },
+    { img: "images/yarrow.jpg", name: "Yarrow", cat: "topical", badge: "First Aid", desc: "Stops minor bleeding and supports fevers.", herbLink: "#", productLink: "#" }
 ];
 
 function initStore() {
@@ -274,10 +274,15 @@ function filterStore(cat, btn) {
     });
 }
 
-function openDisclaimer(name) {
+function openDisclaimer(name, type) {
     const herb = herbData.find(h => h.name === name);
     const modal = document.getElementById('disclaimerModal');
-    document.getElementById('modalConfirmBtn').href = herb.link;
+    
+    // Choose the link based on the button clicked ('herb' or 'product')
+    const targetLink = (type === 'herb') ? herb.herbLink : herb.productLink;
+    document.getElementById('modalConfirmBtn').href = targetLink;
+    
+    // Rest of your logic...
     const rel = document.getElementById('relatedSection');
     if(herb.relatedTool) {
         rel.style.display = "block";
@@ -286,6 +291,7 @@ function openDisclaimer(name) {
     } else { rel.style.display = "none"; }
     modal.style.display = "flex";
 }
+
 
 function closeDisclaimer() { document.getElementById('disclaimerModal').style.display = "none"; }
 function toggleSignup() { const f = document.getElementById('signup-form'); f.style.display = f.style.display === 'none' ? 'block' : 'none'; }
