@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wise & Healthy Living: A science-backed directory for natural remedies, herbal wisdom, and longevity. Explore our research-verified library.">
+<meta name="keywords" content="Herbal Remedies, Natural Health, Moringa, Castor Oil, Bioavailability, Holistic Wellness">
+<meta name="author" content="Jamal">
+
+<meta property="og:title" content="Wise & Healthy Living | Natural Wisdom">
+<meta property="og:description" content="Explore clinical research on herbal remedies and natural vitality.">
+<meta property="og:image" content="wiselogo.png">
+<meta property="og:url" content="https://yourusername.github.io/wise-healthy-living/">
+
+    <title>Morning Rituals | Wise & Healthy Living</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --dark-green: #1b4332;
+            --mid-green: #2d6a4f;
+            --honey: #d4a373;
+            --white: #ffffff;
+            --text-color: #333;
+            --bg-color: #faf9f6; /* Soft paper-like background for reading */
+        }
+
+        body.dark-theme {
+            --white: #121212;
+            --dark-green: #081c15;
+            --text-color: #e0e0e0;
+            --bg-color: #121212;
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Serif font is easier for long-form reading */
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        /* Nav & Progress */
+        nav { background: var(--dark-green); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 1000; font-family: sans-serif; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; font-size: 0.85rem; }
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; z-index: 1001; }
+        .progress-bar { height: 5px; background: var(--honey); width: 0%; }
+
+        /* Article Header */
+        .post-header {
+            max-width: 800px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .post-category { color: var(--honey); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .post-header h1 { font-size: 3rem; color: var(--dark-green); margin: 10px 0; line-height: 1.2; }
+        body.dark-theme .post-header h1 { color: var(--white); }
+        .post-meta { color: #888; font-style: italic; }
+
+        /* Featured Image */
+        .featured-image {
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+        }
+
+        /* Article Body */
+        .post-body {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 25px;
+            font-size: 1.2rem;
+        }
+        .post-body h2 { font-family: sans-serif; color: var(--mid-green); margin-top: 40px; }
+        .post-body blockquote {
+            border-left: 5px solid var(--honey);
+            margin: 40px 0;
+            padding: 10px 30px;
+            background: rgba(212, 163, 115, 0.1);
+            font-style: italic;
+            font-size: 1.4rem;
+        }
+
+        /* Sidebar/Footer Remedies */
+        .related-remedies {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 15px;
+            border: 1px solid var(--honey);
+            font-family: sans-serif;
+        }
+
+        .tracker-container {
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.tracker-card {
+    background: var(--white);
+    border: 2px dashed var(--honey);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.habit-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.habit-table th, .habit-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.habit-table th { background-color: var(--cream); color: var(--dark-green); }
+
+.print-tracker-btn {
+    background: var(--mid-green);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: 0.3s;
+}
+
+.print-tracker-btn:hover { background: var(--dark-green); transform: scale(1.05); }
+
+/* This makes sure ONLY the tracker prints */
+@media print {
+    nav, footer, .theme-toggle, .post-header, .featured-image, .post-body, .related-remedies, .print-tracker-btn {
+        display: none !important;
+    }
+    .tracker-container { margin: 0; padding: 0; }
+    .tracker-card { border: 1px solid #000; width: 100%; }
+}
+
+
+        .theme-toggle { position: fixed; bottom: 30px; left: 30px; background: var(--honey); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
+
+        @media (max-width: 768px) {
+            .post-header h1 { font-size: 2rem; }
+            .featured-image { height: 300px; border-radius: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="blog.html">BACK TO BLOG</a>
+</nav>
+
+<article>
+    <header class="post-header">
+        <span class="post-category">Daily Rituals</span>
+        <h1>The 5 Best Morning Rituals With Herbs</h1>
+        <div class="post-meta">Published on January 26, 2026 • 8 min read</div>
+    </header>
+
+    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1544145945-f904253d0c71?auto=format&fit=crop&q=80&w=1200')"></div>
+
+    <div class="post-body">
+        <p>The first 60 minutes of your day set the chemical tone for the next 16 hours. While most of us reach for a heavy dose of caffeine immediately, ancient herbal traditions suggest a gentler, more systematic approach to waking up the body. By integrating specific herbs into your morning, you can support digestion, mental clarity, and long-term vitality.</p>
+
+        <h2>Scientific Foundations</h2>
+        <p>Explain the "how" here. Use clear, descriptive language. If you are discussing a specific herb, link it back to your library.</p>
+        
+        [attachment_0](attachment)
+
+        <blockquote>
+            ​"How you spend your morning is a primary predictor of your focus and health for the rest of the day."
+        </blockquote>
+
+        <h2>1. The Warm <a href="index.html#remedies">Ginger</a>-Lemon Flush</h2>
+        <p>Before coffee or tea, start with 8oz of warm (not boiling) water, half a lemon, and a slice of fresh Ginger.</p>
+        <ul>
+            <li>The Benefit: Gingerol compounds stimulate the "migrating motor complex" in your gut, effectively "sweeping" the digestive tract clean from the night before.</li>
+            <li>Library Link: <a href="index.html#remedies">Read more about Ginger Root</a></li>
+        </ul>
+
+        <h2>2. Ashwagandha for Cortisol Control</h2>
+        <p>Our cortisol levels (the stress hormone) naturally peak in the morning to help us wake up. However, for those with high stress, this peak can feel like anxiety.</p>
+        <ul>
+            <li>The Benefit: Taking Ashwagandha with breakfast helps modulate this peak, providing "calm energy" rather than a jittery spike.</li>
+        </ul>
+<h2>3. Peppermint Aromatherapy</h2>
+            <p>You don’t always have to ingest an herb to benefit from it. While your morning shower runs, place a few drops of Peppermint oil on the floor (away from the drain).</p>
+        <ul>
+            <li>The Benefit: The steam carries menthol into your lungs, which has been clinically shown to increase oxygen flow to the brain and improve morning alertness.</li>
+            <li>Third tip for the reader.</li>
+        </ul>
+        
+<h2>4. <a href="index.html#remedies">Moringa</a>-Powered Green Smoothie</h2>
+        <p>Swap a sugary breakfast for a nutrient-dense shake featuring Moringa powder.</p>
+        <ul>
+            <li>The Benefit: Because <a href="index.html#remedies">Moringa</a> is a whole-leaf powder, it provides a steady release of vitamins and iron without the "sugar crash" associated with fruit juices or cereals.</li>
+        </ul>
+
+        <h2>5. Conscious Oil Pulling</h2>
+            <p>An ancient Ayurvedic ritual involves swishing a tablespoon of oil (Coconut or Sesame) in your mouth for 5–10 minutes.</p>
+            <ul>
+            <li>The Benefit: This "pulls" bacteria from the mouth before you swallow your first meal. To enhance this, add a drop of clove or oregano oil for their antimicrobial properties.</li>
+        </ul>
+
+        <p>You don't need to do all five rituals tomorrow. Pick one that resonates with you and try it for seven days. Notice the difference in your energy levels and digestion. Your morning is your most sacred time—protect it with the wisdom of the earth.</p>
+
+    </div>
+</article>
+
+<section class="related-remedies">
+    <h3>Related Herbal Remedies</h3>
+    <p>Want to learn more about the herbs mentioned in this article? Explore our verified library:</p>
+    <a href="index.html#remedies" style="color: var(--mid-green); font-weight: bold; text-decoration: none;">View Herbal Library →</a>
+</section>
+
+<button class="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+<section class="tracker-container">
+    <div class="tracker-card">
+        <div class="tracker-header">
+            <h3><i class="fa-solid fa-calendar-check"></i> 7-Day Ritual Tracker</h3>
+            <p>Check off your rituals each morning to stay consistent!</p>
+        </div>
+        
+        <table class="habit-table">
+            <thead>
+                <tr>
+                    <th>Ritual</th>
+                    <th>M</th> <th>T</th> <th>W</th> <th>T</th> <th>F</th> <th>S</th> <th>S</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Warm Ginger Water</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Ashwagandha breakfast</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Peppermint Focus</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Moringa Smoothie</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>Oil Pulling</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+
+        <button class="print-tracker-btn" onclick="window.print()">
+            <i class="fa-solid fa-print"></i> Download & Print Tracker
+        </button>
+    </div>
+</section>
+
+<footer style="text-align: center; padding: 60px; background: var(--dark-green); color: white; font-family: sans-serif;">
+    <div class="disclaimer-box">
+        <strong>MEDICAL DISCLAIMER:</strong> This site does not provide medical advice. 
+        <br>
+        <a href="disclaimer.html" style="color: var(--honey); text-decoration: underline; margin-right: 15px;">Read Disclaimer</a>
+        <a href="privacy.html" style="color: var(--honey); text-decoration: underline;">Privacy Policy</a>
+    </div>
+    <p style="font-size: 0.85rem; opacity: 0.8;"><i class="fa-regular fa-calendar-check"></i> Research Last Verified: <span id="lastUpdated"></span></p>
+    <p>&copy; 2026 Wise & Healthy Living | Natural Wisdom</p>
+</footer>
+
+<script>
+    function toggleTheme() {
+        document.body.classList.toggle('dark-theme');
+        const icon = document.querySelector('.theme-toggle i');
+        icon.className = document.body.classList.contains('dark-theme') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    }
+
+    window.onscroll = () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById("myBar").style.width = ((winScroll / height) * 100) + "%";
+    };
+
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+        document.querySelector('.theme-toggle i').className = 'fa-solid fa-sun';
+    }
+
+    function printRecipe() {
+    // Save the current page content
+    const originalContent = document.body.innerHTML;
+    
+    // Select only the recipe card content
+    // Note: Make sure your recipe card div has id="recipeCard"
+    const recipeContent = document.querySelector('[style*="background-color: #fdfcf0"]').outerHTML;
+
+    // Temporarily replace page content with just the recipe and print
+    document.body.innerHTML = `
+        <div style="padding: 40px; font-family: sans-serif;">
+            <h1 style="color: #1b4332;">Wise & Healthy Living</h1>
+            <hr>
+            ${recipeContent}
+            <p style="font-size: 10px; margin-top: 20px;">Source: Wise & Healthy Living | Understanding Adaptogens</p>
+        </div>
+    `;
+    
+    window.print();
+    
+    // Restore the original page
+    document.body.innerHTML = originalContent;
+    
+    // Re-initialize theme/scroll scripts if necessary
+    location.reload(); 
+}
+
+</script>
+<a href="https://amzn.to/4tANBoc" target="_blank" class="sticky-cta">
+    <i class="fa-solid fa-leaf"></i> View Top Yerba Mate
+</a>
+</body>
+              </html>
