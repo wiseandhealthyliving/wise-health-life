@@ -124,6 +124,27 @@
         margin-top: 0;
     }
 
+        /* Herbs */
+           .herbs {
+        background: var(--white);
+        color: var(--dark-green);
+        padding: 50px 20px;
+        margin: 20px 10px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* The "lift" effect */
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .herbs h2 {
+        color: var(--dark-green);
+        margin-top: 0;
+    }
+
     .btn-dark-green {
         background: var(--dark-green);
         color: var(--white);
@@ -340,6 +361,7 @@ body.dark-theme .blog-content h3 { color: var(--honey); }
     <a href="#herbsStore">Herb Store</a>
     <a href="#affiliates">Shop Supplies</a>
     <a href="#blog-preview">Blog</a>
+    <a href="#yerba-mate">Special on Yerba Mate</a>
     <a href="about.html">About</a>
     <a href="#contact">Contact</a>    
     <a href="resources.html">Resources</a>
@@ -453,14 +475,19 @@ body.dark-theme .blog-content h3 { color: var(--honey); }
     <p class="affiliate-disclaimer">* As an Amazon Associate, I earn from qualifying purchases.</p>
 </section>
 
-    <section style="margin-top:40px;">
-<h2>Featured Research Guide</h2>
+    <section id="yerba-mate" class="herbs" style="margin-top:40px;">
+<h2>A Featured Researched Guide</h2>
 <p>
 We created a fully research-backed breakdown of the health benefits of yerba mate including human clinical trials.
 </p>
 <p>
-<a href="yerba-mate-benefits.html">Read: Benefits of Yerba Mate Backed by Research</a>
+<a href="yerba-mate.html">Read About The Benefits of Yerba Mate & More, Backed by Research</a>
 </p>
+    </section>
+
+    <section class="author-box" style="max-width: 800px; margin: 80px auto; padding: 40px; background: var(--light-beige); border-radius: 15px; text-align: center;">
+  <h3>About the Author</h3>
+  <p>This article was researched and written by [Name], herbal wellness researcher and founder of Wise & Healthy Living. All claims are supported by peer-reviewed research linked throughout this article.</p>
     </section>
 
 <footer>
