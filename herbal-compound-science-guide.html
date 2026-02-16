@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herbal Compound Science Guide | How Plant Compounds Work in the Body</title>
+<meta name="description" content="A science-backed guide explaining how herbal compounds like polyphenols, alkaloids, flavonoids, and terpenes work in the human body. Evidence-based herbal wellness education.">
+<link rel="canonical" href="https://wiseandhealthyliving.github.io/wise-health-life/herbal-compound-science-guide.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wiseandhealthyliving.github.io/wise-health-life/herbal-compound-science-guide.html">
+<meta property="og:title" content="Herbal Compound Science Guide | How Plant Compounds Work in the Body">
+<meta property="og:description" content="Understand the science behind plant compounds including polyphenols, alkaloids, flavonoids, and terpenes — and how they influence human physiology.">
+<meta property="og:image" content="https://wiseandhealthyliving.github.io/wise-health-life/img/herbal-compound-science.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Herbal Compound Science Guide">
+<meta name="twitter:description" content="Evidence-based explanation of how plant compounds affect the body.">
+<meta name="twitter:image" content="https://wiseandhealthyliving.github.io/wise-health-life/img/herbal-compound-science.jpg">
+
+<link rel="stylesheet" href="style.css">
+<style>
+        :root {
+            --dark-green: #1b4332;
+            --mid-green: #2d6a4f;
+            --honey: #d4a373;
+            --white: #ffffff;
+            --text-color: #333;
+            --bg-color: #faf9f6; 
+            --light-beige: #fdfcf0;
+        }
+
+        body.dark-theme {
+            --white: #121212;
+            --dark-green: #081c15;
+            --text-color: #e0e0e0;
+            --bg-color: #121212;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        nav { background: var(--dark-green); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 1000; font-family: sans-serif; }
+        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; font-size: 0.85rem; }
+        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; z-index: 1001; }
+        .progress-bar { height: 5px; background: var(--honey); width: 0%; }
+
+        .post-header {
+            max-width: 800px;
+            margin: 60px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        .post-category { color: var(--honey); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+        .post-header h1 { font-size: 3rem; color: var(--dark-green); margin: 10px 0; line-height: 1.2; }
+        body.dark-theme .post-header h1 { color: var(--white); }
+        .post-meta { color: #888; font-style: italic; }
+
+        .featured-image {
+            max-width: 1000px;
+            margin: 0 auto 50px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .post-body {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 25px;
+            font-size: 1.2rem;
+        }
+        .post-body h2 { font-family: sans-serif; color: var(--mid-green); margin-top: 40px; }
+        .post-body blockquote {
+            border-left: 5px solid var(--honey);
+            margin: 40px 0;
+            padding: 10px 30px;
+            background: rgba(212, 163, 115, 0.1);
+            font-style: italic;
+            font-size: 1.4rem;
+        }
+        
+        h2 small {
+            color: var(--honey); 
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .product-card, .journey-card {
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .product-card:hover, .journey-card:hover {
+            transform: translateY(-5px);
+        }
+
+                .product-card span, .product-card h4, .product-card p {
+  text-shadow: 2px 3px 20px #121212;
+                }
+
+        .related-remedies {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 15px;
+            border: 1px solid var(--honey);
+            font-family: sans-serif;
+        }
+
+        .theme-toggle { 
+            position: fixed; 
+            bottom: 30px; 
+            left: 30px; 
+            background: var(--honey); 
+            color: white; 
+            border: none; 
+            width: 45px; 
+            height: 45px; 
+            border-radius: 50%; 
+            cursor: pointer; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .post-header h1 { font-size: 2rem; }
+            .featured-image { border-radius: 0; }
+        }
+        
+        .sticky-cta {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--mid-green);
+            color: white;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: 0.3s ease;
+        }
+
+        .sticky-cta:hover {
+            background: var(--dark-green);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 18px;
+                font-size: 0.8rem;
+            }
+        }
+</style>
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Herbal Compound Science Guide",
+  "description": "A science-backed guide explaining how herbal compounds work in the human body.",
+  "author": {
+    "@type": "Person",
+    "name": "Wise & Healthy Living Research Team"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Wise & Healthy Living"
+  },
+  "datePublished": "2026-02-16",
+  "dateModified": "2026-02-16",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wiseandhealthyliving.github.io/wise-health-life/herbal-compound-science-guide.html"
+  }
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [{
+   "@type": "Question",
+   "name": "What are herbal compounds?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Herbal compounds are bioactive chemicals found naturally in plants that influence human physiology. These include polyphenols, alkaloids, flavonoids, terpenes, and saponins."
+   }
+ },
+ {
+   "@type": "Question",
+   "name": "How do plant compounds affect the body?",
+   "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Plant compounds interact with enzymes, receptors, gut microbiota, and inflammatory pathways to produce measurable biological effects."
+   }
+ }]
+}
+</script>
+
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="yerba-mate.html">Yerba Mate</a>
+</nav>
+
+<article>
+<header>
+  <h1>Herbal Compound Science Guide</h1>
+  <p>Published February 2026 • 10 min read</p>
+</header>
+
+<div>
+  <img src="img/herbal-compound-science.jpg" alt="Plant Compounds and Molecular Structures">
+</div>
+
+<section>
+<h2>What Are Herbal Compounds?</h2>
+<p>Herbal compounds are naturally occurring bioactive chemicals found in plants. Unlike synthetic pharmaceuticals, these compounds evolved as part of plant defense and survival mechanisms — yet many interact meaningfully with human biological systems.</p>
+</section>
+
+<section>
+<h2>Major Categories of Plant Compounds</h2>
+
+<h3>1. Polyphenols</h3>
+<p>Polyphenols are powerful antioxidant compounds found in herbs, tea, berries, and yerba mate. They help reduce oxidative stress and modulate inflammation.</p>
+<p>Research: <a href="https://pubmed.ncbi.nlm.nih.gov/28409174/" target="_blank">Polyphenols and human health</a></p>
+
+<h3>2. Alkaloids</h3>
+<p>Alkaloids include caffeine, theobromine, and morphine-like compounds. These compounds often influence the nervous system by interacting with receptors.</p>
+
+<h3>3. Flavonoids</h3>
+<p>Flavonoids are a subclass of polyphenols that support cardiovascular health and endothelial function.</p>
+<p>Research: <a href="https://pubmed.ncbi.nlm.nih.gov/30568616/" target="_blank">Flavonoids and cardiovascular disease</a></p>
+
+<h3>4. Terpenes</h3>
+<p>Terpenes contribute aroma and may have anti-inflammatory and neuroprotective properties.</p>
+
+<h3>5. Saponins</h3>
+<p>Saponins may influence cholesterol metabolism and immune modulation.</p>
+</section>
+
+<section>
+<h2>How Herbal Compounds Work in the Body</h2>
+<ul>
+<li>Modulate inflammatory pathways</li>
+<li>Support mitochondrial function</li>
+<li>Influence gut microbiota composition</li>
+<li>Act as mild adaptogens</li>
+<li>Interact with neurotransmitter receptors</li>
+</ul>
+</section>
+
+<section>
+<h2>Limitations of Herbal Research</h2>
+<p>Many herbal studies are small, short-term, or observational. Bioavailability varies depending on preparation method, gut microbiome composition, and dosage. Not all plant compounds produce clinically significant effects in humans.</p>
+</section>
+
+<section>
+<h2>How This Applies to Yerba Mate</h2>
+<p>Yerba mate contains polyphenols, saponins, and xanthine alkaloids like caffeine and theobromine. These compounds contribute to its antioxidant, metabolic, and cognitive effects.</p>
+
+<p>Explore related pages:</p>
+<ul>
+<li><a href="yerba-mate.html">Yerba Mate Overview</a></li>
+<li><a href="benefits-of-yerba-mate.html">Benefits of Yerba Mate</a></li>
+<li><a href="yerba-mate-vs-coffee.html">Yerba Mate vs Coffee</a></li>
+</ul>
+</section>
+
+<section class="author-box">
+<h3>About the Author</h3>
+<p>This guide was researched and written by the Wise & Healthy Living research team. All health-related claims are supported by peer-reviewed scientific literature linked within this article.</p>
+</section>
+
+</article>
+
+<footer>
+<p>&copy; 2026 Wise & Healthy Living</p>
+<a href="index.html">Back to Homepage</a>
+</footer>
+
+</body>
+</html>
