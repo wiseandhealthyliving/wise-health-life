@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Wise & Healthy Living: A science-backed directory for natural remedies, herbal wisdom, and longevity. Explore our research-verified library.">
-<meta name="keywords" content="Herbal Remedies, Natural Health, Moringa, Castor Oil, Bioavailability, Holistic Wellness">
-<meta name="author" content="Jamal">
+    <meta name="keywords" content="Herbal Remedies, Natural Health, Moringa, Castor Oil, Bioavailability, Holistic Wellness">
+    <meta name="author" content="Jamal">
 
-<meta property="og:title" content="Wise & Healthy Living | Natural Wisdom">
-<meta property="og:description" content="Explore clinical research on herbal remedies and natural vitality.">
-<meta property="og:image" content="wiselogo.png">
-<meta property="og:url" content="https://yourusername.github.io/wise-healthy-living/">
+    <meta property="og:title" content="Wise & Healthy Living | Natural Wisdom">
+    <meta property="og:description" content="Explore clinical research on herbal remedies and natural vitality.">
+    <meta property="og:image" content="wiselogo.png">
+    <meta property="og:url" content="https://yourusername.github.io/wise-healthy-living/">
+
+    <!-- Favicon placeholder – replace with actual favicon link -->
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+
+    <!-- Canonical URL – update to match your actual domain -->
+    <!-- <link rel="canonical" href="https://yourusername.github.io/wise-healthy-living/morning-rituals.html"> -->
 
     <title>Morning Rituals | Wise & Healthy Living</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -23,28 +29,60 @@
             --white: #ffffff;
             --text-color: #333;
             --bg-color: #faf9f6; /* Soft paper-like background for reading */
+            --card-bg: #ffffff;
+            --cream: #fdfaf0;
         }
 
         body.dark-theme {
-            --white: #121212;
             --dark-green: #081c15;
+            --mid-green: #1b4d3e;
+            --honey: #b68a5c;
+            --white: #ffffff;
             --text-color: #e0e0e0;
             --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --cream: #2a2a2a;
         }
 
         body {
-            font-family: 'Georgia', serif; /* Serif font is easier for long-form reading */
+            font-family: 'Georgia', serif;
             margin: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.8;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         /* Nav & Progress */
-        nav { background: var(--dark-green); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 1000; font-family: sans-serif; }
-        nav a { color: white; text-decoration: none; padding: 10px 20px; font-weight: 600; font-size: 0.85rem; }
-        .progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 5px; z-index: 1001; }
-        .progress-bar { height: 5px; background: var(--honey); width: 0%; }
+        nav { 
+            background: var(--dark-green); 
+            padding: 15px 0; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            font-family: sans-serif; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            font-weight: 600; 
+            font-size: 0.85rem; 
+        }
+        .progress-container { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 5px; 
+            z-index: 1001; 
+        }
+        .progress-bar { 
+            height: 5px; 
+            background: var(--honey); 
+            width: 0%; 
+        }
 
         /* Article Header */
         .post-header {
@@ -54,19 +92,39 @@
             text-align: center;
             font-family: sans-serif;
         }
-        .post-category { color: var(--honey); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
-        .post-header h1 { font-size: 3rem; color: var(--dark-green); margin: 10px 0; line-height: 1.2; }
-        body.dark-theme .post-header h1 { color: var(--white); }
-        .post-meta { color: #888; font-style: italic; }
+        .post-category { 
+            color: var(--honey); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.9rem; 
+        }
+        .post-header h1 { 
+            font-size: 3rem; 
+            color: var(--dark-green); 
+            margin: 10px 0; 
+            line-height: 1.2; 
+        }
+        body.dark-theme .post-header h1 { 
+            color: var(--white); 
+        }
+        .post-meta { 
+            color: #888; 
+            font-style: italic; 
+        }
 
         /* Featured Image */
         .featured-image {
             max-width: 1000px;
             margin: 0 auto 50px;
-            height: 500px;
-            background-size: cover;
-            background-position: center;
             border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
         }
 
         /* Article Body */
@@ -76,7 +134,11 @@
             padding: 0 25px;
             font-size: 1.2rem;
         }
-        .post-body h2 { font-family: sans-serif; color: var(--mid-green); margin-top: 40px; }
+        .post-body h2 { 
+            font-family: sans-serif; 
+            color: var(--mid-green); 
+            margin-top: 40px; 
+        }
         .post-body blockquote {
             border-left: 5px solid var(--honey);
             margin: 40px 0;
@@ -91,75 +153,107 @@
             max-width: 800px;
             margin: 80px auto;
             padding: 40px;
-            background: var(--white);
+            background: var(--card-bg);
             border-radius: 15px;
             border: 1px solid var(--honey);
             font-family: sans-serif;
         }
 
-        .tracker-container {
+   .tracker-container {
     max-width: 750px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 0 20px; /* ensures container doesn't touch screen edges on mobile */
 }
+/* The inline style on the wrapper handles overflow; no extra CSS needed */
 
-.tracker-card {
-    background: var(--white);
-    border: 2px dashed var(--honey);
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-}
+        .tracker-card {
+            background: var(--card-bg);
+            border: 2px dashed var(--honey);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
 
-.habit-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
+        .habit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
 
-.habit-table th, .habit-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-}
+        .habit-table caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--dark-green);
+        }
 
-.habit-table th { background-color: var(--cream); color: var(--dark-green); }
+        .habit-table th, .habit-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
 
-.print-tracker-btn {
-    background: var(--mid-green);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: sans-serif;
-    transition: 0.3s;
-}
+        .habit-table th { 
+            background-color: var(--cream); 
+            color: var(--dark-green); 
+        }
+        .habit-table th[scope="col"] { background-color: var(--cream); }
 
-.print-tracker-btn:hover { background: var(--dark-green); transform: scale(1.05); }
+        .print-tracker-btn {
+            background: var(--mid-green);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: sans-serif;
+            transition: 0.3s;
+        }
 
-/* This makes sure ONLY the tracker prints */
-@media print {
-    nav, footer, .theme-toggle, .post-header, .featured-image, .post-body, .related-remedies, .print-tracker-btn {
-        display: none !important;
-    }
-    .tracker-container { margin: 0; padding: 0; }
-    .tracker-card { border: 1px solid #000; width: 100%; }
-}
+        .print-tracker-btn:hover { 
+            background: var(--dark-green); 
+            transform: scale(1.05); 
+        }
 
+        /* This makes sure ONLY the tracker prints */
+        @media print {
+            nav, footer, .theme-toggle, .post-header, .featured-image, 
+            .post-body, .related-remedies, .print-tracker-btn {
+                display: none !important;
+            }
+            .tracker-container { margin: 0; padding: 0; }
+            .tracker-card { border: 1px solid #000; width: 100%; }
+        }
 
-        .theme-toggle { position: fixed; bottom: 30px; left: 30px; background: var(--honey); color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; }
+        .theme-toggle { 
+            position: fixed; 
+            bottom: 30px; 
+            left: 30px; 
+            background: var(--honey); 
+            color: white; 
+            border: none; 
+            width: 45px; 
+            height: 45px; 
+            border-radius: 50%; 
+            cursor: pointer;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         @media (max-width: 768px) {
             .post-header h1 { font-size: 2rem; }
-            .featured-image { height: 300px; border-radius: 0; }
+            .featured-image img { height: 300px; }
+            .theme-toggle { bottom: 20px; left: 20px; }
         }
     </style>
 </head>
 <body>
 
-<div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+<div class="progress-container">
+    <div class="progress-bar" id="myBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Reading progress"></div>
+</div>
 
 <nav>
     <a href="index.html">HOME</a>
@@ -173,18 +267,19 @@
         <div class="post-meta">Published on January 26, 2026 • 8 min read</div>
     </header>
 
-    <div class="featured-image" style="background-image: url('https://images.unsplash.com/photo-1544145945-f904253d0c71?auto=format&fit=crop&q=80&w=1200')"></div>
+    <div class="featured-image">
+        <img src="img/teadrinking.jpg" 
+             alt="A cup of herbal tea with fresh ingredients on a wooden table">
+    </div>
 
     <div class="post-body">
         <p>The first 60 minutes of your day set the chemical tone for the next 16 hours. While most of us reach for a heavy dose of caffeine immediately, ancient herbal traditions suggest a gentler, more systematic approach to waking up the body. By integrating specific herbs into your morning, you can support digestion, mental clarity, and long-term vitality.</p>
 
         <h2>Scientific Foundations</h2>
         <p>Explain the "how" here. Use clear, descriptive language. If you are discussing a specific herb, link it back to your library.</p>
-        
-        [attachment_0](attachment)
 
         <blockquote>
-            ​"How you spend your morning is a primary predictor of your focus and health for the rest of the day."
+            "How you spend your morning is a primary predictor of your focus and health for the rest of the day."
         </blockquote>
 
         <h2>1. The Warm <a href="index.html#remedies">Ginger</a>-Lemon Flush</h2>
@@ -199,27 +294,26 @@
         <ul>
             <li>The Benefit: Taking Ashwagandha with breakfast helps modulate this peak, providing "calm energy" rather than a jittery spike.</li>
         </ul>
-<h2>3. Peppermint Aromatherapy</h2>
-            <p>You don’t always have to ingest an herb to benefit from it. While your morning shower runs, place a few drops of Peppermint oil on the floor (away from the drain).</p>
+
+        <h2>3. Peppermint Aromatherapy</h2>
+        <p>You don’t always have to ingest an herb to benefit from it. While your morning shower runs, place a few drops of Peppermint oil on the floor (away from the drain).</p>
         <ul>
             <li>The Benefit: The steam carries menthol into your lungs, which has been clinically shown to increase oxygen flow to the brain and improve morning alertness.</li>
-            <li>Third tip for the reader.</li>
         </ul>
         
-<h2>4. <a href="index.html#remedies">Moringa</a>-Powered Green Smoothie</h2>
+        <h2>4. <a href="index.html#remedies">Moringa</a>-Powered Green Smoothie</h2>
         <p>Swap a sugary breakfast for a nutrient-dense shake featuring Moringa powder.</p>
         <ul>
             <li>The Benefit: Because <a href="index.html#remedies">Moringa</a> is a whole-leaf powder, it provides a steady release of vitamins and iron without the "sugar crash" associated with fruit juices or cereals.</li>
         </ul>
 
         <h2>5. Conscious Oil Pulling</h2>
-            <p>An ancient Ayurvedic ritual involves swishing a tablespoon of oil (Coconut or Sesame) in your mouth for 5–10 minutes.</p>
-            <ul>
+        <p>An ancient Ayurvedic ritual involves swishing a tablespoon of oil (Coconut or Sesame) in your mouth for 5–10 minutes.</p>
+        <ul>
             <li>The Benefit: This "pulls" bacteria from the mouth before you swallow your first meal. To enhance this, add a drop of clove or oregano oil for their antimicrobial properties.</li>
         </ul>
 
         <p>You don't need to do all five rituals tomorrow. Pick one that resonates with you and try it for seven days. Notice the difference in your energy levels and digestion. Your morning is your most sacred time—protect it with the wisdom of the earth.</p>
-
     </div>
 </article>
 
@@ -229,7 +323,10 @@
     <a href="index.html#remedies" style="color: var(--mid-green); font-weight: bold; text-decoration: none;">View Herbal Library →</a>
 </section>
 
-<button class="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i>
+</button>
+
 <section class="tracker-container">
     <div class="tracker-card">
         <div class="tracker-header">
@@ -237,24 +334,29 @@
             <p>Check off your rituals each morning to stay consistent!</p>
         </div>
         
-        <table class="habit-table">
-            <thead>
-                <tr>
-                    <th>Ritual</th>
-                    <th>M</th> <th>T</th> <th>W</th> <th>T</th> <th>F</th> <th>S</th> <th>S</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Warm Ginger Water</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>Ashwagandha breakfast</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>Peppermint Focus</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>Moringa Smoothie</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                <tr><td>Oil Pulling</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-            </tbody>
-        </table>
+        <!-- Scrollable wrapper for the table -->
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+            <table class="habit-table">
+                <caption>7-Day Morning Ritual Tracker</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Ritual</th>
+                        <th scope="col">M</th> <th scope="col">T</th> <th scope="col">W</th> <th scope="col">T</th> 
+                        <th scope="col">F</th> <th scope="col">S</th> <th scope="col">S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Warm Ginger Water</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Ashwagandha breakfast</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Peppermint Focus</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Moringa Smoothie</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Oil Pulling</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
 
-        <button class="print-tracker-btn" onclick="window.print()">
-            <i class="fa-solid fa-print"></i> Download & Print Tracker
+        <button class="print-tracker-btn" id="printTrackerBtn">
+            <i class="fa-solid fa-print"></i> Print Tracker
         </button>
     </div>
 </section>
@@ -267,58 +369,74 @@
         <a href="privacy.html" style="color: var(--honey); text-decoration: underline;">Privacy Policy</a>
     </div>
     <p style="font-size: 0.85rem; opacity: 0.8;"><i class="fa-regular fa-calendar-check"></i> Research Last Verified: <span id="lastUpdated"></span></p>
-    <p>&copy; 2026 Wise & Healthy Living | Natural Wisdom</p>
+    <p>&copy; <span id="currentYear"></span> Wise & Healthy Living | Natural Wisdom</p>
 </footer>
 
 <script>
-    function toggleTheme() {
-        document.body.classList.toggle('dark-theme');
-        const icon = document.querySelector('.theme-toggle i');
-        icon.className = document.body.classList.contains('dark-theme') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-        localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
-    }
+    (function() {
+        // --- Theme Toggle ---
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
 
-    window.onscroll = () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        document.getElementById("myBar").style.width = ((winScroll / height) * 100) + "%";
-    };
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+                themeIcon.className = 'fa-solid fa-sun';
+            } else {
+                document.body.classList.remove('dark-theme');
+                themeIcon.className = 'fa-solid fa-moon';
+            }
+            try {
+                localStorage.setItem('theme', theme);
+            } catch (e) {
+                // localStorage unavailable (private mode, etc.)
+            }
+        }
 
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-        document.querySelector('.theme-toggle i').className = 'fa-solid fa-sun';
-    }
+        // Load saved theme
+        try {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                setTheme('dark');
+            }
+        } catch (e) {}
 
-    function printRecipe() {
-    // Save the current page content
-    const originalContent = document.body.innerHTML;
-    
-    // Select only the recipe card content
-    // Note: Make sure your recipe card div has id="recipeCard"
-    const recipeContent = document.querySelector('[style*="background-color: #fdfcf0"]').outerHTML;
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('dark-theme');
+            setTheme(isDark ? 'light' : 'dark');
+        });
 
-    // Temporarily replace page content with just the recipe and print
-    document.body.innerHTML = `
-        <div style="padding: 40px; font-family: sans-serif;">
-            <h1 style="color: #1b4332;">Wise & Healthy Living</h1>
-            <hr>
-            ${recipeContent}
-            <p style="font-size: 10px; margin-top: 20px;">Source: Wise & Healthy Living | Understanding Adaptogens</p>
-        </div>
-    `;
-    
-    window.print();
-    
-    // Restore the original page
-    document.body.innerHTML = originalContent;
-    
-    // Re-initialize theme/scroll scripts if necessary
-    location.reload(); 
-}
+        // --- Progress Bar ---
+        const progressBar = document.getElementById('myBar');
+        window.addEventListener('scroll', () => {
+            const winScroll = window.scrollY;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            progressBar.style.width = scrolled + '%';
+            progressBar.setAttribute('aria-valuenow', Math.round(scrolled));
+        });
 
+        // --- Print Tracker ---
+        document.getElementById('printTrackerBtn').addEventListener('click', () => {
+            window.print();
+        });
+
+        // --- Populate last updated and year ---
+        const lastUpdatedSpan = document.getElementById('lastUpdated');
+        if (lastUpdatedSpan) {
+            // Use a static date or dynamic – here we use the current date as placeholder
+            const today = new Date();
+            const formatted = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            lastUpdatedSpan.textContent = formatted;
+        }
+
+        const yearSpan = document.getElementById('currentYear');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    })();
 </script>
-<a href="https://amzn.to/4tANBoc" target="_blank" class="sticky-cta">
-    <i class="fa-solid fa-leaf"></i> View Top Yerba Mate
-</a>
+
+<!-- Affiliate link removed; if needed, add with proper rel="sponsored" and visible disclosure -->
 </body>
-              </html>
+                                                                          </html>
